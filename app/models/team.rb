@@ -1,5 +1,6 @@
 class Team < ApplicationRecord
   has_many :team_memberships
+  has_many :reviews
   has_many :gamers, through: :team_memberships
   belongs_to :game_gamer_profile
   belongs_to :game, through: :game_gamer_profile
