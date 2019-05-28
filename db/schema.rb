@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_103954) do
+ActiveRecord::Schema.define(version: 2019_05_28_123728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_103954) do
   create_table "profiles", force: :cascade do |t|
     t.bigint "game_id"
     t.bigint "user_id"
-    t.string "lancher_tag"
+    t.string "launcher_tag"
     t.string "rank"
     t.string "mainrole"
     t.jsonb "profile"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_103954) do
     t.string "location"
     t.string "discord_id"
     t.string "image"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
