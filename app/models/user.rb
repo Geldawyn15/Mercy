@@ -12,4 +12,12 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def self.user_for_game(game)
+    Profile.where(game: game).map do |profile|
+      User.find(profile.user_id)
+    end
+  end
 end
+
+

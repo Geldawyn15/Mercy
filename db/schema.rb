@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_123728) do
   create_table "teams", force: :cascade do |t|
     t.string "spirit"
     t.string "rank_scale"
-    t.string "status"
+    t.string "status", default: "pending"
     t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
