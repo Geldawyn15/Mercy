@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_123728) do
     t.string "spirit"
     t.string "rank_scale"
     t.string "status", default: "pending"
+    t.string "gender_choice"
     t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

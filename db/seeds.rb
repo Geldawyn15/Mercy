@@ -55,43 +55,43 @@ puts 'CREATING 13 USERS'
 puts '-----------------------------'
 
 charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@livefr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'f')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 bimblor = User.create!(username: 'bimblor', email: 'bimblor@gmail.com', password:'mercy4all', discord_id:'Bimblor#3201', birthdate:'28/05/1995', langage: 'en', location: 'us', image: 'https://avatarfiles.alphacoders.com/105/thumb-105223.jpg', gender: 'm')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 platinummad = User.create!(username: 'PlatinumMad', email: 'platinummad@gmail.com', password:'mercy4all', discord_id:'Platinum_Mad#3935', birthdate:'21/05/1995', langage: 'en', location: 'us', image: 'https://www.gamerbraves.com/wp-content/uploads/2017/04/my-hero-academia-smash-tap-app-icon.png', gender: 'm')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 sonchucks = User.create!(username: 'Sonchucks', email: 'sonchucks@gmail.com', password:'mercy4all', discord_id:'Sonchucks#1734', birthdate:'29/05/1990', langage: 'en', location: 'us', image: 'http://pre14.deviantart.net/2f88/th/pre/i/2017/014/e/0/overwatch___reinhardt__player_icon__by_yoshinoyoshie-davffz6.png', gender: 'm')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 oma = User.create!(username: 'Oma', email: 'oma@gmail.com', password:'mercy4all', discord_id:'Oma#9261', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://lincolnpropertycompany.co.uk/wp-content/uploads/2017/05/Kurt-Profile-Image-Square-Brick-1024x1024.jpg', gender: 'm')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 oten = User.create!(username: 'Oten', email: 'oten@gmail.com', password:'mercy4all', discord_id:'Oten#1848', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/771779/profile/WURUQDJR_avatar_medium_square.jpg', gender: 'f')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 sakiminora = User.create!(username: 'SakiMinora', email: 'sakiminora@gmail.com', discord_id:'Saki Minora#2788', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://www.tamarvalleygirl.com/wp-content/uploads/2016/11/Clair-Wellsbury-Nye-TamarValleyGirl-profile-square.jpg', gender: 'f')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 starkdouxlol = User.create!(username: 'StarkDOUXlol', email: 'starkdouxlol@gmail.com', discord_id:'Starku-Sama#7037', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8nTSQmtT23ID-Z-SpUxF7-fGu0T03lafX22rfk0YLHHg5r8C1Jw', gender: 'f')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 adrean = User.create!(username: 'Adrean', email: 'adrean@gmail.com', password:'mercy4all', discord_id:'Adrean#6804', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.thesweetbeastblog.com/wp-content/uploads/em-profile-square.jpg', gender: 'f')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 kratkiller = User.create!(username: 'Kratkiller', email: 'kratkiller@gmail.com', password:'mercy4all', discord_id:'Kratkiller#7277', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://fusion-therapies.co.uk/wp-content/uploads/2017/03/Beki-Profile-Square.jpg', gender: 'f')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 kyo = User.create!(username: 'Kyo', email: 'kyo@gmail.com', password:'mercy4all', discord_id:'Kyo#8128', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/1061631/profile/YGERHLET_avatar_medium_square.jpg', gender: 'f')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 yunyun = User.create!(username: 'YunYun', email: 'yunyun@gmail.com', password:'mercy4all', discord_id:'YunYun#9321', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://elnuevosol.net/wp-content/uploads/2018/12/Jessica-Wells-483x500.png', gender: 'f')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 bourbon = User.create!(username: 'Bourbon', email: 'Jonaschancelier@gmail.com', discord_id:'Bourbon kid*#6910', password:'mercy4all', birthdate:'02/02/1993', langage: 'en', location: 'eu', image: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/36/36362efcd22d2845be1bc5c0edc38cddd14674cb_full.jpg', gender: 'm')
-puts "User.last.name created"
+puts "#{User.last.username} created"
 
 puts '-----------------------------'
 puts 'CREATING 13 OVERWATCH PROFILES'
@@ -156,7 +156,7 @@ puts 'CREATING 8 TEAMS FOR OVERWATCH'
 puts '-----------------------------'
 
 8.times do
-  Team.create!(spirit: %w[casual competitive].sample, rank_scale: ow_rank.sample, game: overwatch)
+  Team.create!(spirit: %w[casual competitive].sample, rank_scale: ow_rank.sample, game: overwatch, gender_choice: %w[girls guys mixed].sample)
 end
 
 puts '8 teams created'
