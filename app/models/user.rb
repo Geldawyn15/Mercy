@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends, class_name: 'User', through: :friendships
 
-  validates :username, :email, presence: true
+  # validates :username, :email, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
