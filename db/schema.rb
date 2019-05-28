@@ -81,10 +81,10 @@ ActiveRecord::Schema.define(version: 2019_05_28_123728) do
     t.boolean "add_friend"
     t.boolean "endorse"
     t.boolean "nok", default: false
-    t.boolean "nok_positiveness"
-    t.boolean "nok_respect"
-    t.boolean "nok_communication"
-    t.boolean "nok_helpfulness"
+    t.boolean "nok_positiveness", default: false
+    t.boolean "nok_respect", default: false
+    t.boolean "nok_communication", default: false
+    t.boolean "nok_helpfulness", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_reviews_on_user_id"
@@ -98,12 +98,13 @@ ActiveRecord::Schema.define(version: 2019_05_28_123728) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "birthdate"
-    t.string "langage"
-    t.string "location"
+    t.date "birthdate", default: "1991-12-25"
+    t.string "langage", default: "en"
+    t.string "location", default: "eu"
     t.string "discord_id"
     t.string "image"
     t.string "username"
+    t.string "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
