@@ -1,10 +1,10 @@
-class Gamer < ApplicationRecord
-  has_many :game_gamer_profiles
-  has_many :reviews
+class User < ApplicationRecord
+  has_many :profiles
+  has_many :user_reviews
   has_many :team_membership
   has_many :teams, through: :team_memberships
   has_many :friendships
-  has_many :friends, class_name: 'Gamer', through: :friendships
+  has_many :friends, class_name: 'User', through: :friendships
 
   validates :username, :email, presence: true
 

@@ -1,6 +1,6 @@
 class TeamMembership < ApplicationRecord
-  belongs_to :gamer
+  belongs_to :user
   belongs_to :team
 
-  validates :gamer, :team, presence: true
+  validates :user, :team, presence: true
 end

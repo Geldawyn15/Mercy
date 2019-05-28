@@ -3,7 +3,8 @@ class CreateTeams < ActiveRecord::Migration[5.2]
     create_table :teams do |t|
       t.string :spirit
       t.string :rank_scale
-      t.references :game_gamer_profile, foreign_key: true
+      t.string :status
+      t.references :game, foreign_key: true
 
       t.timestamps
     end
