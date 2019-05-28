@@ -9,9 +9,7 @@ class Team < ApplicationRecord
                                   message: "Status should be either 'pending' or 'complete'or ingame' or 'over'" }
 
   def team_users
-    @team.team_memberships.map do |team_membership|
-      team_membership.user
-    end
+    @team.team_memberships.map { |team_membership| team_membership.user}
   end
 
   def self.all_pending
@@ -24,7 +22,7 @@ class Team < ApplicationRecord
 
   def pending!
     @team.status = "pending"
-    team.save!
+    @team.save!
   end
 
   def self.all_complete
@@ -37,7 +35,7 @@ class Team < ApplicationRecord
 
   def complete!
     @team.status = "complete"
-    team.save!
+    @team.save!
   end
 
   def self.all_ingame
@@ -50,7 +48,7 @@ class Team < ApplicationRecord
 
   def ingame!
     @team.status = "ingame"
-    team.save!
+    @team.save!
   end
 
   def self.all_over
@@ -63,6 +61,6 @@ class Team < ApplicationRecord
 
   def over!
     @team.status = "over"
-    team.save!
+    @team.save!
   end
 end

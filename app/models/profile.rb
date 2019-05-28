@@ -3,5 +3,5 @@ class Profile < ApplicationRecord
   belongs_to :game
   has_many :teams
 
-  validates :game, :user, :mainrole, :rank, :launcher_tag, presence: true
+  validates :game, :user, :mainrole, :launcher_tag, presence: true
 end
