@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home', as: 'home'
 
   resources :users, only: %i[show] do
-    resources :user_reviews, only: %i[new create]
     resources :profiles, only: %i[new create]
-    resources :teams, only: %i[show new create]
+    resources :teams, only: %i[new create]
+  end
+  resources :teams, only: %i[show] do
+    resources :user_reviews, only: %i[new create]
   end
 end
