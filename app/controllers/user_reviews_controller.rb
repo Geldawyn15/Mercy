@@ -4,9 +4,9 @@ class UserReviewsController < ApplicationController
   end
 
   def create
-    @review = UserReview.new(params_review)
+    @review = UserReview.new(review_params)
     if @review.save!
-      redirect_to user_profiles_path(@users)
+      redirect_to redirect_to users_path(@users.id)
     else
       render :new
     end
@@ -14,7 +14,7 @@ class UserReviewsController < ApplicationController
 
   private
 
-  def params_review
+  def review_params
     if :nok == true
       params.require(:user_reviews).permit(:nok_positiveness, :nok_respect, :nok_helpfulness, :nok_communication)
     else

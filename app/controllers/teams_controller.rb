@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   def show
-    @team = Team.new
+    @team = Team.find(params[:id])
   end
 
   def new
@@ -8,9 +8,9 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(params_team)
+    @team = Team.new(team_params)
     if @team.save!
-      redirect_to user_teams_path(@users)
+      redirect_to teams_id_teams_memberships_new_path
     else
       render :new
     end
@@ -18,7 +18,7 @@ class TeamsController < ApplicationController
 
   private
 
-  def params_team
-    params.require(:teams).permit(:spirit, :rank_scale, :status)
+  def team_params
+    params.require(:teams).permit(:spirit, :rank_scale, :status, :game, :gender_choice)
   end
 end
