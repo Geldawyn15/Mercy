@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body>
+
+<div class="homepage-banner">
+  <div class="homepage-content">
+    <div class="homepage-title">
+      <h1>Play your favorite game with<br> <span class="pink-text">non-toxic players</span> now.
+      </h1>
+    </div>
+  </div>
+</div>
+
+
+  <section id="feature-cards">
+    <% title1 = 'Use your mic again' %> <br>
+    <% icon1 = 'fas fa-headset' %> <br>
+    <% para1 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
+    <% title2 = 'Join the community' %>
+    <% icon2 = 'fa fa-users' %>
+    <% para2 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
+    <% title3 = 'Use your mic again' %>
+    <% icon3 = 'fas fa-headset' %>
+    <% para3 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
+
+    <%= render 'shared/feature_card', title: title1, icon: icon1, para: para1, color: 'orange'%>
+    <%= render 'shared/feature_card', title: title2, icon: icon2, para: para2, color: 'light-green'%>
+    <%= render 'shared/feature_card', title: title3, icon: icon3, para: para3, color: 'pink'%>
+  </section>
+</body>

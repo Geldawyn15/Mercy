@@ -1,10 +1,23 @@
 // Define variables for your color scheme
 
 // For example:
-$red: #FD1015;
-$blue: #167FFB;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+$red: #EF4E5C;
+$blue: #041E2F;
+$light-blue: #6A94FA;
+$orange: #F4902A;
+$green: #6DE944;
+$pink: #CA519B;
+$light-green: #55CDC9;
+$dark-blue: #141414;
+$white: #E7E7E7;
+$black: #000000;
+$gray: #76848D;
+$light-gray: #E8EAEC;
+$yellow: #ffe837;
+$dark-pink: #E91367;
+
+.pink-text {
+  color: $dark-pink;
+}
+
+$font-color: #A2A2A2;
