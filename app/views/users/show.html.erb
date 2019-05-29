@@ -1,3 +1,32 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div id="pofile-box">
+  <%= image_tag @user.image, class:"avatar-lg" %>
+  <% if user.gender == "female" %>
+    <p>https://fontawesome.com/icons/female?style=solid</p>
+  <% elsif user.gender == "male" %>
+    <p><i class="fas fa-male"></i></p>
+  <% elsif user.gender == "fluid" %>
+  <% elsif user.gender == "nc" %>
+  <% end %>
 
+  <p>AGE<%= @user.birthdate %></p>
+  <p></p>
+</div>
+
+
+
+
+create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "birthdate", default: "1991-12-25"
+    t.string "langage", default: "en"
+    t.string "location", default: "eu"
+    t.string "discord_id"
+    t.string "image"
+    t.string "username"
+    t.string "gender"
