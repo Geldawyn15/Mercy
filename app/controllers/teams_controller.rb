@@ -16,6 +16,11 @@ class TeamsController < ApplicationController
     end
   end
 
+  def mates
+    @user = current_user
+    @friends = @user.friendships
+  end
+
   private
 
   def team_params
