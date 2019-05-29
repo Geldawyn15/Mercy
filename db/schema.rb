@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
   create_table "profiles", force: :cascade do |t|
     t.bigint "game_id"
     t.bigint "user_id"
-    t.string "launcher_tag"
+    t.string "lancher_tag"
     t.string "rank"
     t.string "mainrole"
     t.jsonb "profile"
@@ -69,8 +69,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
   create_table "teams", force: :cascade do |t|
     t.string "spirit"
     t.string "rank_scale"
-    t.string "status", default: "pending"
-    t.string "gender_choice"
+    t.string "status"
     t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -82,10 +81,10 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
     t.boolean "add_friend"
     t.boolean "endorse"
     t.boolean "nok", default: false
-    t.boolean "nok_positiveness", default: false
-    t.boolean "nok_respect", default: false
-    t.boolean "nok_communication", default: false
-    t.boolean "nok_helpfulness", default: false
+    t.boolean "nok_positiveness"
+    t.boolean "nok_respect"
+    t.boolean "nok_communication"
+    t.boolean "nok_helpfulness"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_reviews_on_user_id"
@@ -99,9 +98,9 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "birthdate", default: "1991-12-25"
-    t.string "langage", default: "en"
-    t.string "location", default: "eu"
+    t.date "birthdate"
+    t.string "langage"
+    t.string "location"
     t.string "discord_id"
     t.string "image"
     t.string "username"

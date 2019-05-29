@@ -1,2 +1,10 @@
 <h1>Teams#new</h1>
 <p>Find me in app/views/teams/new.html.erb</p>
+
+
+<%= simple_form_for :team do |f| %>
+  <%= f.input :spirit %>
+  <%= f.input :rank_scale %>
+  <%= f.button :submit link_to team_path %>
+<% end %>
+
