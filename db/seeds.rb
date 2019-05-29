@@ -30,6 +30,7 @@ csgo = Game.create!(name: 'CS:Go', rank_typology: csgo_rank, players_quantity: 5
 
 puts 'CS:Go Game created'
 
+
 # Parsing for lol roles
 url_lol_role = 'https://leagueoflegends.fandom.com/wiki/List_of_champions/Position'
 response = open(url_lol_role).read
@@ -54,43 +55,43 @@ puts '-----------------------------'
 puts 'CREATING 13 USERS'
 puts '-----------------------------'
 
-charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@livefr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'f')
+charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@livefr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
-bimblor = User.create!(username: 'bimblor', email: 'bimblor@gmail.com', password:'mercy4all', discord_id:'Bimblor#3201', birthdate:'28/05/1995', langage: 'en', location: 'us', image: 'https://avatarfiles.alphacoders.com/105/thumb-105223.jpg', gender: 'm')
+bimblor = User.create!(username: 'bimblor', email: 'bimblor@gmail.com', password:'mercy4all', discord_id:'Bimblor#3201', birthdate:'28/05/1995', langage: 'en', location: 'us', image: 'https://avatarfiles.alphacoders.com/105/thumb-105223.jpg', gender: 'male', status: 'online')
 puts "#{User.last.username} created"
 
-platinummad = User.create!(username: 'PlatinumMad', email: 'platinummad@gmail.com', password:'mercy4all', discord_id:'Platinum_Mad#3935', birthdate:'21/05/1995', langage: 'en', location: 'us', image: 'https://www.gamerbraves.com/wp-content/uploads/2017/04/my-hero-academia-smash-tap-app-icon.png', gender: 'm')
+platinummad = User.create!(username: 'PlatinumMad', email: 'platinummad@gmail.com', password:'mercy4all', discord_id:'Platinum_Mad#3935', birthdate:'21/05/1995', langage: 'en', location: 'us', image: 'https://www.gamerbraves.com/wp-content/uploads/2017/04/my-hero-academia-smash-tap-app-icon.png', gender: 'male', status: 'online')
 puts "#{User.last.username} created"
 
-sonchucks = User.create!(username: 'Sonchucks', email: 'sonchucks@gmail.com', password:'mercy4all', discord_id:'Sonchucks#1734', birthdate:'29/05/1990', langage: 'en', location: 'us', image: 'http://pre14.deviantart.net/2f88/th/pre/i/2017/014/e/0/overwatch___reinhardt__player_icon__by_yoshinoyoshie-davffz6.png', gender: 'm')
+sonchucks = User.create!(username: 'Sonchucks', email: 'sonchucks@gmail.com', password:'mercy4all', discord_id:'Sonchucks#1734', birthdate:'29/05/1990', langage: 'en', location: 'us', image: 'http://pre14.deviantart.net/2f88/th/pre/i/2017/014/e/0/overwatch___reinhardt__player_icon__by_yoshinoyoshie-davffz6.png', gender: 'male', status: 'ingame')
 puts "#{User.last.username} created"
 
-oma = User.create!(username: 'Oma', email: 'oma@gmail.com', password:'mercy4all', discord_id:'Oma#9261', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://lincolnpropertycompany.co.uk/wp-content/uploads/2017/05/Kurt-Profile-Image-Square-Brick-1024x1024.jpg', gender: 'm')
+oma = User.create!(username: 'Oma', email: 'oma@gmail.com', password:'mercy4all', discord_id:'Oma#9261', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://lincolnpropertycompany.co.uk/wp-content/uploads/2017/05/Kurt-Profile-Image-Square-Brick-1024x1024.jpg', gender: 'male', status: 'online')
 puts "#{User.last.username} created"
 
-oten = User.create!(username: 'Oten', email: 'oten@gmail.com', password:'mercy4all', discord_id:'Oten#1848', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/771779/profile/WURUQDJR_avatar_medium_square.jpg', gender: 'f')
+oten = User.create!(username: 'Oten', email: 'oten@gmail.com', password:'mercy4all', discord_id:'Oten#1848', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/771779/profile/WURUQDJR_avatar_medium_square.jpg', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
-sakiminora = User.create!(username: 'SakiMinora', email: 'sakiminora@gmail.com', discord_id:'Saki Minora#2788', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://www.tamarvalleygirl.com/wp-content/uploads/2016/11/Clair-Wellsbury-Nye-TamarValleyGirl-profile-square.jpg', gender: 'f')
+sakiminora = User.create!(username: 'SakiMinora', email: 'sakiminora@gmail.com', discord_id:'Saki Minora#2788', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://www.tamarvalleygirl.com/wp-content/uploads/2016/11/Clair-Wellsbury-Nye-TamarValleyGirl-profile-square.jpg', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
-starkdouxlol = User.create!(username: 'StarkDOUXlol', email: 'starkdouxlol@gmail.com', discord_id:'Starku-Sama#7037', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8nTSQmtT23ID-Z-SpUxF7-fGu0T03lafX22rfk0YLHHg5r8C1Jw', gender: 'f')
+starkdouxlol = User.create!(username: 'StarkDOUXlol', email: 'starkdouxlol@gmail.com', discord_id:'Starku-Sama#7037', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8nTSQmtT23ID-Z-SpUxF7-fGu0T03lafX22rfk0YLHHg5r8C1Jw', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
-adrean = User.create!(username: 'Adrean', email: 'adrean@gmail.com', password:'mercy4all', discord_id:'Adrean#6804', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.thesweetbeastblog.com/wp-content/uploads/em-profile-square.jpg', gender: 'f')
+adrean = User.create!(username: 'Adrean', email: 'adrean@gmail.com', password:'mercy4all', discord_id:'Adrean#6804', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.thesweetbeastblog.com/wp-content/uploads/em-profile-square.jpg', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
-kratkiller = User.create!(username: 'Kratkiller', email: 'kratkiller@gmail.com', password:'mercy4all', discord_id:'Kratkiller#7277', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://fusion-therapies.co.uk/wp-content/uploads/2017/03/Beki-Profile-Square.jpg', gender: 'f')
+kratkiller = User.create!(username: 'Kratkiller', email: 'kratkiller@gmail.com', password:'mercy4all', discord_id:'Kratkiller#7277', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://fusion-therapies.co.uk/wp-content/uploads/2017/03/Beki-Profile-Square.jpg', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
-kyo = User.create!(username: 'Kyo', email: 'kyo@gmail.com', password:'mercy4all', discord_id:'Kyo#8128', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/1061631/profile/YGERHLET_avatar_medium_square.jpg', gender: 'f')
+kyo = User.create!(username: 'Kyo', email: 'kyo@gmail.com', password:'mercy4all', discord_id:'Kyo#8128', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/1061631/profile/YGERHLET_avatar_medium_square.jpg', gender: 'female', status: 'away')
 puts "#{User.last.username} created"
 
-yunyun = User.create!(username: 'YunYun', email: 'yunyun@gmail.com', password:'mercy4all', discord_id:'YunYun#9321', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://elnuevosol.net/wp-content/uploads/2018/12/Jessica-Wells-483x500.png', gender: 'f')
+yunyun = User.create!(username: 'YunYun', email: 'yunyun@gmail.com', password:'mercy4all', discord_id:'YunYun#9321', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://elnuevosol.net/wp-content/uploads/2018/12/Jessica-Wells-483x500.png', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
-bourbon = User.create!(username: 'Bourbon', email: 'Jonaschancelier@gmail.com', discord_id:'Bourbon kid*#6910', password:'mercy4all', birthdate:'02/02/1993', langage: 'en', location: 'eu', image: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/36/36362efcd22d2845be1bc5c0edc38cddd14674cb_full.jpg', gender: 'm')
+bourbon = User.create!(username: 'Bourbon', email: 'Jonaschancelier@gmail.com', discord_id:'Bourbon kid*#6910', password:'mercy4all', birthdate:'02/02/1993', langage: 'en', location: 'eu', image: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/36/36362efcd22d2845be1bc5c0edc38cddd14674cb_full.jpg', gender: 'male', status: 'online')
 puts "#{User.last.username} created"
 
 puts '-----------------------------'
@@ -118,34 +119,34 @@ profile_creation(charlycade_parameters)
 bimblor_parameters = { user: bimblor, launcher_tag: '1842', platform: 'pc', mainrole: 'reinhardt', game: overwatch }
 profile_creation(bimblor_parameters)
 
-platinummad_parameters = { user: platinummad, launcher_tag: '1533', platform: 'pc', mainrole: 'dVa', game: overwatch }
+platinummad_parameters = { user: platinummad, launcher_tag: '1533', platform: 'pc', mainrole: 'zenyatta', game: overwatch }
 profile_creation(platinummad_parameters)
 
-sonchucks_parameters = { user: sonchucks, launcher_tag: '1458', platform: 'pc', mainrole: 'dVa', game: overwatch }
+sonchucks_parameters = { user: sonchucks, launcher_tag: '1458', platform: 'pc', mainrole: 'mei', game: overwatch }
 profile_creation(sonchucks_parameters)
 
-oma_parameters = { user: oma, launcher_tag: '21712', platform: 'pc', mainrole: 'dVa', game: overwatch }
+oma_parameters = { user: oma, launcher_tag: '21712', platform: 'pc', mainrole: 'tracer', game: overwatch }
 profile_creation(oma_parameters)
 
-oten_parameters = { user: oten, launcher_tag: '2998', platform: 'pc', mainrole: 'dVa', game: overwatch }
+oten_parameters = { user: oten, launcher_tag: '2998', platform: 'pc', mainrole: 'mercy', game: overwatch }
 profile_creation(oten_parameters)
 
-sakiminora_parameters = { user: sakiminora, launcher_tag: '2910', platform: 'pc', mainrole: 'dVa', game: overwatch }
+sakiminora_parameters = { user: sakiminora, launcher_tag: '2910', platform: 'pc', mainrole: 'ana', game: overwatch }
 profile_creation(sakiminora_parameters)
 
-starkdouxlol_parameters = { user: starkdouxlol, launcher_tag: '2250', platform: 'pc', mainrole: 'dVa', game: overwatch }
+starkdouxlol_parameters = { user: starkdouxlol, launcher_tag: '2250', platform: 'pc', mainrole: 'winston', game: overwatch }
 profile_creation(starkdouxlol_parameters)
 
-adrean_parameters = { user: adrean, launcher_tag: '2939', platform: 'pc', mainrole: 'dVa', game: overwatch }
+adrean_parameters = { user: adrean, launcher_tag: '2939', platform: 'pc', mainrole: 'mccree', game: overwatch }
 profile_creation(adrean_parameters)
 
-kratkiller_parameters = { user: kratkiller, launcher_tag: '2173', platform: 'pc', mainrole: 'dVa', game: overwatch }
+kratkiller_parameters = { user: kratkiller, launcher_tag: '2173', platform: 'pc', mainrole: 'ana', game: overwatch }
 profile_creation(kratkiller_parameters)
 
-kyo_parameters = { user: kyo, launcher_tag: '21185', platform: 'pc', mainrole: 'dVa', game: overwatch }
+kyo_parameters = { user: kyo, launcher_tag: '21185', platform: 'pc', mainrole: 'genji', game: overwatch }
 profile_creation(kyo_parameters)
 
-yunyun_parameters = { user: yunyun, launcher_tag: '2662', platform: 'pc', mainrole: 'dVa', game: overwatch }
+yunyun_parameters = { user: yunyun, launcher_tag: '2662', platform: 'pc', mainrole: 'soldier76', game: overwatch }
 profile_creation(yunyun_parameters)
 
 bourbon_parameters = { user: bourbon, launcher_tag: '21332', platform: 'pc', mainrole: 'dVa', game: overwatch }

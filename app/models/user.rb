@@ -9,11 +9,11 @@ class User < ApplicationRecord
   has_many :friends, class_name: 'User', through: :friendships
 
   validates :username, :location, presence: true
-  validates :status, inclusion: { in: %w[online ingame available offline],
+  validates :status, inclusion: { in: %w[online ingame away],
                                   message: "%{value} is not a valid status" }
 
-  validates :gener, inclusion: { in: %w[male female fluid nc],
-                                  message: "%{value} is not a valid status" }
+  validates :gender, inclusion: { in: %w[male female fluid nc],
+                                 message: "%{value} is not a valid gender" }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
