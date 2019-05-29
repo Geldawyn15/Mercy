@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+
+
+#feature-cards {
+  background: $dark-blue;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 30px;
+}
