@@ -1,0 +1,33 @@
+h1 {
+  color: #fff;
+  font-family: $body-font;
+  font-weight: bold;
+}
+.homepage-banner {
+  height: 100vh;
+  position: relative;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('dva-banner.jpg');
+  background-position: 35% 70%;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  z-index: -2;
+}
+
+.homepage-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6%;
+  border-left: 2px solid #20d8da;
+}
+
+.homepage-title {
+  opacity: 1;
+  font-size: 42px;
+}
+
+
+
+
