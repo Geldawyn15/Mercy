@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_164651) do
+ActiveRecord::Schema.define(version: 2019_05_29_092228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,12 +30,13 @@ ActiveRecord::Schema.define(version: 2019_05_27_164651) do
     t.integer "players_quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "roles"
   end
 
   create_table "profiles", force: :cascade do |t|
     t.bigint "game_id"
     t.bigint "user_id"
-    t.string "lancher_tag"
+    t.string "launcher_tag"
     t.string "rank"
     t.string "mainrole"
     t.jsonb "profile"
@@ -68,7 +69,8 @@ ActiveRecord::Schema.define(version: 2019_05_27_164651) do
   create_table "teams", force: :cascade do |t|
     t.string "spirit"
     t.string "rank_scale"
-    t.string "status"
+    t.string "status", default: "pending"
+    t.string "gender_choice"
     t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,10 +82,10 @@ ActiveRecord::Schema.define(version: 2019_05_27_164651) do
     t.boolean "add_friend"
     t.boolean "endorse"
     t.boolean "nok", default: false
-    t.boolean "nok_positiveness"
-    t.boolean "nok_respect"
-    t.boolean "nok_communication"
-    t.boolean "nok_helpfulness"
+    t.boolean "nok_positiveness", default: false
+    t.boolean "nok_respect", default: false
+    t.boolean "nok_communication", default: false
+    t.boolean "nok_helpfulness", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_reviews_on_user_id"
@@ -97,9 +99,14 @@ ActiveRecord::Schema.define(version: 2019_05_27_164651) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "birthdate"
-    t.string "langage"
-    t.string "location"
+    t.date "birthdate", default: "1991-12-25"
+    t.string "langage", default: "en"
+    t.string "location", default: "eu"
+    t.string "discord_id"
+    t.string "image"
+    t.string "username"
+    t.string "gender"
+    t.string "status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
