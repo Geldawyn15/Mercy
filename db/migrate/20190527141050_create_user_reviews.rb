@@ -5,10 +5,10 @@ class CreateUserReviews < ActiveRecord::Migration[5.2]
       t.boolean :add_friend
       t.boolean :endorse
       t.boolean :nok, default: false
-      t.boolean :nok_positiveness
-      t.boolean :nok_respect
-      t.boolean :nok_communication
-      t.boolean :nok_helpfulness
+      t.boolean :nok_positiveness, default: false
+      t.boolean :nok_respect, default: false
+      t.boolean :nok_communication, default: false
+      t.boolean :nok_helpfulness, default: false
 
       t.timestamps
     end
