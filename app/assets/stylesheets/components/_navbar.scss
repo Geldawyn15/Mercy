@@ -7,6 +7,79 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.login {
+  background-color: #eeeeee;
+  color: #ff4949;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.logo {
+  height: 40px;
+}
+
+
+.navbar {
+  position: fixed;
+  width: 100vW;
+  z-index: 10;
+  background: linear-gradient(135deg, rgba(202,81,155,1) 0%,rgba(202,81,155,1) 31%,rgba(106,148,250,1) 99%);
+  height: 60px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: white;
+}
+
+.nav-button {
+  display: inline;
+}
+
+.nav-item {
+  color: #FFCD00;
+  width: 100px;
+}
+
+.nav-item a {
+  color: white;
+  padding: 8px 16px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: black;
+}
+
+.dropdown-menu {
+  background: white;
+}
+
+.dropdown-item a {
+  color: #356ABD;
+}
+
+.dropdown-item:active {
+    color: #eeeeee;
+    text-decoration: none;
+    background-color: #356ABD;
+}
+
+ul.navbar-nav.mr-auto p {
+  position: relative;
+  top: 4px;
+  color: $info;
+  margin: 0;
+}
+
+.burger-dropdown {
+  background-color: white;
 }
