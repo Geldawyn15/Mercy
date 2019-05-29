@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :profiles, dependent: :destroy
+  has_many :games, through: :profiles
   has_many :user_reviews, dependent: :destroy
   has_many :team_memberships
   has_many :teams, through: :team_memberships
@@ -13,7 +14,7 @@ class User < ApplicationRecord
                                   message: "%{value} is not a valid status" }
 
   validates :gender, inclusion: { in: %w[male female fluid nc],
-                                 message: "%{value} is not a valid gender" }
+                                  message: "%{value} is not a valid gender" }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -22,5 +23,13 @@ class User < ApplicationRecord
     Profile.where(game: game).map do |profile|
       User.find(profile.user_id)
     end
+  end
+
+  def shared_team_count(friend)
+    teams.where(id: friend.teams.pluck(:id)).count
+  end
+
+  def game_profile(game)
+    Profile.where(user: self, game: game)
   end
 end

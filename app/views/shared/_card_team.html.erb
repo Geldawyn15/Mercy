@@ -1,0 +1,26 @@
+    <% if team.status == pending %>
+    <% elsif team.status == complete %>
+    <% elsif team.status == ingame %>
+    <% elsif team.status == over %>
+
+
+
+<div class="card-team">
+  <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg">
+  <div class="card-team-infos">
+    <div>
+      <h2>Team <%= team.id %></h2>
+      <p>game &nbsp;<%= team.game.name %></p>
+      <p>spirit &nbsp;<%= team.spirit %></p>
+      <p>rank scale &nbsp;<%= team.rank_scale %></p>
+      <p>type &nbsp;<%= team.gender_choice %></p>
+    </div>
+    <h2 class="card-team-pricing">
+      <% unless team.average_rating.nil? %>
+        <p><% team.average_rating.round.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      <% end %></p>
+    </h2>
+  </div>
+</div>

@@ -55,7 +55,7 @@ puts '-----------------------------'
 puts 'CREATING 13 USERS'
 puts '-----------------------------'
 
-charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@livefr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'female', status: 'online')
+charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@live.fr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
 bimblor = User.create!(username: 'bimblor', email: 'bimblor@gmail.com', password:'mercy4all', discord_id:'Bimblor#3201', birthdate:'28/05/1995', langage: 'en', location: 'us', image: 'https://avatarfiles.alphacoders.com/105/thumb-105223.jpg', gender: 'male', status: 'online')
@@ -226,7 +226,7 @@ puts '-----------------------------------------------------------'
 
 # user reviews ++ (endorse + add_friend)
 p over_teams
-over_teams[0..-2] do |team|
+over_teams[0..-2].each do |team|
   UserReview.create(user: team.users[0], add_friend: true, endorse: true, nok: false)
   UserReview.create(user: team.users[1], add_friend: true, endorse: true, nok: false)
   UserReview.create(user: team.users[2], add_friend: true, endorse: true, nok: false)
@@ -235,7 +235,7 @@ over_teams[0..-2] do |team|
   UserReview.create(user: team.users[5], add_friend: true, endorse: true, nok: false)
 end
 
-over_teams[-2..-1] do |team|
+over_teams[-2..-1].each do |team|
   UserReview.create(user: team.users[0], add_friend: true, endorse: true, nok: false)
   UserReview.create(user: team.users[1], add_friend: false, endorse: true, nok: false)
   UserReview.create(user: team.users[2], add_friend: false, endorse: true, nok: false)
