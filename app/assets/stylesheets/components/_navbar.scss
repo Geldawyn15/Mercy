@@ -24,7 +24,7 @@
   position: fixed;
   width: 100vW;
   z-index: 10;
-  background: #ff4949;
+  background: linear-gradient(135deg, rgba(202,81,155,1) 0%,rgba(202,81,155,1) 31%,rgba(106,148,250,1) 99%);
   height: 60px;
   text-align: right;
   display: flex;
@@ -47,11 +47,20 @@
 
 .nav-item {
   color: #FFCD00;
+  width: 100px;
 }
 
 .nav-item a {
   color: white;
   padding: 8px 16px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: black;
+}
+
+.dropdown-menu {
+  background: white;
 }
 
 .dropdown-item a {
@@ -69,4 +78,8 @@ ul.navbar-nav.mr-auto p {
   top: 4px;
   color: $info;
   margin: 0;
+}
+
+.burger-dropdown {
+  background-color: white;
 }
