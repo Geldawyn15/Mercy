@@ -8,20 +8,16 @@ class Team < ApplicationRecord
   validates :status, inclusion: { in: %w[pending complete ingame over],
                                   message: "Status should be either 'pending' or 'complete'or ingame' or 'over'" }
 
-  def team_users
-    @team.team_memberships.map { |team_membership| team_membership.user}
-  end
-
   def self.all_pending
     Team.where(status: 'pending')
   end
 
   def pending?
-    @team.status == "pending"
+    @status == "pending"
   end
 
   def pending!
-    @team.status = "pending"
+    @status = "pending"
     @team.save!
   end
 
@@ -30,11 +26,11 @@ class Team < ApplicationRecord
   end
 
   def complete?
-    @team.status == "complete"
+    @status == "complete"
   end
 
   def complete!
-    @team.status = "complete"
+    @status = "complete"
     @team.save!
   end
 
@@ -43,11 +39,11 @@ class Team < ApplicationRecord
   end
 
   def ingame?
-    @team.status == "ingame"
+    @status == "ingame"
   end
 
   def ingame!
-    @team.status = "ingame"
+    @status = "ingame"
     @team.save!
   end
 
@@ -56,11 +52,11 @@ class Team < ApplicationRecord
   end
 
   def over?
-    @team.status == "over"
+    @status == "over"
   end
 
   def over!
-    @team.status = "over"
+    @status = "over"
     @team.save!
   end
 end

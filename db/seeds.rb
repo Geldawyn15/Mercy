@@ -19,7 +19,7 @@ puts 'CREATING GAMES'
 puts '-----------------------------'
 
 ow_rank = %w[bronze silver gold platinium diamond master grandmaster top500]
-ow_roles = %w[bastion dVa genji hanzo junkrat lúcio mccree mei mercy orisa pharah reaper reinhardt roadhog soldier76 sombra symmetra torbjörn tracer widowmaker winston zarya zenyatta]
+ow_roles = %w[bastion dVa genji hanzo junkrat lúcio mccree mei mercy orisa pharah reaper reinhardt roadhog soldier76 sombra symmetra torbjörn tracer widowmaker winston zarya zenyatta ana ashe baptiste brigitte doomfist moira wreckingball]
 overwatch = Game.create!(name: 'overwatch', rank_typology: ow_rank, players_quantity: 6, roles: ow_roles)
 
 puts 'Overwatch Game created'
