@@ -18,6 +18,10 @@ class Team < ApplicationRecord
     end
   end
 
+  def team_review_for(user)
+    team_reviews.where(user: user)
+  end
+
   def self.all_pending
     Team.where(status: 'pending')
   end

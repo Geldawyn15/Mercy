@@ -1,47 +1,81 @@
-<div id="pofile-box">
+<div class="user_image">
+  <%= image_tag @user.image, class:"avatar-xlarge" %>
+</div>
+
+<div class="profile-box">
   <div class="user-tagname">
-    <%= image_tag @user.image, class:"avatar-lg" %>
-    <p><%= @user.username %></p>
+    <h2><%= @user.username %>
     <% if @user.gender == "female" %>
-      <p><i class="fas fa-female"></i></p>
+      <i class="fas fa-female"></i>
     <% elsif @user.gender == "male" %>
-      <p><i class="fas fa-male"></i></p>
+      <i class="fas fa-male"></i>
     <% elsif @user.gender == "fluid" %>
-      <p><i class="fas fa-rainbow"></i></p>
-    <% end %>
-    <p class="user-age">AGE<%= @user.birthdate %></p>
-    <p></p>
+      <i class="fas fa-rainbow"></i>
+    <% end %></h2>
+    <div class="discord-id">
+        <%= image_tag 'discord_logo.jpg', id:"discord-logo" %>
+        <p><%= @user.discord_id %></p>
+    </div>
   </div>
   <div class="user-mercy-stats">
     <% if @user.user_reviews != [] %>
-      <p class="user-endorsement">ENDORSEMENTS <%= UserReview.where(user_id: @user.id, endorse: true).count %></p>
-      <p class="user-as-friends">ADDED AS FRIEND <%= UserReview.where(user_id: @user.id, add_friend: true).count %></p>
-      <p class="user-endorsement">POSITIVE REVIEWS <%= (UserReview.where(user_id: @user.id, endorse: true).count / UserReview.where(user_id: @user.id).count)*100 %></br>%</p>
+      <p class="user-endorsement"><i class="fas fa-thumbs-up"></i></br>NUMBER OF </br>ENDORSEMENTS </br><%= UserReview.where(user_id: @user.id, endorse: true).count %></h3>
+      <p class="user-as-friends"><i class="fas fa-heart"></i></br>ADDED </br>AS FRIEND </br><%= UserReview.where(user_id: @user.id, add_friend: true).count %></p>
+      <p class="user-endorsement"><i class="fas fa-smile-beam"></i></br>POSITIVE </br>REVIEWS </br><%= (UserReview.where(user_id: @user.id, endorse: true).count / UserReview.where(user_id: @user.id).count)*100 %> %</p>
     <% end %>
-      </div>
-    <div class="discord-id">
-      <%= image_tag 'discord_logo.jpg' %>
-      <%= @user.discord_id %>
-    </div>
-  <p class='more-info'>More info <i class="fas fa-plus"></i></p>
+  </div>
+<%= link_to user_path(@user.id), class:'more-info button-green' do %>
+  More info <i class="fas fa-plus"></i>
+<% end %>
 </div>
 
 <!-- MY TEAMS -->
 
 <%= render 'shared/separator', title: 'MY TEAMS', score: @user.teams.count %>
+  <div class="glide">
+    <div data-glide-el="track" class="glide__track">
+      <ul class="glide__slides">
+        <% @user.teams.each do |team| %>
+          <li class="glide__slide"><%= render 'shared/card_team', team: team %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track"></div>
 
-<% @user.teams.each do |team| %>
-  <%= render 'shared/card_team', team: team %>
-<% end %>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+      </div>
+    </div>
+  </div>
 
 <!-- MY FRIENDS -->
 
-<%= render 'shared/separator', title: 'MY FRIENDS', score: @user.friendships.count %>
+<%= render 'shared/separator', title: 'MY FRIENDS', score: @user.friendships.count, color: '$light-green' %>
+  <div class="glide">
+    <div data-glide-el="track" class="glide__track">
+      <ul class="glide__slides">
+        <% @user.friends.each do |friend| %>
+          <li class="glide__slide"><%= render 'shared/card_friend', friend: friend %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track"></div>
 
-<% @user.friends.each do |friend| %>
-  <%= render 'shared/card_friend', friend: friend %>
-<% end %>
+      <div class="glide__arrows box" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+      </div>
+    </div>
+  </div>
 
 <!-- MY GAMES -->
 
-<%= render 'shared/separator', title: 'MY GAMES', score: @user.profiles.count %>
+<!-- render 'shared/separator', title: 'MY GAMES', score: @user.profiles.count -->
+
+
+
+
+

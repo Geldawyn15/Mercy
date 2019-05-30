@@ -6,3 +6,9 @@
   background: linear-gradient(to bottom,  #6de944 43%,#55cdc9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6de944', endColorstr='#55cdc9',GradientType=0 ); /* IE6-9 */
 }
+
+.button-green {
+  background-color: $light-green;
+  padding: 8px 12px;
+  color: white;
+}

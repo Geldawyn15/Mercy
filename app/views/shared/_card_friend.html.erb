@@ -1,18 +1,20 @@
-<% link_to user_path(friend.id) do %>
-  <div class='card_friend'>
-    <%= image_tag friend.image %>
-    <p><%= friend.username %></p>
-    <% if !@user.shared_team_count(friend).zero? %>
-      <p><%= @user.shared_team_count(friend) %> games together <i class="fas fa-heart"></i></p>
-    <% else %>
-      <p>No game together yet <i class="fas fa-surprise"></i></p>
-    <% end %>
-    <div class='friend-games'>
-      <p>GAMES</p>
-      <% friend.games.each do |game|%>
-        <p><%= game.name %> - <%= friend.game_profile(game) %></p>
+<%= link_to user_path(friend.id) do %>
+  <div class='card-friend'>
+    <%= image_tag friend.image, class:"friend-image" %>
+    <div class='card-friend-info'>
+      <h3><%= friend.username %> - <%= friend.status %> <i class="fas fa-circle <%= friend.status %>"></i></h3>
+      <% if !@user.shared_team_count(friend).zero? %>
+        <p><%= @user.shared_team_count(friend) %> games together <i class="fas fa-heart"></i></p>
+      <% else %>
+        <p>No game together yet <i class="fas fa-surprise"></i></p>
       <% end %>
+      <div class='friend-games'>
+        <h4>PROFILES</h4>
+        <% friend.games.each do |game|%>
+          <p><%= game.name.upcase %> - <%= friend.game_profile(game) %></p>
+        <% end %>
+      </div>
     </div>
-    <p><%= friend.status %><i class="fas fa-circle <%= friend.status %>"></i></p>
+
   </div>
 <% end %>

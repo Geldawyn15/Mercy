@@ -1,3 +1,5 @@
+// CARD GAME //
+
 .card-game {
   background-size: cover;
   background-position: center;
@@ -9,11 +11,13 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+// CARD TEAM //
+
 .card-team {
+  max-width: 300px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -26,6 +30,7 @@
 }
 
 .card-team h2 {
+  // color: $game;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -38,6 +43,7 @@
 }
 
 .card-team .card-team-infos {
+  background-color: $dark-blue;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -50,4 +56,53 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+// CARD TEAM //
+
+.card-friend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-friend-info {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 48px 8px 0 8px;
+  h3 {
+    font-size: 16px;
+    color: orange;
+    margin-bottom: 0;
+  }
+  h4 {
+    font-size: 16px;
+    color: white;
+  }
+  p {
+    font-size: 12px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  fas {
+    font-size: 10px;
+  }
+}
+
+.friend-image {
+  height:100px;
+  width: 100px;
+  z-index: 4;
+  border-radius: 50%;
+  position: relative;
+  top: 50px;
+  border: 1px solid $orange;
 }

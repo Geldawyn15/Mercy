@@ -196,7 +196,8 @@ over_teams = Team.all_over
 over_teams[0..-2].each do |team|
   j = 0
   6.times do
-    TeamReview.create!(team: team, rating: [4,5].sample, comment: good_reviews[j])
+    members = team.users
+    TeamReview.create!(user: team.users[j], team: team, rating: [4,5].sample, comment: good_reviews[j])
     j += 1
   end
 end
@@ -205,15 +206,19 @@ puts "24 good team reviews created"
 
 #Mild and bad reviews#
 over_teams[-2..-1].each do |team|
+  members = team.users
   j = 0
+  k = 0
   2.times do
-    TeamReview.create!(team: team, rating: [1,2].sample, comment: bad_reviews[j])
+    TeamReview.create!(user: team.users[k], team: team, rating: [1,2].sample, comment: bad_reviews[j])
     j += 1
+    k =+ 1
   end
   j = 0
   4.times do
-    TeamReview.create!(team: team, rating: [2,3].sample, comment: mild_reviews[j])
+    TeamReview.create!(user: team.users[k], team: team, rating: [2,3].sample, comment: mild_reviews[j])
     j += 1
+    k =+ 1
   end
 end
 
@@ -225,7 +230,6 @@ puts 'CREATING 6 USER REVIEWS FOR USERS IN TEAMS WITH STATUS OVER'
 puts '-----------------------------------------------------------'
 
 # user reviews ++ (endorse + add_friend)
-p over_teams
 over_teams[0..-2].each do |team|
   UserReview.create(user: team.users[0], add_friend: true, endorse: true, nok: false)
   UserReview.create(user: team.users[1], add_friend: true, endorse: true, nok: false)
