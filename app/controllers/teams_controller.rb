@@ -11,11 +11,10 @@ class TeamsController < ApplicationController
   def create
     p team_params
     @team = Team.new(team_params)
-    if @team.save!
+    if @team.save
       redirect_to mates_path
-
     else
-      render :new
+      redirect_to new_team_path
     end
   end
 
