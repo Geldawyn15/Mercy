@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "logo.png", :class=>"logo" %>
+      <%= image_tag "proto_mercy_logo.png", :class=>"logo" %>
     <% end %>
 
   <% if user_signed_in? %>
@@ -12,7 +12,9 @@
       <ul class="navbar-nav mr-auto">
         <div>
           <li class="nav-item active">
-            <%#= link_to "Find a team", new_user_team_path(current_user.id), class: "nav-link" %>
+
+            <%= link_to "Find a team",  new_team_path(current_user.id), class: "nav-link" %>
+
           </li>
 
           <li class="nav-item d-block d-sm-none">

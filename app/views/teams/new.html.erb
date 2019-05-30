@@ -5,9 +5,9 @@
   <h2>Create your team now</h2>
   <div class="container">
     <%= simple_form_for @team, url: mates_path, method: 'GET' do |f| %>
-    <%= f.input :spirit %>
-    <%= f.input :rank_scale %>
-    <%= f.button :submit %>
+      <%= f.input :spirit %>
+      <%= f.input :rank_scale %>
+      <%= f.button :submit %>
     <% end %>
   </div>
 </div>
