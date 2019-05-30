@@ -7,6 +7,7 @@
     <%= simple_form_for @team, url: mates_path, method: 'GET' do |f| %>
       <%= f.input :spirit %>
       <%= f.input :rank_scale %>
+      <%= f.input :gender_choice %>
       <%= f.button :submit %>
     <% end %>
   </div>
