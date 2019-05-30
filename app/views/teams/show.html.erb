@@ -1,2 +1,7 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+
+<div class="container">
+  <h1> Team is Ready to Go ! </h1>
+  <%= render 'shared/circle_container' %>
+  <button class="button1"> Finish session </button>
+  <%= link_to "Finish session", new_team_user_review_path, class: "button1" %>
+</div>
