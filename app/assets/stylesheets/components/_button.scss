@@ -11,4 +11,60 @@
   background-color: $light-green;
   padding: 8px 12px;
   color: white;
+
+
+.plus-buttons {
+  border: none;
+  background: #6de944;
+  background: -moz-linear-gradient(top,  #6de944 43%, #55cdc9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #6de944 43%,#55cdc9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #6de944 43%,#55cdc9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6de944', endColorstr='#55cdc9',GradientType=0 ); /* IE6-9 */
+  border-radius: 50%;
+  color: black;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 9px;
+  left: 5px;
+    i {
+      font-size: 16px;
+    }
+}
+
+.ok-buttons {
+  background: #6de944;
+  background: -moz-linear-gradient(top,  #6de944 43%, #55cdc9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #6de944 43%,#55cdc9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #6de944 43%,#55cdc9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6de944', endColorstr='#55cdc9',GradientType=0 ); /* IE6-9 */
+  border: none;
+  border-radius: 30%;
+  color: black;
+  width: 56px;
+  height: 56px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5%;
+  left: 48%;
+}
+
+.button1-submit {
+  background: #6de944;
+  background: -moz-linear-gradient(top,  #6de944 43%, #55cdc9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #6de944 43%,#55cdc9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #6de944 43%,#55cdc9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6de944', endColorstr='#55cdc9',GradientType=0 ); /* IE6-9 */
+  border: none;
+  margin-top: 16px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
