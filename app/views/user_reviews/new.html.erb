@@ -1,14 +1,11 @@
 <div class="container">
-<h1>The game is never over</h1>
-<p>We hope you enjoyed your session.
-It’s now time to evaluate your team mates!</p>
-<h2>Rate your mate : </h2>
-<%= render 'shared/rating_cards' %>
-<%= render 'shared/rating_cards' %>
-<%= render 'shared/rating_cards' %>
-
-
-
-
-
+  <h1>The game is never over</h1>
+  <p>We hope you enjoyed your session.
+  It’s now time to evaluate your team mates!</p>
+  <h2>Rate your mate : </h2>
+  <%= render 'shared/rating_cards' %>
+  <%= render 'shared/rating_cards' %>
+  <%= render 'shared/rating_cards' %>
+  <!-- <button class="button1-submit">Submit</button> -->
+  <%= link_to "Submit", home_path, class: "button1-submit", id: "mylink", notice: "Succefuly added" %>
 </div>
