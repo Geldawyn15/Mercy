@@ -1,0 +1,48 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  background: -moz-linear-gradient(left,  #ca519b 0%, #6a94fa 83%, #6a94fa 99%);
+  background: -webkit-linear-gradient(left,  #ca519b 0%,#6a94fa 83%,#6a94fa 99%);
+  background: linear-gradient(to right,  #ca519b 0%,#6a94fa 83%,#6a94fa 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ca519b', endColorstr='#6a94fa',GradientType=1 );
+  height: 180px;
+  width: 100%;
+  display: flex;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top:16px;
+}
+
+.avatar-cards {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+
+.card-category img {
+    position: relative;
+    top: 27%;
+    left: 1%;
+}
+
+ul {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.ok-comments {
+  margin-top: 8px;
+  margin-left: 32px;
+  li {
+    display: flex;
+  }
+}
+
+.not-really {
+  margin-top: 8px;
+  margin-left: 32px;
+}
