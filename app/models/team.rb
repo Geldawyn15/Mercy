@@ -27,7 +27,7 @@ class Team < ApplicationRecord
   end
 
   def self.no_reviews?
-    Team.all.map { |team| team.id if team.team_reviews.count == 0 }
+    Team.all.map { |team| team.id if team_reviews.count.zero? }
   end
 
   def team_review_for(user)
