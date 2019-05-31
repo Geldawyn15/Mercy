@@ -1,2 +1,46 @@
 <h1>Teams#new</h1>
 <p>Find me in app/views/teams/new.html.erb</p>
+
+<div>
+  <h2>Create your team now</h2>
+
+  <div id="ow" class="game-card">
+    <img src="/assets/logo-ow.jpg">
+    <div class="game-card-infos">
+      <div>
+        <h2><%= @games[0].name.capitalize %></h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="csgo"class="game-card">
+    <img src="/assets/logo-ow.jpg">
+    <div class="game-card-infos">
+      <div>
+        <h2><%= @games[0].name.capitalize %></h2>
+      </div>
+    </div>
+  </div>
+
+  <div id="lol" class="game-card">
+    <img src="/assets/logo-ow.jpg">
+    <div class="game-card-infos">
+      <div>
+        <h2><%= @games[0].name.capitalize %></h2>
+      </div>
+    </div>
+  </div> -->
+
+  <% game = @games[0].rank_typology.tr('[]"', '').split(",")%>
+  <% spirit = ["casual", "competitive"] %>
+
+  <div class="container">
+    <%= simple_form_for @team, url: teams_path, method: 'POST' do |f| %>
+      <%= f.association :game, as: :radio_buttons%>
+      <%= f.input :spirit, collection: spirit, selected: 1 %>
+      <%= f.input :rank_scale, collection: game, selected: 1%>
+      <%= f.input :gender_choice, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['huys','Just the Boys']], label_method: :second, value_method: :first%>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

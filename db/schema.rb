@@ -16,51 +16,12 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
   enable_extension "plpgsql"
 
   create_table "friendships", force: :cascade do |t|
-    t.bigint "gamer_id"
+    t.bigint "user_id"
     t.bigint "friend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["friend_id"], name: "index_friendships_on_friend_id"
-    t.index ["gamer_id"], name: "index_friendships_on_gamer_id"
-  end
-
-  create_table "game_gamer_profiles", force: :cascade do |t|
-    t.bigint "game_id"
-    t.bigint "gamer_id"
-    t.string "lancher_tag"
-    t.string "rank"
-    t.string "mainrole"
-    t.jsonb "profile"
-    t.jsonb "complete"
-    t.jsonb "mainhero"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_game_gamer_profiles_on_game_id"
-    t.index ["gamer_id"], name: "index_game_gamer_profiles_on_gamer_id"
-  end
-
-  create_table "gamer_reviews", force: :cascade do |t|
-    t.bigint "gamer_id"
-    t.boolean "add_friend"
-    t.boolean "endorse"
-    t.boolean "nok", default: false
-    t.boolean "nok_positiveness"
-    t.boolean "nok_respect"
-    t.boolean "nok_communication"
-    t.boolean "nok_helpfulness"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["gamer_id"], name: "index_gamer_reviews_on_gamer_id"
-  end
-
-  create_table "gamers", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.date "birth_date"
-    t.string "langage"
-    t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -72,13 +33,28 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
     t.string "roles"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.bigint "game_id"
+    t.bigint "user_id"
+    t.string "launcher_tag"
+    t.string "rank"
+    t.string "mainrole"
+    t.jsonb "profile"
+    t.jsonb "complete"
+    t.jsonb "main_hero"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_profiles_on_game_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "team_memberships", force: :cascade do |t|
-    t.bigint "gamer_id"
+    t.bigint "user_id"
     t.bigint "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["gamer_id"], name: "index_team_memberships_on_gamer_id"
     t.index ["team_id"], name: "index_team_memberships_on_team_id"
+    t.index ["user_id"], name: "index_team_memberships_on_user_id"
   end
 
   create_table "team_reviews", force: :cascade do |t|
@@ -93,12 +69,26 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
   create_table "teams", force: :cascade do |t|
     t.string "spirit"
     t.string "rank_scale"
-    t.integer "rating"
-    t.text "comment"
-    t.bigint "game_gamer_profile_id"
+    t.string "status", default: "pending"
+    t.string "gender_choice"
+    t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_gamer_profile_id"], name: "index_teams_on_game_gamer_profile_id"
+    t.index ["game_id"], name: "index_teams_on_game_id"
+  end
+
+  create_table "user_reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.boolean "add_friend"
+    t.boolean "endorse"
+    t.boolean "nok", default: false
+    t.boolean "nok_positiveness", default: false
+    t.boolean "nok_respect", default: false
+    t.boolean "nok_communication", default: false
+    t.boolean "nok_helpfulness", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,6 +99,9 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birthdate", default: "1991-12-25"
+    t.string "langage", default: "en"
+    t.string "location", default: "eu"
     t.string "discord_id"
     t.string "image"
     t.string "username"
@@ -118,13 +111,13 @@ ActiveRecord::Schema.define(version: 2019_05_29_092228) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "friendships", "gamers"
-  add_foreign_key "friendships", "gamers", column: "friend_id"
-  add_foreign_key "game_gamer_profiles", "gamers"
-  add_foreign_key "game_gamer_profiles", "games"
-  add_foreign_key "gamer_reviews", "gamers"
-  add_foreign_key "team_memberships", "gamers"
+  add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "friend_id"
+  add_foreign_key "profiles", "games"
+  add_foreign_key "profiles", "users"
   add_foreign_key "team_memberships", "teams"
+  add_foreign_key "team_memberships", "users"
   add_foreign_key "team_reviews", "teams"
-  add_foreign_key "teams", "game_gamer_profiles"
+  add_foreign_key "teams", "games"
+  add_foreign_key "user_reviews", "users"
 end
