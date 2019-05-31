@@ -18,9 +18,9 @@
       </p>
       <p>It worth a word</p>
       <%= simple_form_for [@team, @team_review] do |f| %>
-        <%= f.hidden_field :rating, :value => 5 } %>
-        <%= f.hidden_field :team, :value => @team } %>
-        <%= f.hidden_field :user, :value => current_user } %>
+        <%= f.hidden_field :rating, :value => 5 %>
+        <%= f.hidden_field :team, :value => @team %>
+        <%= f.hidden_field :user, :value => current_user %>
         <%= f.input :comment, label: false, as: :text %>
         <%= f.button :submit, "Submit", class: "my-button" %>
       <% end %>
