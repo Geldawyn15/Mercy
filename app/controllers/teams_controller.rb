@@ -5,14 +5,16 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @games = Game.all
   end
 
   def create
+    p team_params
     @team = Team.new(team_params)
-    if @team.save!
-
+    if @team.save
+      redirect_to mates_path
     else
-      render :new
+      redirect_to new_team_path
     end
   end
 
@@ -24,6 +26,6 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:teams).permit(:spirit, :rank_scale, :status, :game, :gender_choice)
+    params.require(:team).permit(:spirit, :rank_scale, :status, :game_id, :gender_choice)
   end
 end
