@@ -33,28 +33,3 @@ h1 {
   margin-left: 40px;
 }
 
-#friends li {
-  cursor: grab;
-}
-
-#friends li:active {
-  cursor: grabbing;
-}
-
-#friends li.ghost {
-  filter: grayscale(1);
-  opacity: 0.5;
-}
-
-#team li {
-  cursor: grab;
-}
-
-#team li:active {
-  cursor: grabbing;
-}
-
-#team li.ghost {
-  filter: grayscale(1);
-  opacity: 0.5;
-}
