@@ -8,6 +8,32 @@ class Team < ApplicationRecord
   validates :status, inclusion: { in: %w[pending complete ingame over],
                                   message: "Status should be either 'pending' or 'complete'or ingame' or 'over'" }
 
+  def average_rating
+    unless team_reviews.count.zero?
+      sum = 0
+      team_reviews.each do |review|
+        sum += review.rating
+      end
+      sum / team_reviews.count
+    end
+  end
+
+  def complete_reviews?
+    team_reviews.count != 6
+  end
+
+  def pending_reviews?
+    team_reviews.count != 6
+  end
+
+  def self.no_reviews?
+    Team.all.map { |team| team.id if team.team_reviews.count == 0 }
+  end
+
+  def team_review_for(user)
+    team_reviews.where(user: user)
+  end
+
   def self.all_pending
     Team.where(status: 'pending')
   end

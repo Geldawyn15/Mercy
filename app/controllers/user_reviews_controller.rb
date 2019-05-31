@@ -15,10 +15,7 @@ class UserReviewsController < ApplicationController
   private
 
   def review_params
-    if :nok == true
-      params.require(:user_reviews).permit(:nok_positiveness, :nok_respect, :nok_helpfulness, :nok_communication)
-    else
-      params.require(:user_reviews).permit(:endorse, :add_friend)
+      params.require(:user_reviews).permit(:user, :endorse, :add_friend, :nok, :nok_positiveness, :nok_respect, :nok_helpfulness, :nok_communication)
     end
   end
 end

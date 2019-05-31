@@ -1,7 +1,10 @@
 import "bootstrap";
-// import "alert";
-import { initSortable } from '../sortable.js';
+import Glide from '@glidejs/glide';
+import '@glidejs/glide/dist/css/glide.core.min.css'
 
-
-initSortable();
+new Glide('.glide', {
+  type: 'carousel',
+  startAt: 0,
+  perView: 4
+}).mount()
 

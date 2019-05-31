@@ -1,0 +1,149 @@
+.main {
+  width: 390px;
+  height: 550px;
+  background: $dark-blue;
+  margin: 0px auto;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+          box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.logo {
+  top: 50px;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background: #000;
+  position: relative;
+  border-radius: 100px;
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-animation: rotation 10s infinite linear;
+  -webkit-box-shadow: 0 0 100px #fa3380;
+          box-shadow: 0 0 100px #fa3380;
+  background: #f857a6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff5858, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.logo:hover {
+  -webkit-animation: rotation 0.9s infinite linear;
+  -webkit-box-shadow: 0 0 10px #fa3380;
+          box-shadow: 0 0 10px #fa3380;
+}
+.logo h1 {
+  color: #fff;
+  font-size: 70px;
+  font-weight: 200;
+  line-height: 100px;
+}
+form {
+  top: 100px;
+  position: relative;
+}
+form input {
+  display: block;
+  margin: 10px auto;
+}
+
+form h4 {
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+h4 a {
+  color: $dark-pink;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+h4 a:hover {
+  color: #000;
+}
+input[type='email'], input[type='password'] {
+  width: 60%;
+  outline: none;
+  border-top: 0;
+  color: #fa3380;
+  border-left: 0;
+  border-right: 0;
+  font-size: 14px;
+  padding: 26px;
+  font-weight: 300;
+  border-bottom: 1px solid #fa3380;
+}
+
+
+input[type='submit'] {
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 50px;
+  border-radius: 4px;
+  transition: 200ms ease-out;
+  -webkit-box-shadow: 0 0 10px ;
+          box-shadow: 0 0 10px #fa3380;
+  background: #f857a6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff5858, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+input[type='submit']:hover {
+  width: 155px;
+  height: 52px;
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #fa3380;
+}
+.fa-user {
+  color: #fa3380;
+  position: absolute;
+  top: 25px;
+  left: 56px;
+  font-size: 18px !important;
+  cursor: text;
+  transition: .2s ease-out;
+}
+
+.fa-lock {
+  color: #fa3380;
+  position: absolute;
+  top: 105px;
+  left: 56px;
+  font-size: 18px !important;
+  cursor: text;
+  transition: .2s ease-out;
+}
+.fa-redo {
+  color: #fa3380;
+  position: absolute;
+  top: 185px;
+  left: 56px;
+  font-size: 18px !important;
+  cursor: text;
+  transition: .2s ease-out;
+}
+
+
+[placeholder]::-webkit-input-placeholder  {
+  color: #fa3380;
+  padding-left: 10px;
+}
+[placeholder]:focus::-webkit-input-placeholder {
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-transform: translate(10px, 0);
+          transform: translate(10px, 0);
+  opacity: 0;
+}
+
+
+
+
+
+
+

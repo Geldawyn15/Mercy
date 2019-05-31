@@ -17,7 +17,12 @@ body {
   background-color: $dark-blue;
 }
 
+h1, h2, h3 {
+  font-family: $headers-font;
+  color: white;
+}
 
-* {
-  border: 1px solid red;
+p {
+  font-family: $body-font;
+  color: #A2A2A2;
 }

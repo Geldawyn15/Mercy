@@ -1,0 +1,89 @@
+.user_image {
+  margin-top: 140px;
+  display: flex;
+  justify-content: center;
+}
+
+.user_image img{
+  z-index: 3;
+}
+
+.profile-box {
+  width: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s;
+  color: white;
+  border: 1px solid $light-green;
+  margin: 0 auto;
+  position: relative;
+  top: -20px;
+  padding-top: 32px;
+  padding-bottom: 16px;
+  text-align: center;
+
+  h2 {
+    color: $light-green;
+  }
+
+  p {
+    font-size: 12px;
+    color: white;
+    width: 100px;
+    .fas {
+    font-size: 24px;
+    color: $light-green;
+    padding-bottom: 12px;
+    }
+  }
+}
+
+.user-tagname {
+  display: inline-block;
+}
+
+.user-mercy-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.discord-id {
+  text-align: center;
+}
+
+#discord-logo {
+  width: 10px;
+  color: $pink;
+}
+
+.user-age {
+  font-size: 12px;
+  color: $light-green;
+}
+
+.more-info {
+  margin: 0 auto;
+  position: relative;
+  top: 40px;
+}
+
+.glide__arrow.box {
+  display: flex;
+  fex-direction: column;
+  justify-content: space-between;
+}
+
+.glide__arrow {
+  height: 24px;
+  width: 32px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  background-color: $orange;
+  padding: 0;
+  text-align: center;
+  border: none;
+}

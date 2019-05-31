@@ -1,0 +1,82 @@
+<% if team.status == 'pending' %>
+  <div class="card-team">
+    <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg", class="bottom-line pending" >
+    <div class="card-team-infos">
+      <div>
+        <h2>Team <%= team.id %></h2>
+        <p>game &nbsp;<%= team.game.name %></p>
+        <p>spirit &nbsp;<%= team.spirit %></p>
+        <p>rank scale &nbsp;<%= team.rank_scale %></p>
+        <p>type &nbsp;<%= team.gender_choice %></p>
+      </div>
+      <p class="card-team-status">PENDING</p>
+    </div>
+  </div>
+
+<% elsif team.status == 'complete' %>
+  <div class="card-team">
+    <img src="https://www.playstationlifestyle.net/assets/uploads/2019/05/overwatch-1st-person-screen-01-ps4-us-16may18.jpeg", class="bottom-line" >
+    <div class="card-team-infos">
+      <div>
+        <h2>Team <%= team.id %></h2>
+        <p>game &nbsp;<%= team.game.name %></p>
+        <p>spirit &nbsp;<%= team.spirit %></p>
+        <p>rank scale &nbsp;<%= team.rank_scale %></p>
+        <p>type &nbsp;<%= team.gender_choice %></p>
+      </div>
+      <p class="card-team-status">TEAM READY</p>
+    </div>
+  </div>
+
+<% elsif team.status == 'ingame' %>
+  <div class="card-team">
+    <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg">
+    <div class="card-team-infos">
+      <div>
+        <h2>Team <%= team.id %></h2>
+        <p>game &nbsp;<%= team.game.name %></p>
+        <p>spirit &nbsp;<%= team.spirit %></p>
+        <p>rank scale &nbsp;<%= team.rank_scale %></p>
+        <p>type &nbsp;<%= team.gender_choice %></p>
+      </div>
+      <p class="card-team-status">IN GAME</p>
+    </div>
+  </div>
+
+<% elsif team.status == 'over' && team.team_review_for(current_user).present? %>
+  <div class="card-team">
+    <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg">
+    <div class="card-team-infos">
+      <div>
+        <h2>Team <%= team.id %></h2>
+        <p>game &nbsp;<%= team.game.name %></p>
+        <p>spirit &nbsp;<%= team.spirit %></p>
+        <p>rank scale &nbsp;<%= team.rank_scale %></p>
+        <p>type &nbsp;<%= team.gender_choice %></p>
+      </div>
+      <h2 class="card-team-pricing">
+        <% unless team.average_rating.nil? %>
+          <p><% team.average_rating.round.times do %>
+            <i class="fas fa-star"></i>
+          <% end %></p>
+        <% end %>
+      </h2>
+    </div>
+  </div>
+
+<% elsif team.status == 'over' && team.team_review_for(current_user).blank? %>
+  <div class="card-team">
+    <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg">
+    <div class="card-team-infos">
+      <div>
+        <h2>Team <%= team.id %></h2>
+        <p>game &nbsp;<%= team.game.name %></p>
+        <p>spirit &nbsp;<%= team.spirit %></p>
+        <p>rank scale &nbsp;<%= team.rank_scale %></p>
+        <p>type &nbsp;<%= team.gender_choice %></p>
+      </div>
+      <p class="card-team-status">REVIEW PENDING</p>
+      <%= link_to "Submit your review", user_path(current_user.id), class:"button-green" %>
+    </div>
+  </div>
+<% end %>
