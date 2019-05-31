@@ -9,8 +9,11 @@
 
 .button-green {
   background-color: $light-green;
+  opacity: .7;
   padding: 8px 12px;
   color: white;
+  position: relative;
+  left: 3%;
 }
 
 .plus-buttons {

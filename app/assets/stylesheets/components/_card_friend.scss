@@ -1,0 +1,46 @@
+.card-friend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-friend-info {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 48px 8px 0 8px;
+  h3 {
+    font-size: 16px;
+    color: orange;
+    margin-bottom: 0;
+  }
+  h4 {
+    font-size: 16px;
+    color: white;
+  }
+  p {
+    font-size: 12px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  fas {
+    font-size: 10px;
+  }
+}
+
+.friend-image {
+  height:100px;
+  width: 100px;
+  z-index: 4;
+  border-radius: 50%;
+  position: relative;
+  top: 50px;
+  border: 1px solid $orange;
+}

@@ -126,3 +126,4 @@ ActiveRecord::Schema.define(version: 2019_05_30_151925) do
   add_foreign_key "teams", "games"
   add_foreign_key "user_reviews", "users"
   add_foreign_key "user_reviews", "users", column: "user_reviewed_id"
+end

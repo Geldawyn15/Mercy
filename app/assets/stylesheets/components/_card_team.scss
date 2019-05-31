@@ -1,0 +1,155 @@
+.card-container ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-self: center;
+}
+
+
+// CARD TEAM PENDING//
+.card-team {
+  max-width: 300px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 16px;
+}
+
+.card-team > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-team h2 {
+  // color: $game;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-team p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-team span {
+  color: white;
+  font-weight: bold;
+}
+
+.card-team .card-team-infos {
+  background-color: $dark-blue;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-team-infos .card-team-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-team-status {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .card-team .card-team-status.pending {
+    padding: 6px 25px;
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 29px;
+    z-index: 3;
+    top: -70px;
+    left: 150px;
+
+}
+
+.card-team-status.pending {
+    background: #ff205f;
+    opacity: .8;
+}
+
+// CARD TEAM READY //
+
+.card-team .card-team-status.ready {
+    padding: 6px 25px;
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 29px;
+    z-index: 3;
+    top: -47%;
+    left: 40%;
+}
+
+.card-team-status.ready {
+    background: #00FF18;
+    opacity: .8;
+    text-align: center;
+}
+// CARD REVIEW PENDING //
+.pending-img {
+  height: 200px;
+  width: 300px;
+  background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/122/517/890.jpg');
+  background-size: cover;
+  position: relative;
+  top: 20%;
+}
+
+
+.card-team .card-team-status.rpending {
+    padding: 6px 25px;
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 29px;
+    z-index: 3;
+    top: -48%;
+    left: 31%;
+}
+
+.card-team-status.rpending {
+    background: #EF7400;
+    opacity: .8;
+    text-align: center;
+}
+
+// CARD INGAME //
+
+.card-team .card-team-status.ingame {
+    padding: 6px 25px;
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 29px;
+    z-index: 3;
+    top: -47%;
+    left: 51%;
+}
+
+.card-team-status.ingame {
+    background: #EF001D;
+    opacity: .8;
+    text-align: center;
+  }
+
+// CARD COMPLETE //
+.stars {
+    padding: 6px 25px;
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 29px;
+    z-index: 3;
+    opacity: 1;
+    text-align: center;
+    top: -25%;
+    left: 55%;
+    color: yellow;
+
+  }
