@@ -1,0 +1,37 @@
+<div class="container">
+  <% if @team.team_review_for(current_user) == [] %>
+    <h1>The game is never over</h1>
+    <p>We hope you enjoyed your session.</br>
+    It’s now time to evaluate your team mates!</p>
+    <h2>Rate your mates</h2>
+    <% @team.users.each do |member| %>
+      <% if member.id != current_user.id %>
+        <%= render 'shared/user_review_card', user: member %>
+      <% end %>
+    <% end %>
+    <h2>Rate your party</h2>
+      <p><span id="star1"><i class="fas fa-star"></i></span>
+        <span id="star2"><i class="fas fa-star"></i></span>
+        <span id="star3"><i class="fas fa-star"></i></span>
+        <span id="star4"><i class="fas fa-star"></i></span>
+        <span id="star5"><i class="fas fa-star"></i></span>
+      </p>
+      <p>It worth a word</p>
+      <%= simple_form_for [@team, @team_review] do |f| %>
+        <%= f.hidden_field :rating, :value => 5 } %>
+        <%= f.hidden_field :team, :value => @team } %>
+        <%= f.hidden_field :user, :value => current_user } %>
+        <%= f.input :comment, label: false, as: :text %>
+        <%= f.button :submit, "Submit", class: "my-button" %>
+      <% end %>
+  <% else %>
+    <h1 class="already-submitted">You already submited you review on this team!</h1>
+    <p>(thanks)</p>
+
+    <div>
+      <%= link_to "My profile",  user_path(current_user.id), class:"button-green"%>
+      <%= link_to "Find a team",  new_team_path, class:"button-green"%>
+    </div>
+  <% end %>
+</div>
+

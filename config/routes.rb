@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
   get '/teams/mates', to: 'teams#mates', as: 'mates'
   resources :teams, only: %i[show new create] do
+    get '/review', to: 'teams#review'
+    resources :team_reviews, only: %i[new create]
     resources :user_reviews, only: %i[new create]
   end
 end

@@ -15,7 +15,6 @@ class UserReviewsController < ApplicationController
   private
 
   def review_params
-      params.require(:user_reviews).permit(:user, :endorse, :add_friend, :nok, :nok_positiveness, :nok_respect, :nok_helpfulness, :nok_communication)
-    end
+    params.require(:user_reviews).permit(:user, :endorse, :add_friend, :nok, :nok_positiveness, :nok_respect, :nok_helpfulness, :nok_communication)
   end
 end
