@@ -3,33 +3,36 @@
 
 <div>
   <h2>Create your team now</h2>
+  <div class="inline-game-cards">
 
-  <div id="ow" class="game-card">
-    <img src="/assets/logo-ow.jpg">
-    <div class="game-card-infos">
-      <div>
-        <h2><%= @games[0].name.capitalize %></h2>
+    <div id="ow" class="game-card">
+      <img src="/assets/logo-ow.jpg">
+      <div class="game-card-infos">
+        <div>
+          <h2><%= @games[0].name.capitalize %></h2>
+        </div>
       </div>
     </div>
+
+    <div id="csgo"class="game-card">
+      <img src="/assets/logo-ow.jpg">
+      <div class="game-card-infos">
+        <div>
+          <h2><%= @games[1].name.capitalize %></h2>
+        </div>
+      </div>
+    </div>
+
+    <div id="lol" class="game-card">
+      <img src="/assets/logo-ow.jpg">
+      <div class="game-card-infos">
+        <div>
+          <h2><%= @games[2].name.capitalize %></h2>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <!-- <div id="csgo"class="game-card">
-    <img src="/assets/logo-ow.jpg">
-    <div class="game-card-infos">
-      <div>
-        <h2><%= @games[0].name.capitalize %></h2>
-      </div>
-    </div>
-  </div>
-
-  <div id="lol" class="game-card">
-    <img src="/assets/logo-ow.jpg">
-    <div class="game-card-infos">
-      <div>
-        <h2><%= @games[0].name.capitalize %></h2>
-      </div>
-    </div>
-  </div> -->
 
   <% game = @games[0].rank_typology.tr('[]"', '').split(",")%>
   <% spirit = ["casual", "competitive"] %>
@@ -44,3 +47,17 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  document.querySelector("#ow").addEventListener("click", function(){
+    document.querySelector("#team_game_id_1").checked = true;
+  });
+
+  document.querySelector("#csgo").addEventListener("click", function(){
+    document.querySelector("#team_game_id_2").checked = true;
+  });
+
+  document.querySelector("#lol").addEventListener("click", function(){
+    document.querySelector("#team_game_id_3").checked = true;
+  });
+</script>

@@ -27,3 +27,8 @@
   align-items: flex-end;
   position: relative;
 }
+
+.inline-game-cards {
+  display: flex;
+  justify-content: space-around;
+}
