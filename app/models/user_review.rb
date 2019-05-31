@@ -1,7 +1,7 @@
 class UserReview < ApplicationRecord
   belongs_to :user
   belongs_to :user_reviewed, class_name: 'User'
-  validates :user, presence: true
+  validates :user, :user_reviewed, presence: true
 
   after_save :frienshipcreation
 
