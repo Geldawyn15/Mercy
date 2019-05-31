@@ -55,7 +55,7 @@ puts '-----------------------------'
 puts 'CREATING 13 USERS'
 puts '-----------------------------'
 
-charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@livefr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'female', status: 'online')
+charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@live.fr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'female', status: 'online')
 puts "#{User.last.username} created"
 
 bimblor = User.create!(username: 'bimblor', email: 'bimblor@gmail.com', password:'mercy4all', discord_id:'Bimblor#3201', birthdate:'28/05/1995', langage: 'en', location: 'us', image: 'https://avatarfiles.alphacoders.com/105/thumb-105223.jpg', gender: 'male', status: 'online')
@@ -196,7 +196,8 @@ over_teams = Team.all_over
 over_teams[0..-2].each do |team|
   j = 0
   6.times do
-    TeamReview.create!(team: team, rating: [4,5].sample, comment: good_reviews[j])
+    members = team.users
+    TeamReview.create!(user: team.users[j], team: team, rating: [4,5].sample, comment: good_reviews[j])
     j += 1
   end
 end
@@ -205,15 +206,19 @@ puts "24 good team reviews created"
 
 #Mild and bad reviews#
 over_teams[-2..-1].each do |team|
+  members = team.users
   j = 0
+  k = 0
   2.times do
-    TeamReview.create!(team: team, rating: [1,2].sample, comment: bad_reviews[j])
+    TeamReview.create!(user: team.users[k], team: team, rating: [1,2].sample, comment: bad_reviews[j])
     j += 1
+    k =+ 1
   end
   j = 0
   4.times do
-    TeamReview.create!(team: team, rating: [2,3].sample, comment: mild_reviews[j])
+    TeamReview.create!(user: team.users[k], team: team, rating: [2,3].sample, comment: mild_reviews[j])
     j += 1
+    k =+ 1
   end
 end
 
@@ -225,22 +230,22 @@ puts 'CREATING 6 USER REVIEWS FOR USERS IN TEAMS WITH STATUS OVER'
 puts '-----------------------------------------------------------'
 
 # user reviews ++ (endorse + add_friend)
-over_teams[0..-2] do |team|
-  UserReview.create!(user: team.team_users[0], add_friend: true, endorse: true)
-  UserReview.create!(user: team.team_users[1], add_friend: true, endorse: true)
-  UserReview.create!(user: team.team_users[2], add_friend: true, endorse: true)
-  UserReview.create!(user: team.team_users[3], add_friend: false, endorse: true)
-  UserReview.create!(user: team.team_users[4], add_friend: false, endorse: true)
-  UserReview.create!(user: team.team_users[5], add_friend: true, endorse: true)
+over_teams[0..-2].each do |team|
+  UserReview.create(user: team.users[0], add_friend: true, endorse: true, nok: false)
+  UserReview.create(user: team.users[1], add_friend: true, endorse: true, nok: false)
+  UserReview.create(user: team.users[2], add_friend: true, endorse: true, nok: false)
+  UserReview.create(user: team.users[3], add_friend: false, endorse: true, nok: false)
+  UserReview.create(user: team.users[4], add_friend: false, endorse: true, nok: false)
+  UserReview.create(user: team.users[5], add_friend: true, endorse: true, nok: false)
 end
 
-over_teams[-2..-1] do |team|
-  UserReview.create!(user: team.team_users[0], add_friend: true, endorse: true)
-  UserReview.create!(user: team.team_users[1], add_friend: false, endorse: true)
-  UserReview.create!(user: team.team_users[2], add_friend: false, endorse: true)
-  UserReview.create!(user: team.team_users[3], add_friend: false, endorse: true)
-  UserReview.create!(user: team.team_users[4], add_friend: false, endorse: false, nok: true, nok_respect: true)
-  UserReview.create!(user: team.team_users[5], add_friend: false, endorse: true, nok: true, nok_communication: true, nok_helpfulness: true)
+over_teams[-2..-1].each do |team|
+  UserReview.create(user: team.users[0], add_friend: true, endorse: true, nok: false)
+  UserReview.create(user: team.users[1], add_friend: false, endorse: true, nok: false)
+  UserReview.create(user: team.users[2], add_friend: false, endorse: true, nok: false)
+  UserReview.create(user: team.users[3], add_friend: false, endorse: true, nok: false)
+  UserReview.create(user: team.users[4], add_friend: false, endorse: false, nok: true, nok_respect: true)
+  UserReview.create(user: team.users[5], add_friend: false, endorse: true, nok: true, nok_communication: true, nok_helpfulness: true)
 end
 
 puts "30 reviews created"
