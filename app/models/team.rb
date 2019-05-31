@@ -18,6 +18,18 @@ class Team < ApplicationRecord
     end
   end
 
+  def complete_reviews?
+    team_reviews.count != 6
+  end
+
+  def pending_reviews?
+    team_reviews.count != 6
+  end
+
+  def self.no_reviews?
+    Team.all.map { |team| team.id if team.team_reviews.count == 0 }
+  end
+
   def team_review_for(user)
     team_reviews.where(user: user)
   end
