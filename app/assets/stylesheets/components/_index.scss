@@ -1,14 +1,22 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
-@import "navbar";
 @import "banner_homepage";
-@import "feature_card";
 @import "button";
+@import "card_friend";
+@import "card_game";
+@import "card_team";
+@import "card_team";
 @import "circle-container";
-@import "rating_cards";
+@import "feature_card";
 @import "game_card";
-
+@import "login_popup";
+@import "navbar";
+@import "rating_cards";
+@import "separator";
+@import "sign_in";
+@import "user-header";
+@import "user_status";
 
 .container {
   margin-top: 62px;

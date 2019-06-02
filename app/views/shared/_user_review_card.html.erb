@@ -1,0 +1,27 @@
+<div class="card-category">
+  <%= image_tag user.image, :class => "avatar-cards" %>
+
+   <div class="ok-comments">
+    <% user_review = UserReview.new %>
+     <h4>Really enjoyed playing together?</h4>
+      <%= simple_form_for [@team, user_review] do |f| %>
+        <%= f.input :add_friend, as: :boolean, boolean_style: :inline %>
+        <%= f.input :endorse, as: :boolean, boolean_style: :inline %>
+        <%= f.input :nok, as: :boolean, boolean_style: :inline %>
+        <%= f.button :submit, "Next", class: "my-button" %>
+      <% end %>
+   </div>
+   <h4>Not really? </h4>
+   <p>Explain us why and help this player to improve </p>
+   <div class="ok-buttons"> OK </div>
+    <% simple_form_for [@team, user_review] do |f| %>
+      <% f.input :nok_positiveness, as: :boolean, boolean_style: :inline %>
+      <% f.input :nok_communication, as: :boolean, boolean_style: :inline %>
+      <% f.input :nok_helpfulness, as: :boolean, boolean_style: :inline %>
+      <% f.input :nok_respect, as: :boolean, boolean_style: :inline %>
+      <% f.button :submit, "Submit", class: "my-button" %>
+    <% end %>
+</div>
+
+
+

@@ -6,7 +6,7 @@
   font-weight: bold;
 }
 
-.logo {
+.logototo {
   height: 40px;
 }
 
@@ -15,7 +15,7 @@
   width: 100vW;
   z-index: 10;
   background: $dark-blue;
-  box-shadow: 0 0 0px 1px rgba(226, 30, 228, 1);
+  box-shadow: 0px 1px 5px 1px  rgba(226, 30, 228, 1);
   height: 60px;
   text-align: center;
   display: flex;
@@ -23,6 +23,7 @@
   justify-content: space-between;
   margin-bottom: 60px;
   top: 0;
+
 }
 
 .navbar .navbar-collapse {
