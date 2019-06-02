@@ -1,6 +1,7 @@
 import "bootstrap";
-import "alert";
-import "./gameSelect.js";
+import {gameSelect} from "./gameSelect.js";
+
+gameSelect();
 
 
 
