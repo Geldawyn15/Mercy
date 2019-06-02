@@ -1,5 +1,5 @@
 import "bootstrap";
-import {gameSelect} from "./gameSelect.js";
+import { gameSelect } from "../gameSelect.js";
 
 gameSelect();
 
