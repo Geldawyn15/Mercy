@@ -10,7 +10,6 @@ class TeamsController < ApplicationController
   end
 
   def create
-    p team_params
     @team = Team.new(team_params)
     if @team.save
       TeamMembership.create(mems_params(@team))

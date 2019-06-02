@@ -47,7 +47,7 @@
         <%= f.input :rank_scale, collection: ranks, selected: 1, input_html: { class: 'hidden-rank rank-select', id: 'team_select_' + game.id.to_s }, label_html: { class: 'hidden-rank rank-label', id: 'team_label_' + game.id.to_s } %>
       <% end %>
 
-      <%= f.input :gender_choice, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['huys','Just the Boys']], label_method: :second, value_method: :first%>
+      <%= f.input :gender_choice, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['guys','Just the Boys']], label_method: :second, value_method: :first%>
       <%= f.button :submit %>
     <% end %>
   </div>
