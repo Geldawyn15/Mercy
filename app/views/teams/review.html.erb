@@ -14,7 +14,7 @@
     <h2>Rate your party</h2>
       <div id="rater"></div>
       </p>
-      <p>It worth a word</p>
+      <p class="review-form">It worth a word</p>
       <%= simple_form_for [@team, @team_review] do |f| %>
         <%= f.hidden_field :rating, :value => 5 %>
         <%= f.input :comment, label: false, as: :text %>
@@ -30,7 +30,7 @@
     </div>
   <% end %>
 
-  <script src="node-modules/rater-js/index.js"></script>
+  <div class="rating-box"><script src="node-modules/rater-js/index.js"></script></div>
 </div>
 
 
