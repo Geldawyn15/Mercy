@@ -5567,6 +5567,11 @@ range-parser@^1.2.1, range-parser@~1.2.1:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
 
+rater-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/rater-js/-/rater-js-1.0.0.tgz#6eba14158e22ec06b445b930d07ae2befeccb854"
+  integrity sha512-krg5+diw34YBsPKZWTIy4pUCnMydm1MK/uEAc8a1e6au34VffY9lEEa+ryAZiMp9gHe5kIt2Al8RJJs5WoeUfw==
+
 raw-body@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.4.0.tgz#a1ce6fb9c9bc356ca52e89256ab59059e13d0332"

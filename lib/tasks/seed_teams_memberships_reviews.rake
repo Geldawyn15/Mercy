@@ -4,6 +4,15 @@ desc 'it launches the seeds for team memberships, team reviews and user reviews'
   task :seed2 do
 
     puts '-----------------------------'
+    puts 'destroying all previous datas'
+    puts '-----------------------------'
+
+    Friendship.destroy_all
+    UserReview.destroy_all
+    TeamReview.destroy_all
+    TeamMembership.destroy_all
+
+    puts '-----------------------------'
     puts 'CREATING 6 TEAM_MEMBERSHIPS FOR EACH TEAM'
     puts '-----------------------------'
 
@@ -74,23 +83,23 @@ desc 'it launches the seeds for team memberships, team reviews and user reviews'
 
     over_teams[0..-2].each do |team|
       team.users.each_with_index do |user, index|
-        UserReview.create!(user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
-        UserReview.create!(user: user, user_reviewed: team.users[1], add_friend: true, endorse: true, nok: false) if index !=1
-        UserReview.create!(user: user, user_reviewed: team.users[2], add_friend: true, endorse: true, nok: false) if index !=2
-        UserReview.create!(user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
-        UserReview.create!(user: user, user_reviewed: team.users[4], add_friend: false, endorse: true, nok: false) if index !=4
-        UserReview.create!(user: user, user_reviewed: team.users[5], add_friend: true, endorse: true, nok: false) if index !=5
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: true, endorse: true, nok: false) if index !=1
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: true, endorse: true, nok: false) if index !=2
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: true, nok: false) if index !=4
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: true, endorse: true, nok: false) if index !=5
       end
     end
 
     over_teams[-2..-1].each do |team|
       team.users.each_with_index do |user, index|
-        UserReview.create!(user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
-        UserReview.create!(user: user, user_reviewed: team.users[1], add_friend: false, endorse: true, nok: false) if index !=1
-        UserReview.create!(user: user, user_reviewed: team.users[2], add_friend: false, endorse: true, nok: false) if index !=2
-        UserReview.create!(user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
-        UserReview.create!(user: user, user_reviewed: team.users[4], add_friend: false, endorse: false, nok: true, nok_respect: true) if index !=4
-        UserReview.create!(user: user, user_reviewed: team.users[5], add_friend: false, endorse: true, nok: true, nok_communication: true, nok_helpfulness: true) if index !=5
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: false, endorse: true, nok: false) if index !=1
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: false, endorse: true, nok: false) if index !=2
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: false, nok: true, nok_respect: true) if index !=4
+        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: false, endorse: true, nok: true, nok_communication: true, nok_helpfulness: true) if index !=5
       end
     end
 
