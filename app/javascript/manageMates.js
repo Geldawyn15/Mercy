@@ -1,0 +1,5 @@
+const manageMates = () => {
+
+}
+
+export { gameSelect };
