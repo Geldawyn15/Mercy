@@ -32,7 +32,7 @@ class Team < ApplicationRecord
   end
 
   def complete_reviews?
-    team_reviews.count != 6
+    team_reviews.count == 6
   end
 
   def pending_reviews?
