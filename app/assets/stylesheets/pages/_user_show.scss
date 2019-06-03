@@ -20,20 +20,33 @@
   }
 }
 
-
-.profile-box {
-  background-color: #131313;
-  width: 400px;
+.stats {
+  background-color: #292845;
+  width: 500px;
+  height: 250px;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
+  justify-content: center;
   transition: 0.3s;
   color: white;
   margin: 0 auto;
   position: relative;
-  // top: -20px;
+  border: $light-green;
+}
+
+.profile-box {
+  background-color: #292845;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  color: white;
+  margin-top: -184px;
+  margin-left: 180px;
+  position: relative;
   padding-top: 160px;
-  padding-bottom: 20px;
+  padding-bottom: 5
+  px;
   text-align: center;
   border-radius: 0% 0% 10% 10%;
   border-top: $light-green;
@@ -107,6 +120,32 @@
   padding: 0;
   text-align: center;
   border: none;
+}
+
+.button-friend {
+  background-color: $light-green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 16px;
+  margin: 4px 700px;
+  cursor: pointer;
+}
+
+.button-message {
+  background-color: $light-green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  font-size: 16px;
+  margin: 4px 700px;
+  cursor: pointer;
 }
 
 

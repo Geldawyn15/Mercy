@@ -3,12 +3,12 @@
 <div class="homepage-banner">
   <div class="homepage-content">
     <div class="homepage-title">
-      <h1>Play your favorite game with<br> <span class="pink-text">non-toxic players</span> now.
-      </h1>
+      <h1>Play your favorite game with<br> <strong><span class="pink-text">non-toxic players</span></strong> now.</h1>
+      <p>Join the community of Mercy and build a respectful place for gamers.</p>
     </div>
-  </div>
+    <%= link_to "Join us", new_user_registration_path, class: "button-green-1" %>
+    </div>
 </div>
-
 
   <section id="feature-cards">
     <% title1 = 'Use your mic again' %> <br>
@@ -26,3 +26,13 @@
     <%= render 'shared/feature_card', title: title3, icon: icon3, para: para3, color: 'pink'%>
   </section>
 </body>
+
+<div id="slider">
+  <figure>
+    <img src="austin-fireworks.jpg" alt>
+    <img src="taj-mahal.jpg" alt>
+    <img src="ibiza.jpg" alt>
+    <img src="ankor-wat.jpg" alt>
+    <img src="austin-fireworks.jpg" alt>
+  </figure>
+</div>

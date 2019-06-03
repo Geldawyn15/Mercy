@@ -1,12 +1,7 @@
-h1 {
-  color: #fff;
-  font-family: $body-font;
-  font-weight: bold;
-}
 .homepage-banner {
   height: 100vh;
   position: relative;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('dva-banner.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('girl2.jpg');
   background-position: 35% 70%;
   height: 70vh;
   width: 100%;
@@ -23,11 +18,19 @@ h1 {
   border-left: 2px solid #20d8da;
 }
 
-.homepage-title {
+.homepage-title h1 {
+  color: #fff;
+  font-family: $body-font;
+  font-weight: bold;
   opacity: 1;
   font-size: 42px;
 }
 
-
-
-
+.homepage-title p {
+  font-size: 15px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  position: relative;
+  top: -3px; left: 40px;
+}
