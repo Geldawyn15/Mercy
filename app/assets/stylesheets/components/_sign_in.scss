@@ -1,0 +1,23 @@
+.modal-content {
+  background-color: $dark-blue;
+
+}
+
+#exampleModalLabel {
+  color: $white;
+  font-family: agency-fb, sans-serif;
+  font-weight: 400;
+}
+
+.form-actions {
+  justify-content: center;
+  display: flex;
+}
+
+.col-form-label {
+  color: white;
+}
+
+.modal-header {
+  border-bottom: 1px solid $dark-pink;
+}

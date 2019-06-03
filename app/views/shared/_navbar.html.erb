@@ -9,15 +9,16 @@
         </button>
       </div>
       <div class="modal-body">
-                <%= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+                <%= simple_form_for(User.new, as: :user, url: session_path(:user), wrapper: :horizontal_form) do |f| %>
           <div class="form-inputs text-dark form-login">
             <%= f.input :email,
                         required: false,
                         autofocus: true,
-                        input_html: { autocomplete: "email" } %>
+                        input_html: { autocomplete: "email" }
+                         %>
             <%= f.input :password,
                         required: false,
-                        input_html: { autocomplete: "current-password" } %>
+                        input_html: { autocomplete: "current-password" }  %>
             </div>
 
           <div class="form-actions">
@@ -44,12 +45,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <div>
+        <div class="navbar-text">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item active">
-            <%= link_to "Find a team",  new_team_path(current_user.id), class: "nav-link" %>
+            <%= link_to "Find a team", new_team_path(current_user.id), class: "nav-link" %>
           </li>
 
           <li class="nav-item d-block d-sm-none">
@@ -59,6 +60,7 @@
           <li class="nav-item  d-block d-sm-none">
             <%= link_to "Sign out", destroy_user_session_path, class: "nav-link" %>
           </li>
+          </div>
         </div>
 
         <li class="dropdown d-none d-sm-block">
