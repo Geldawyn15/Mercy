@@ -15,7 +15,7 @@
       margin: -2em;
     }
     .circle-container img { display: block; width: 100%; }
-    .deg0 { transform: translate(12em); } /* 12em = half the width of the wrapper */
+    .deg0 { transform: translate(12em); }
     .deg45 { transform: rotate(45deg) translate(12em) rotate(-45deg); }
     .deg135 { transform: rotate(135deg) translate(12em) rotate(-135deg); }
     .deg180 { transform: translate(-12em); }

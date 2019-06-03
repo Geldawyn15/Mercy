@@ -1,62 +1,62 @@
 <% if team.status == 'pending' %>
   <div class="card-team">
-    <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg", class="bottom-line pending" >
+    <img src="https://i.pinimg.com/originals/9d/48/24/9d4824e004d497a1ce85c61db5ae26a6.jpg", class="bottom-line pending" >
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
-        <p>game &nbsp;<%= team.game.name %></p>
-        <p>spirit &nbsp;<%= team.spirit %></p>
-        <p>rank scale &nbsp;<%= team.rank_scale %></p>
-        <p>type &nbsp;<%= team.gender_choice %></p>
+        <p>Game: &nbsp;<span><%= team.game.name.capitalize %></span></p>
+        <p>Spirit: &nbsp;<span><%= team.spirit.capitalize %></span></p>
+        <p>Rank: &nbsp;<span><%= team.rank_scale.capitalize %></span></p>
+        <p>Type: &nbsp;<span><%= team.gender_choice.capitalize %></span></p>
       </div>
-      <p class="card-team-status">PENDING</p>
+      <p class="card-team-status pending">PENDING</p>
     </div>
   </div>
 
 <% elsif team.status == 'complete' %>
   <div class="card-team">
-    <img src="https://www.playstationlifestyle.net/assets/uploads/2019/05/overwatch-1st-person-screen-01-ps4-us-16may18.jpeg", class="bottom-line" >
+    <img src="https://bnetcmsus-a.akamaihd.net/cms/blog_header/nr/NRKCTXZNWRQ81519177975121.jpg", class="bottom-line" >
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
-        <p>game &nbsp;<%= team.game.name %></p>
-        <p>spirit &nbsp;<%= team.spirit %></p>
-        <p>rank scale &nbsp;<%= team.rank_scale %></p>
-        <p>type &nbsp;<%= team.gender_choice %></p>
+        <p>Game: &nbsp;<span><%= team.game.name.capitalize %></span></p>
+        <p>Spirit: &nbsp;<span><%= team.spirit.capitalize %></span></p>
+        <p>Rank: &nbsp;<span><%= team.rank_scale.capitalize %></span></p>
+        <p>Type: &nbsp;<span><%= team.gender_choice.capitalize %></span></p>
       </div>
-      <p class="card-team-status">TEAM READY</p>
+      <p class="card-team-status ready">TEAM READY</p>
     </div>
   </div>
 
 <% elsif team.status == 'ingame' %>
   <div class="card-team">
-    <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg">
+    <img src="https://ksassets.timeincuk.net/wp/uploads/sites/54/2014/11/OVR_Brigitte_007-1024x576.png">
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
-        <p>game &nbsp;<%= team.game.name %></p>
-        <p>spirit &nbsp;<%= team.spirit %></p>
-        <p>rank scale &nbsp;<%= team.rank_scale %></p>
-        <p>type &nbsp;<%= team.gender_choice %></p>
+        <p>Game: &nbsp;<span><%= team.game.name.capitalize %></span></p>
+        <p>Spirit: &nbsp;<span><%= team.spirit.capitalize %></span></p>
+        <p>Rank: &nbsp;<span><%= team.rank_scale.capitalize %></span></p>
+        <p>Type: &nbsp;<span><%= team.gender_choice.capitalize %></span></p>
       </div>
-      <p class="card-team-status">IN GAME</p>
+      <p class="card-team-status ingame">IN GAME</p>
     </div>
   </div>
 
 <% elsif team.status == 'over' && team.team_review_for(current_user).present? %>
   <div class="card-team">
-    <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5Hso0rfNz1V41JRKlAxh_H4nn7VcL_2P8sHHmyjWRtBRdP_KLQ">
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
-        <p>game &nbsp;<%= team.game.name %></p>
-        <p>spirit &nbsp;<%= team.spirit %></p>
-        <p>rank scale &nbsp;<%= team.rank_scale %></p>
-        <p>type &nbsp;<%= team.gender_choice %></p>
+        <p>Game: &nbsp;<span><%= team.game.name.capitalize %></span></p>
+        <p>Spirit: &nbsp;<span><%= team.spirit.capitalize %></span></p>
+        <p>Rank: &nbsp;<span><%= team.rank_scale.capitalize %></span></p>
+        <p>Type: &nbsp;<span><%= team.gender_choice.capitalize %></span></p>
       </div>
       <h2 class="card-team-pricing">
         <% unless team.average_rating.nil? %>
-          <p><% team.average_rating.round.times do %>
+          <p class="stars"><% team.average_rating.round.times do %>
             <i class="fas fa-star"></i>
           <% end %></p>
         <% end %>
@@ -66,17 +66,17 @@
 
 <% elsif team.status == 'over' && team.team_review_for(current_user).blank? %>
   <div class="card-team">
-    <img src="https://cdn.cdkeys.com/media/catalog/product/o/v/overwatch-game-of-the-year-edition-pc_1.jpg">
+    <div class="pending-img"></div>
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
-        <p>game &nbsp;<%= team.game.name %></p>
-        <p>spirit &nbsp;<%= team.spirit %></p>
-        <p>rank scale &nbsp;<%= team.rank_scale %></p>
-        <p>type &nbsp;<%= team.gender_choice %></p>
+        <p>Game: &nbsp;<span><%= team.game.name.capitalize %></span></p>
+        <p>Spirit: &nbsp;<span><%= team.spirit.capitalize %></span></p>
+        <p>Rank: &nbsp;<span><%= team.rank_scale.capitalize %></span></p>
+        <p>Type: &nbsp;<span><%= team.gender_choice.capitalize %></span></p>
       </div>
-      <p class="card-team-status">REVIEW PENDING</p>
-      <%= link_to "Submit your review", user_path(current_user.id), class:"button-green" %>
+      <p class="card-team-status rpending">REVIEW PENDING</p>
+      <%= link_to "SUBMIT REVIEW", user_path(current_user.id), class:"button-green" %>
     </div>
   </div>
 <% end %>

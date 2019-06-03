@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
                 <%= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
-          <div class="form-inputs text-dark">
+          <div class="form-inputs text-dark form-login">
             <%= f.input :email,
                         required: false,
                         autofocus: true,

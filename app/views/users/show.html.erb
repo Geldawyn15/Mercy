@@ -76,22 +76,12 @@
 <!-- MY TEAMS -->
 
 <%= render 'shared/separator', title: 'MY TEAMS', score: @user.teams.count %>
-  <div class="glide">
-    <div data-glide-el="track" class="glide__track">
-      <ul class="glide__slides">
+  <div class="card-container">
+      <ul>
         <% @user.teams.each do |team| %>
-          <li class="glide__slide"><%= render 'shared/card_team', team: team %></li>
+          <li><%= render 'shared/card_team', team: team %></li>
         <% end %>
       </ul>
-    </div>
-    <div class="glide">
-      <div class="glide__track" data-glide-el="track"></div>
-
-      <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
-      </div>
-    </div>
   </div>
 
 
