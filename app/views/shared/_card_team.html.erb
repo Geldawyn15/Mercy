@@ -75,8 +75,9 @@
         <p>Rank: &nbsp;<span><%= team.rank_scale.capitalize %></span></p>
         <p>Type: &nbsp;<span><%= team.gender_choice.capitalize %></span></p>
       </div>
-      <p class="card-team-status rpending">REVIEW PENDING</p>
-      <%= link_to "SUBMIT REVIEW", user_path(current_user.id), class:"button-green" %>
+      <%= link_to team_review_path(team.id) do %>
+        <p class="card-team-status rpending"><i class="fas fa-pen"></i> REVIEW PENDING</p>
+      <% end %>
     </div>
   </div>
 <% end %>
