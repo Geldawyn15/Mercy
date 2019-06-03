@@ -26,6 +26,11 @@ class User < ApplicationRecord
     end
   end
 
+  def profile(team)
+    profile = profiles.where(game: team.game)
+    profile.first.mainrole
+  end
+
   def shared_team_count(friend)
     teams.where(id: friend.teams.pluck(:id)).count
   end

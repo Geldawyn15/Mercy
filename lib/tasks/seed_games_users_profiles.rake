@@ -10,10 +10,6 @@ require 'nokogiri'
     puts 'destroying all previous datas'
     puts '-----------------------------'
 
-    Friendship.destroy_all
-    UserReview.destroy_all
-    TeamReview.destroy_all
-    TeamMembership.destroy_all
     Profile.destroy_all
     Team.destroy_all
     User.destroy_all

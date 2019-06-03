@@ -1,27 +1,44 @@
 <div class="card-category">
-  <%= image_tag user.image, :class => "avatar-cards" %>
+  <h4>Enjoyed playing with <%= user.username %>?</h4>
+  <div class="card-category-content">
+    <div class="user-aka-mainrole">
+      <div>
+        <%= image_tag user.image, :class => "avatar-cards" %>
+        <p><%= user.username %></p>
+      </div>
+      <p class="aka">aka</p>
+      <div>
+        <%= image_tag src="https://gamepedia.cursecdn.com/overwatch_gamepedia/thumb/5/59/Icon-McCree.png/150px-Icon-McCree.png", :class => "avatar-cards" %>
+        <p><%= user.profile(team).capitalize %></p>
+      </div>
+    </div>
 
-   <div class="ok-comments">
+   <div class="comments">
     <% user_review = UserReview.new %>
-     <h4>Really enjoyed playing together?</h4>
       <%= simple_form_for [@team, user_review] do |f| %>
-        <%= f.input :add_friend, as: :boolean, boolean_style: :inline %>
-        <%= f.input :endorse, as: :boolean, boolean_style: :inline %>
-        <%= f.input :nok, as: :boolean, boolean_style: :inline %>
-        <%= f.button :submit, "Next", class: "my-button" %>
+        <%= f.hidden_field :user_reviewed_id, :value => user.id %>
+        <%= f.input :add_friend, as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox" %>
+        <%= f.input :endorse, as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox" %>
+        <%= f.input :nok, label: "Not really", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox" %>
+        <%= f.button :submit, "Next", class: "my-button btn-user-rating" %>
       <% end %>
    </div>
-   <h4>Not really? </h4>
-   <p>Explain us why and help this player to improve </p>
-   <div class="ok-buttons"> OK </div>
-    <% simple_form_for [@team, user_review] do |f| %>
-      <% f.input :nok_positiveness, as: :boolean, boolean_style: :inline %>
-      <% f.input :nok_communication, as: :boolean, boolean_style: :inline %>
-      <% f.input :nok_helpfulness, as: :boolean, boolean_style: :inline %>
-      <% f.input :nok_respect, as: :boolean, boolean_style: :inline %>
-      <% f.button :submit, "Submit", class: "my-button" %>
-    <% end %>
+
+   <div class="comments hidden">
+    <h4>What was wrong with </h4>
+      <p>Explain us why and help this player to improve </p>
+      <div class="ok-buttons"> OK </div>
+        <% simple_form_for [@team, user_review] do |f| %>
+          <% f.input :nok_positiveness, as: :boolean, boolean_style: :inline %>
+          <% f.input :nok_communication, as: :boolean, boolean_style: :inline %>
+          <% f.input :nok_helpfulness, as: :boolean, boolean_style: :inline %>
+          <% f.input :nok_respect, as: :boolean, boolean_style: :inline %>
+          <% f.button :submit, "Submit", class: "my-button" %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
 
 
 

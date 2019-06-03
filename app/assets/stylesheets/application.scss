@@ -26,3 +26,14 @@ p {
   font-family: $body-font;
   color: #A2A2A2;
 }
+
+
+.form-check {
+  input[type='checkbox']:checked + label {
+    background: red;
+  }
+
+  input[type='checkbox'] {
+    display: none;
+  }
+}
