@@ -20,10 +20,25 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def self.user_for_game_available(game)
+    Profile.where(game: game).map do |profile|
+      user = User.find(profile.user_id)
+      if user.user_already_booked
+        nil
+      else
+        user
+      end
+    end.compact
+  end
+
   def self.user_for_game(game)
     Profile.where(game: game).map do |profile|
-      User.find(profile.user_id)
-    end
+      user = User.find(profile.user_id)
+    end.compact
+  end
+
+  def user_already_booked
+    teams.where(status: "pending").any? || teams.where(status: "complete").any? || teams.where(status: "ingame").any?
   end
 
   def profile(team)
@@ -42,7 +57,7 @@ class User < ApplicationRecord
       profile[0].mainrole
     else
       nil
-    end
+    end.compact
   end
 
   def age

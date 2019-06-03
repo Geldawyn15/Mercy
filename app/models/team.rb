@@ -1,6 +1,6 @@
 class Team < ApplicationRecord
-  has_many :team_memberships
-  has_many :team_reviews, dependent: :destroy
+  has_many :team_memberships, dependent: :destroy
+  has_many :team_reviews
   has_many :user_reviews
   has_many :users, through: :team_memberships
   belongs_to :game
