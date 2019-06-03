@@ -1,38 +1,30 @@
-.card-category {
+.rating-card {
   border-radius: 4px;
   background-color: #131313;
-  display: flex;
   transition: 0.3s;
   color: white;
   margin: 0 auto;
-  padding: 16px;
+  padding: 16px 32px;
   width: 80vw;
   text-align: center;
   border-top: #55CDC9;
   box-shadow: 0px 0px 34px 2px rgba(85, 205, 201, 0.62);
 }
 
-.card-content {
-  border-radius: 4px;
-  background-color: #131313;
+.rating-card-content {
   display: flex;
-  transition: 0.3s;
-  color: white;
-  margin: 0 auto;
-  padding: 16px;
-  width: 80vw;
-  text-align: center;
-  border-top: #55CDC9;
-  box-shadow: 0px 0px 34px 2px rgba(85, 205, 201, 0.62);
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0;
 }
 
-.avatar-cards {
+.avatar-rating-cards {
   width: 72px;
   height: 72px;
   border-radius: 50%;
 }
 
-.card-category img {
+.rating-card img {
     position: relative;
     top: 27%;
     left: 1%;
@@ -63,3 +55,71 @@ ul {
 .aka {
   padding: 8px;
 }
+
+.inline-button {
+  display: flex;
+  align-items: center;
+  padding-right: 1.25rem;
+}
+
+.btn.my-button.btn-user-rating {
+  margin-top: 0;
+}
+
+.new_user_review {
+  display: flex;
+  position: relative;
+  top: 60;
+}
+
+.nok-button {
+  position: relative;
+  top: 60px;
+  right: 120px;
+  .form-check {
+    input[type='checkbox'] + label {
+      padding: 0;
+      border: none;
+      color: white;
+    }
+    input[type='checkbox']:checked + label {
+      padding: 0;
+      background-color: $light-green;
+      transition: box-shadow .3s;
+      border-radius: 2px;
+      border: 1px solid #55CDC9;
+    }
+    input[type='checkbox'] {
+      display: none;
+    }
+  }
+}
+
+.nok {
+  display: flex;
+  align-self: center;
+  position: relative;
+  top: -45px;
+  left: 120px;
+  font-size: 14px;
+  .fas {
+      color: $light-green;
+      font-size: 16px;
+    }
+}
+
+// .user_review_add_friend {
+//   padding: 8px 16px;
+//   background-color: #141414;
+//   transition: box-shadow .3s;
+//   border-radius: 2px;
+//   border: 1px solid #55CDC9;
+// }
+
+// .user_review_add_friend:active {
+//   padding: 8px 16px;
+//   background-color: #141414;
+//   transition: box-shadow .3s;
+//   border-radius: 2px;
+//   border: 1px solid #55CDC9;
+// }

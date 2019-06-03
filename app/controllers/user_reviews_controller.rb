@@ -8,7 +8,7 @@ class UserReviewsController < ApplicationController
     @review = UserReview.new(review_params)
     @review.user_id = current_user.id
     @review.team_id = @team.id
-    @review.save
+    @review.save!
     redirect_to team_review_path(@team.id)
   end
 
