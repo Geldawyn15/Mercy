@@ -1,5 +1,5 @@
 .login {
-  background-color: #eeeeee;
+  background-color: #292845;
   color: #ff4949;
   border: none;
   border-radius: 5px;
@@ -10,6 +10,11 @@
   height: 40px;
 }
 
+.topnav {
+  color: white;
+
+
+}
 .navbar {
   position: fixed;
   width: 100vW;
@@ -18,12 +23,21 @@
   box-shadow: 0px 1px 5px 1px  rgba(226, 30, 228, 1);
   height: 60px;
   text-align: center;
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 60px;
   top: 0;
+}
 
+.navbar-text {
+  display: flex;
+  position: relative;
+  right: 20px;
+}
+
+.nav-link {
+  width: 125px;
 }
 
 .navbar .navbar-collapse {

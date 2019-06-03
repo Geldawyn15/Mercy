@@ -1,120 +1,23 @@
 <!-- banner -->
 <div class= "banner-profil">
-</div>
-
-<!-- user-card -->
-<div class="profile-box">
-
-  <div class="user_image">
-    <%= image_tag @user.image, class:"avatar-xlarge" %>
-  </div>
-
-<div class="user-info">
-  <div class="user-tagname">
-    <h2><%= @user.username %></h2>
-    <br>
-<!--     <h3>
-    <% if @user.gender == "female" %>
-      <i class="fas fa-female"></i>
-    <% elsif @user.gender == "male" %>
-      <i class="fas fa-male"></i>
-    <% elsif @user.gender == "fluid" %>
-      <i class="fas fa-rainbow"></i>
-    <% end %></h3>
- -->  </div>
- <div class="user-social">
-  <div class="discord_id">
-<!--     <a href="#"> -->
-      <i class="fab fa-discord"></i>
- <!--        <p><%= @user.discord_id %></p> -->
-    </a>
- </div>
-
+  <%= render "shared/user_profil_box" %>
 </div>
 
 
-  <div class="user-mercy-stats">
-    <% if @user.user_reviews != [] %>
-      <p class="user-endorsement"><i class="fas fa-thumbs-up"></i></br>NUMBER OF </br>ENDORSEMENTS </br><%= UserReview.where(user_id: @user.id, endorse: true).count %></h3>
-      <p class="user-as-friends"><i class="fas fa-heart"></i></br>ADDED </br>AS FRIEND </br><%= UserReview.where(user_id: @user.id, add_friend: true).count %></p>
-      <p class="user-endorsement"><i class="fas fa-smile-beam"></i></br>POSITIVE </br>REVIEWS </br><%= (UserReview.where(user_id: @user.id, endorse: true).count / UserReview.where(user_id: @user.id).count)*100 %> %</p>
+<div class="row-profil">
+  <div class="column-profil">
+    <h2 class="section-title">RECENT GAME</h2>
+    <% @user.teams.each do |team| %>
+      <div class="column-profil"><%= render 'shared/card_team', team: team %></div>
     <% end %>
   </div>
-<%= link_to user_path(@user.id), class:'more-info button-green' do %>
-  More info <i class="fas fa-plus"></i>
-<% end %>
-</div>
-</div>
 
+<div class="headerDivider"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- MY TEAMS -->
-
-<%= render 'shared/separator', title: 'MY TEAMS', score: @user.teams.count %>
-  <div class="card-container">
-      <ul>
-        <% @user.teams.each do |team| %>
-          <li><%= render 'shared/card_team', team: team %></li>
-        <% end %>
-      </ul>
+  <div class="column-profil">
+    <h2 class="section-title">TEAMMATES</h2>
+    <% @user.friends.each do |friend| %>
+    <div class="column-profil"><%= render 'shared/card_friend', friend: friend %></div>
+            <% end %>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- MY FRIENDS -->
-
-<%= render 'shared/separator', title: 'MY FRIENDS', score: @user.friendships.count, color: '$light-green' %>
-  <div class="glide">
-    <div data-glide-el="track" class="glide__track">
-      <ul class="glide__slides">
-        <% @user.friends.each do |friend| %>
-          <li class="glide__slide"><%= render 'shared/card_friend', friend: friend %></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="glide">
-      <div class="glide__track" data-glide-el="track"></div>
-
-      <div class="glide__arrows box" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
-      </div>
-    </div>
-  </div>
-
-<!-- MY GAMES -->
-
-<!-- render 'shared/separator', title: 'MY GAMES', score: @user.profiles.count -->
-
+</div>
