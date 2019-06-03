@@ -20,7 +20,7 @@ class TeamReviewsController < ApplicationController
   private
 
   def team_review_params
-    params.require(:team_review).permit(:team, :user, :rating, :comment)
+    params.require(:team_review).permit(:team_id, :rating, :comment)
   end
 
   def set_team
