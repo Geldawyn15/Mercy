@@ -1,43 +1,43 @@
-<h1>Teams#new</h1>
-<p>Find me in app/views/teams/new.html.erb</p>
-
-<div>
-  <h2>Create your team now</h2>
+<div class="container">
+  <h2 id="team-title">Create your team now</h2>
   <div class="inline-game-cards">
 
     <div id="ow" class="game-card">
-      <img src="/assets/logo-ow.jpg">
+      <img src="https://blznav.akamaized.net/img/games/cards/card-overwatch-7eff92e1257149aa.jpg">
       <div class="game-card-infos">
         <div>
           <h2><%= @games[0].name.capitalize %></h2>
         </div>
+        <p class="card-game-rank">Rank select</p>
       </div>
     </div>
 
     <div id="csgo"class="game-card">
-      <img src="/assets/logo-ow.jpg">
+      <img src="https://s3.gaming-cdn.com/images/products/62/orig/counter-strike-global-offensive-prime-status-upgrade-cover.jpg">
       <div class="game-card-infos">
         <div>
           <h2><%= @games[1].name.capitalize %></h2>
         </div>
+        <p class="card-game-rank">Rank select</p>
       </div>
     </div>
 
     <div id="lol" class="game-card">
-      <img src="/assets/logo-ow.jpg">
+      <img src="https://i.udemycdn.com/course/480x270/1712886_5ce0.jpg">
       <div class="game-card-infos">
         <div>
           <h2><%= @games[2].name.capitalize %></h2>
         </div>
+        <p class="card-game-rank">Rank select</p>
       </div>
     </div>
 
   </div>
 
 
-  <% spirit = ["casual", "competitive"] %>
+  <% spirit = ["Casual", "Competitive"] %>
 
-  <div class="container">
+  <div class="container team-form">
     <%= simple_form_for @team, url: teams_path, method: 'POST' do |f| %>
       <%= f.association :game, as: :radio_buttons%>
       <%= f.input :spirit, collection: spirit, selected: 1 %>
@@ -47,7 +47,7 @@
         <%= f.input :rank_scale, collection: ranks, selected: 1, input_html: { class: 'hidden-rank rank-select', id: 'team_select_' + game.id.to_s }, label_html: { class: 'hidden-rank rank-label', id: 'team_label_' + game.id.to_s } %>
       <% end %>
 
-      <%= f.input :gender_choice, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['guys','Just the Boys']], label_method: :second, value_method: :first%>
+      <%= f.input :gender_choice, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['guys','Just the Boys']], label_method: :second, value_method: :first, class: 'radio'%>
       <%= f.button :submit %>
     <% end %>
   </div>

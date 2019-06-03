@@ -7,7 +7,7 @@
 
   <ul id="friends" class="friend-list">
     <% @friends.each do |person| %>
-      <li id="<%= person.friend.id %>" ><img class="avatar-large" alt="avatar-large" src="<%= person.friend.image %>" /><%= person.friend.username %></li>
+      <li id="<%= person.friend.id %>" class="friend" ><img class="avatar-large" alt="avatar-large" src="<%= person.friend.image %>" /><%= person.friend.username %></li>
     <% end %>
   </ul>
 
