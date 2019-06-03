@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :users, only: %i[show] do
     resources :profiles, only: %i[new create]
   end
-  get '/teams/mates', to: 'teams#mates', as: 'mates'
+
   resources :teams, only: %i[show new create] do
+    get '/mates', to: 'team_memberships#mates', as: 'mates'
+    resources :team_memberships, only: %i[create destroy]
     get '/review', to: 'teams#review'
     resources :team_reviews, only: %i[new create]
     resources :user_reviews, only: %i[new create]

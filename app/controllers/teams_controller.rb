@@ -19,12 +19,6 @@ class TeamsController < ApplicationController
     end
   end
 
-  def mates
-    @user = current_user
-    @team = @user.teams.last
-    @friends = @user.friendships
-  end
-
   def review
     @team_review = TeamReview.new
   end

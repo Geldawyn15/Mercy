@@ -7,7 +7,11 @@ if(window.location.href.indexOf("teams/new") > -1){
   gameSelect();
 }
 
+if(window.location.href.indexOf("/mates") > -1){
+  manageMates();
+}
 
-manageMates();
+
+
 
 
