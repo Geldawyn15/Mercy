@@ -1,14 +1,21 @@
+let friends = document.querySelectorAll(".friend");
+let mates = document.querySelectorAll(".mate");
+
 const manageMates = () => {
-  let friends = document.querySelectorAll(".friend");
 
   friends.forEach(function(friend, index) {
     friend.addEventListener("click", function(){
-      onClick(friend);
-
+      clickFriend(friend);
     });
   })
 
-  const onClick = (item) => {
+  mates.forEach(function(mate, index) {
+    mate.addEventListener("click", function(){
+      clickMate(mate);
+    });
+  })
+
+  const clickFriend = (item) => {
 
     let circle = document.querySelector(".empty");
     let circleImg = circle.querySelector("img");
@@ -17,31 +24,53 @@ const manageMates = () => {
     let pathname = window.location.pathname;
     let teamId = pathname.split("/")[2];
 
-    console.log(item.id)
-
     let mydata = {
       "user_id": item.id,
       "team_id": teamId
     }
 
-    Rails.ajax({
-      type: "POST",
-      url: "/teams/" + teamId + "/team_memberships",
-      data: mydata,
-      success: function(repsonse){
-        circleImg.replaceWith(itemImg);
-        circle.setAttribute("id", item.id);
-        item.remove();
-        circle.classList.remove("empty")
-      },
-      error: function(repsonse){
-        alert("the fuck did you do")
+    fetch("/teams/" + teamId + "/team_memberships", {
+      method: "POST",
+      body: JSON.stringify(mydata),
+      headers: { "Content-Type": "application/json" }
+    }).then((response) => {
+      if (response.ok) {
+        // circleImg.replaceWith(itemImg);
+        // circle.setAttribute("id", item.id);
+        // item.remove();
+        // circle.classList.remove("empty");
+        // circle.classList.add("mate");
+        alert("Friend added to Team!");
+        location.reload()
+      } else {
+        alert("the fuck did you do");
       }
     })
 
-
   }
 
+  const clickMate = (mate) => {
+
+    let pathname = window.location.pathname;
+    let teamId = pathname.split("/")[2];
+    let mydata = {
+      "user_id": mate.id,
+      "team_id": teamId
+    }
+
+    fetch("/teams/" + teamId + "/destroy", {
+      method: "DELETE",
+      body: JSON.stringify(mydata),
+      headers: { "Content-Type": "application/json" }
+    }).then((response) => {
+      if (response.ok) {
+        alert("Teammate Removed!");
+        location.reload();
+      } else {
+        alert("the fuck did you do");
+      }
+    })
+  }
 }
 
 export { manageMates };

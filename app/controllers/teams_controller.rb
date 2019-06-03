@@ -1,7 +1,9 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[review]
+
   def show
     @team = Team.find(params[:id])
+    @mems = @team.team_memberships
   end
 
   def new
