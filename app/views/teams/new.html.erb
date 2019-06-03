@@ -42,9 +42,10 @@
       <%= f.association :game, as: :radio_buttons%>
       <%= f.input :spirit, collection: spirit, selected: 1 %>
 
-      <%@games.each do |game| %>
+      <%@games.each_with_index do |game, index| %>
         <% ranks = game.rank_typology.tr('[]"', '').split(",")%>
-        <%= f.input :rank_scale, collection: ranks, selected: 1, input_html: { class: 'hidden-rank rank-select', id: 'team_select_' + game.id.to_s }, label_html: { class: 'hidden-rank rank-label', id: 'team_label_' + game.id.to_s } %>
+        <% index += 1 %>
+        <%= f.input :rank_scale, collection: ranks, selected: 1, input_html: { class: 'hidden-rank rank-select', id: 'team_select_' + index.to_s }, label_html: { class: 'hidden-rank rank-label', id: 'team_label_' + index.to_s } %>
       <% end %>
 
       <%= f.input :gender_choice, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['guys','Just the Boys']], label_method: :second, value_method: :first%>
