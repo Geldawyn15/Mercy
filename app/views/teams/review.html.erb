@@ -9,6 +9,7 @@
       <h2>Rate your teammates</h2>
         <%= render 'shared/user_review_card', user: member, team: @team %>
       <% end %>
+    <% break  @team.user_review_needed(current_user).any? == false %>
     <% end %>
   <% elsif @team.user_review_needed(current_user) == [] %>
     <h2>Rate your party</h2>
