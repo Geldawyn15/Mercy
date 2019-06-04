@@ -1,38 +1,67 @@
-.avatar-large {
-  width: 56px;
-  border-radius: 50%;
-}
-
-.container{
+.container-mates{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 62px;
+  margin: 60px auto;
 }
 
-.button1 {
-  margin-left: 30px;
+// TEAM CIRCLE
+
+.team-circle {
+  width: 80%;
+  text-align: center;
+  padding: 16px;
 }
 
+// FRIEND BAR
+
+.friend-bar {
+  margin-top: 0;
+  width: 20%;
+}
 .friend-list {
-  position: absolute;
-  align-self: flex-end;
-  margin-top: 80px;
-  margin-left: 50px;
+  padding: 16px;
 }
 
-.friend-list li {
-  margin-bottom: 16px;
-  margin-right: 16px;
-  list-style:none;
+ul.friend-list {
+  margin-top: 0;
 }
 
-h1 {
-  margin-top: 16px;
-  margin-left: 40px;
+.friend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  .friend-ingame {
+    border: 1.5px solid $orange;
+  }
+  .friend-online {
+    border: 1.5px solid #52B581;
+  }
+  .friend-away {
+   border: 1.5px solid $red;
+  }
+  .fa-circle {
+    font-size: 12px;
+    position: relative;
+    top: 21px;
+    left: -18px;
+  }
 }
 
+.friend-info {
+  width: 140px;
+  p {
+    margin: 0;
+  }
+}
 
+.friend-image-sm {
+  height:64px;
+  width: 64px;
+  border-radius: 50%;
+  border: 1.5px solid #52B581;
+}
+
+// JAVASCRIPT
 
 .tool .tooltiptext {
   visibility: hidden;
