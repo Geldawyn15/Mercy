@@ -1,3 +1,40 @@
+.banner-review {
+  margin-top: 60px;
+  background-position: center 0px;
+  width: 100%;
+  height: 400px;
+  background: url('soldier.jpg') center center no-repeat;
+  background-size: cover;
+  justify-content: center;
+  display: flex;
+  z-index: 300;
+  align-items: center;
+}
+
+.title-review h1 {
+  color: white;
+  font-family: agency-fb,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.title-review p {
+  color: $white;
+  font-family: $body-font;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rating-card h4 {
+  font-family: $body-font;
+}
+
+.comments {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
 .container-review {
   margin-top: 60px;
   display: flex;
@@ -25,8 +62,6 @@
   background: 141414;
   h1 {
     background: linear-gradient(to right, #ff5858, #f857a6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font: {
       size: 32px;
       family: $headers-font;
@@ -71,5 +106,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.user-aka-mainrole {
+  position:relative;
+  top: -17px;
+}
+
+.avatar-mainrole {
+  position: relative;
+  top: 25px;
+  left: -7px;
+}
+
+.avatar-user {
+  position: relative;
+  top: -20px;
+  left: 25px;
 }
 

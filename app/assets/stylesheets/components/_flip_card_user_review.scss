@@ -1,0 +1,71 @@
+h3 {
+  font-family: $body-font;
+  justify-content: center;
+}
+
+
+.flip-card-user-review {
+  border: 1px;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+
+  .faces {
+    border: 1px solid;
+    flex-grow: 1;
+    position: relative;
+    perspective: 800px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+
+    &.flipped {
+      transform: rotateY( 180deg );
+    }
+  }
+
+  .faces div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+  }
+
+  .faces .front {
+    background: $dark-blue;
+    margin-top: -50px;
+  }
+
+  .faces .back {
+    background: $dark-blue;
+    transform: rotateY( 180deg );
+  }
+}
+
+.front {
+  font-size: small;
+  text-align: center;
+}
+
+.team-banner-review {
+  width: 100%;
+}
+
+.team-avatar-review {
+  height: 72px;
+  text-align: center;
+  position: relative;
+  top: -28px;
+
+  img {
+    border-radius: 50%;
+    border: 1.5px solid #52B581;
+  }
+}
+
+.inline-button {
+
+
+}
+
