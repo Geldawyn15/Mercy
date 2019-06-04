@@ -1,14 +1,31 @@
-<div class="container">
-  <h1> Create Your Team </h1>
-  <%= render 'shared/circle_container', mems: @mems %>
+<div class="container-mates">
 
-  <%= link_to "Complete the team", team_random_mates_path, class: "button1" %>
+  <div class="team-circle">
+    <h1> Create Your Team </h1>
+    <%= render 'shared/circle_container', mems: @mems %>
+    <%= link_to "Complete the team", team_random_mates_path, class: "button1" %>
+  </div>
 
-  <ul id="friends" class="friend-list">
-    <% @friends.each do |friend| %>
-      <li id="<%= friend.id %>" class="friend" ><img class="avatar-large" alt="avatar-large" src="<%= friend.image %>" /><%= friend.username %></li>
-    <% end %>
-  </ul>
-
-
+  <div class="friend-bar">
+    <ul class="friend-list">
+      <h2>MY FRIENDS</h2>
+      <% @friends.each do |friend| %>
+        <li id="<%= friend.id %>" class="friend" >
+          <div class="friend-avatar-available">
+            <% if friend.status == "ingame" %> <%= image_tag friend.image, class:"friend-image-sm friend-ingame" %>
+          <% elsif friend.status == "online" %> <%= image_tag friend.image, class:"friend-image-sm  friend-online" %>
+          <% else friend.status == "away" %> <%= image_tag friend.image, class:"friend-image-sm  friend-away" %>
+          <% end %>
+          <i class="fas fa-circle <%= friend.status %>"></i>
+          </div>
+          <div class="friend-info">
+            <p><%= friend.username %></p>
+            <p>aka. <%= friend.profile(@team).capitalize %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
+
+
