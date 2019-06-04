@@ -16,16 +16,7 @@
         <% end %>
       <% end %>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="team-review">
-          <div class="team-rating">
-            <div id="rater"></div>
-              <%= simple_form_for [@team, @team_review] do |f| %>
-                <%= f.hidden_field :rating, :value => 5 %>
-                <%= f.input :comment, label: false, placeholder: "It worth a word", as: :text %>
-                <%= f.button :submit, "Submit", class: "my-button btn-user-rating" %>
-              <% end %>
-          </div>
-        </div>
+        <%= render 'shared/flip_card_team_review', team: @team, team_review: @team_review, ov_img: @ov_img %>
       </div>
     </div>
   </div>

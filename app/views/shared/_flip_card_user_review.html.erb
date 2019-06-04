@@ -1,8 +1,10 @@
 <div class="flipcard">
-  <div class="flipcard-inner">
-    <%= image_tag src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0a07b6c5-6816-4033-8e6b-ec3d1637506e/d9w5fzt-248cabe6-5e92-4c1d-8737-39d79c9e6fb4.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhMDdiNmM1LTY4MTYtNDAzMy04ZTZiLWVjM2QxNjM3NTA2ZVwvZDl3NWZ6dC0yNDhjYWJlNi01ZTkyLTRjMWQtODczNy0zOWQ3OWM5ZTZmYjQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6pZ2MgGDhNyakHF2heUZl4ZQriFjE45TQi7LkFKymlI", :class => "team-banner-review" %>
-
+  <div class="flipcard-banner">
+    <%= image_tag src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0a07b6c5-6816-4033-8e6b-ec3d1637506e/d9w5fzt-248cabe6-5e92-4c1d-8737-39d79c9e6fb4.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhMDdiNmM1LTY4MTYtNDAzMy04ZTZiLWVjM2QxNjM3NTA2ZVwvZDl3NWZ6dC0yNDhjYWJlNi01ZTkyLTRjMWQtODczNy0zOWQ3OWM5ZTZmYjQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6pZ2MgGDhNyakHF2heUZl4ZQriFjE45TQi7LkFKymlI", class:"team-banner-review" %>
     <%= image_tag user.image, class:"friend-image" %>
+  </div>
+
+  <div class="flipcard-inner">
       <div class="front">
         <h2>Enjoyed playing with </br><%= user.username %>?</h2>
         <div class="ok-comments">
