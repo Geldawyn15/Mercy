@@ -1,0 +1,14 @@
+<div class="container">
+  <h1> Create Your Team </h1>
+  <%= render 'shared/circle_container', mems: @mems %>
+
+  <%= link_to "Complete the team", team_random_mates_path, class: "button1" %>
+
+  <ul id="friends" class="friend-list">
+    <% @friends.each do |friend| %>
+      <li id="<%= friend.id %>" class="friend" ><img class="avatar-large" alt="avatar-large" src="<%= friend.image %>" /><%= friend.username %></li>
+    <% end %>
+  </ul>
+
+
+</div>

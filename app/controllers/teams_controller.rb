@@ -1,7 +1,9 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[review]
+
   def show
     @team = Team.find(params[:id])
+    @mems = @team.team_memberships
   end
 
   def new
@@ -17,12 +19,6 @@ class TeamsController < ApplicationController
     else
       redirect_to new_team_path
     end
-  end
-
-  def mates
-    @user = current_user
-    @team = @user.teams.last
-    @friends = @user.friendships
   end
 
   def review
