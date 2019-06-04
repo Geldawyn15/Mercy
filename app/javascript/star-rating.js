@@ -1,6 +1,6 @@
 import rater from "rater-js";
 
-const InitRaterJs = () => {
+const initRaterJs = () => {
   const myRater = rater({
         starSize:26.30,
         max:5,
@@ -14,4 +14,4 @@ const InitRaterJs = () => {
     })
 }
 
-export default InitRaterJs
+export { initRaterJs };

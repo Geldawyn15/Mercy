@@ -43,10 +43,13 @@ class TeamMembershipsController < ApplicationController
   end
 
   def random_mates
-
     mems = @team.team_memberships.pluck(:user_id)
-    redirect_to team_path(@team) if mems.length == 6
+    if mems.length == 6
+      redirect_to team_path(@team)
+      return
+    end
 
+    # get friends of friends
 
     mates = current_user.friends.pluck(:id)
 
@@ -58,32 +61,55 @@ class TeamMembershipsController < ApplicationController
     end
 
     friend_friends = friend_friends.flatten.uniq
+    make_team(friend_friends, mems)
 
-    friend_friends.first(6 - mems.length).each do |people|
-      TeamMembership.new(
-        user_id: people,
-        team_id: @team.id
-      )
-    end
+
+    #  get most endorsed that aren't your friends or your friends friends
 
     mems = @team.team_memberships.pluck(:user_id)
-    redirect_to team_path(@team) if mems.length == 6
+    if mems.length == 6
+      redirect_to team_path(@team)
+      return
+    end
 
     users = User.where(status: "online").pluck(:id)
 
     lvl1 =  users - mates
     lvl2 = lvl1 - friend_friends
 
-    lvl2.first(6 - mems.length).each do |people|
-      TeamMembership.new(
-        user_id: people,
-        team_id: @team.id
-      )
+    lvl3 = User.where(id: lvl2).joins(:user_reviews).where("user_reviews.endorse = ?", true).pluck(:id)
+
+    lvl3 = lvl3.flatten.uniq
+
+    make_team(lvl3, mems)
+
+    # get randoms
+
+    mems = @team.team_memberships.pluck(:user_id)
+    if mems.length == 6
+      redirect_to team_path(@team)
+      return
     end
+
+    last_resorts = lvl3 - mems
+
+    make_team(last_resorts, mems)
+
     redirect_to team_path(@team)
   end
 
   private
+
+  def make_team(mates, mems)
+    mates.first(6 - mems.length).each do |people|
+      next if people == current_user.id
+
+      TeamMembership.create(
+        user_id: people,
+        team_id: @team.id
+      )
+    end
+  end
 
   def team_params
     params.require(:team_membership).permit(:user_id, :team_id)
