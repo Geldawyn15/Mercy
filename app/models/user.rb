@@ -46,6 +46,12 @@ class User < ApplicationRecord
     profile.first.mainrole
   end
 
+  def profile_image(team)
+    mainrole = OverwatchImageScrapper.new.scrapping
+    mainrole_user = profile(team)
+    mainrole[mainrole_user]
+  end
+
   def shared_team_count(friend)
     teams.where(id: friend.teams.pluck(:id)).count
   end
