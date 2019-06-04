@@ -1,7 +1,17 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: %i[review]
+  before_action :set_team, only: %i[show review]
+
   def show
-    @team = Team.find(params[:id])
+    @mems = @team.users if @team
+    if @team == false
+      redirect_to user_path(current_user.id)
+    elsif @team.status == "pending"
+      redirect_to team_mates_path(@team.id)
+    elsif @team.status == "complete" || @team.status == "ingame"
+      redirect_to team_path(@team.id)
+    elsif @team.status == "over"
+      redirect_to team_review_path(@team.id)
+    end
   end
 
   def new
@@ -13,16 +23,10 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     if @team.save
       TeamMembership.create(mems_params(@team))
-      redirect_to mates_path
+      redirect_to team_mates_path(@team)
     else
       redirect_to new_team_path
     end
-  end
-
-  def mates
-    @user = current_user
-    @team = @user.teams.last
-    @friends = @user.friendships
   end
 
   def review
@@ -40,6 +44,10 @@ class TeamsController < ApplicationController
   end
 
   def set_team
-    @team = Team.find(params[:team_id])
+    if Team.pluck(:id).include? params[:team_id].to_i
+      @team = Team.find(params[:team_id])
+    else
+      @team = false
+    end
   end
 end

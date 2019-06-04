@@ -10,7 +10,6 @@
 
 <!-- IF THERE IS NO TEAM REVIEW FOR CURRENT USER AND CURRENT TEAM -->
   <% if @team.team_review_for(current_user) == [] %>
-    </div>
     <!-- LOOP UNTIL THERE IS STILL USER REVIEWS NEEDED FOR CURRENT USER -->
     <% loop do %>
       <% member = @team.user_review_needed(current_user).first %>
@@ -37,7 +36,7 @@
     <% end %>
 
 <!-- IF THERE IS A TEAM REVIEW FOR CURRENT USER AND CURRENT TEAM -->
-  <% else %>
+<!--   <% else %>
     <div class="already-submitted">
       <div class="already-submitted-text">
         <h1>You already submited you review on this team!</h1>
@@ -49,4 +48,6 @@
       </div>
     </div>
   <% end %>
+</div> -->
+
 </div>

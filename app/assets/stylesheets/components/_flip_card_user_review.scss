@@ -1,0 +1,48 @@
+.flip-card-user-review {
+  border: 1px solid red;
+  width: 180px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+
+  .faces {
+    border: 1px solid green;
+    flex-grow: 1;
+    position: relative;
+    perspective: 800px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+
+    &.flipped {
+      transform: rotateY( 180deg );
+    }
+  }
+
+  .faces div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .faces .front {
+    background: red;
+  }
+
+  .faces .back {
+    background: blue;
+    transform: rotateY( 180deg );
+  }
+}
+
+
+
+
+// .cardddd.flipped {
+//     -webkit-transform: rotateY( 180deg );
+//     -moz-transform: rotateY( 180deg );
+//     -o-transform: rotateY( 180deg );
+//     transform: rotateY( 180deg );
+// }
+// */

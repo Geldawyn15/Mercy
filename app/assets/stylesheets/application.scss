@@ -14,7 +14,7 @@
 
 
 body {
-  background-color: $black;
+  background-color: $dark-blue;
 }
 
 h1, h2, h3 {
@@ -25,24 +25,4 @@ h1, h2, h3 {
 p {
   font-family: $body-font;
   color: #A2A2A2;
-}
-
-.form-check {
-  input[type='checkbox'] + label {
-    padding: 8px 16px;
-    background-color: #141414;
-    transition: box-shadow .3s;
-    border-radius: 2px;
-    border: 1px solid #55CDC9;
-  }
-  input[type='checkbox']:checked + label {
-    padding: 8px 16px;
-    background-color: $light-green;
-    transition: box-shadow .3s;
-    border-radius: 2px;
-    border: 1px solid #55CDC9;
-  }
-  input[type='checkbox'] {
-    display: none;
-  }
 }
