@@ -2,19 +2,20 @@
   <h4>Enjoyed playing with <%= user.username %>?</h4>
   <div class="rating-card-content">
 
-    <div class="user-aka-mainrole">
-      <div>
+  <div class="user-aka-mainrole">
+      <div class="avatar-user">
         <%= image_tag user.image, :class => "avatar-rating-cards" %>
-        <p><%= user.username %></p>
       </div>
-      <p class="aka">aka</p>
-      <div>
-        <%= image_tag src="https://gamepedia.cursecdn.com/overwatch_gamepedia/thumb/5/59/Icon-McCree.png/150px-Icon-McCree.png", :class => "avatar-rating-cards" %>
-        <p><%= user.profile(team).capitalize %></p>
-      </div>
-    </div>
+  <div class="avatar-mainrole"> <%= image_tag src="https://cdn2.iconfinder.com/data/icons/overwatch-players-icons/512/Overwatch-512.png", :class => "avatar-rating-cards" %>
+  </div>
+        <!-- <p><%= user.profile(team).capitalize %></p> -->
+  </div>
+</div>
 
-   <div class="comments">
+    <!--       <p class="aka">aka</p> -->
+
+    <!--   <p><%= user.username %></p> -->
+<div class="comments">
     <% user_review = UserReview.new %>
       <%= simple_form_for [@team, user_review] do |f| %>
         <%= f.hidden_field :user_reviewed_id, :value => user.id %>
@@ -34,3 +35,4 @@
       <% end %>
   </div>
 </div>
+ --> -->

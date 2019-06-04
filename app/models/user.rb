@@ -57,7 +57,7 @@ class User < ApplicationRecord
       profile[0].mainrole
     else
       nil
-    end.compact
+    end
   end
 
   def age

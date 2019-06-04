@@ -1,20 +1,25 @@
+<div class="banner-review">
+  <div class="title-review">
+    <h1>THE GAME IS <strong><span class="pink-text">NOT OVER</span></strong></h1>
+    <p>Build a respectful community by reviewing your teammates</p>
+  </div>
+</div>
+
+
 <div class="container-review">
 
 <!-- IF THERE IS NO TEAM REVIEW FOR CURRENT USER AND CURRENT TEAM -->
   <% if @team.team_review_for(current_user) == [] %>
-    <div class="review-title">
-      <h1>The game is never over</h1>
     </div>
     <!-- LOOP UNTIL THERE IS STILL USER REVIEWS NEEDED FOR CURRENT USER -->
     <% loop do %>
       <% member = @team.user_review_needed(current_user).first %>
       <!-- IF THERE IS STILL MEMBERS NEEDING REVIEWS: SUBMIT USER REVIEW-->
       <% if !member.nil? %>
-        <h2>Rate your teammates</h2>
         <%= render 'shared/user_review_card', user: member, team: @team %>
       <!-- IF THERE IS NO MORE MEMBERS NEEDING REVIEWS: SUBMIT TEAM REVIEW -->
       <% elsif member.nil? %>
-        <h2>Rate your party</h2>
+
         <div class="rating-card team-review">
           <div class="team-rating">
             <div id="rater"></div>
