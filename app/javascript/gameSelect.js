@@ -1,4 +1,3 @@
-
 const gameSelect = () => {
   document.querySelector(".team_game").classList.add("hidden-rank");
 
