@@ -29,6 +29,7 @@ class TeamsController < ApplicationController
 
   def review
     @team_review = TeamReview.new
+    @user_review = UserReview.new
   end
 
   private
