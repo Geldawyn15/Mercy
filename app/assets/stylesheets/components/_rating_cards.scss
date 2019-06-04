@@ -4,6 +4,7 @@
   transition: 0.3s;
   color: white;
   margin: 0 auto;
+  margin-bottom: 60px;
   padding: 16px 32px;
   width: 80vw;
   text-align: center;
@@ -75,19 +76,17 @@ ul {
 .nok-button {
   position: relative;
   top: 60px;
-  right: 120px;
+  right: 140px;
   .form-check {
     input[type='checkbox'] + label {
-      padding: 0;
-      border: none;
+      padding: 0 4px;
       color: white;
     }
     input[type='checkbox']:checked + label {
-      padding: 0;
+      padding: 0 4px;
       background-color: $light-green;
       transition: box-shadow .3s;
       border-radius: 2px;
-      border: 1px solid #55CDC9;
     }
     input[type='checkbox'] {
       display: none;
@@ -99,7 +98,7 @@ ul {
   display: flex;
   align-self: center;
   position: relative;
-  top: -45px;
+  top: -50px;
   left: 120px;
   font-size: 14px;
   .fas {

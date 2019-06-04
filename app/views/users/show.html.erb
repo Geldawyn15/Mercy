@@ -6,7 +6,7 @@
 
 <div class="row-profil">
   <div class="column-profil">
-    <h2 class="section-title">RECENT GAME</h2>
+    <h2 class="section-title">RECENT GAME <span class="title-number"><%= @user.teams.count %></span></h2>
     <% @user.teams.each do |team| %>
       <div class="column-profil"><%= render 'shared/card_team', team: team %></div>
     <% end %>
@@ -15,8 +15,8 @@
 <div class="headerDivider"></div>
 
   <div class="column-profil">
-    <h2 class="section-title">TEAMMATES</h2>
-    <% @user.friends.each do |friend| %>
+    <h2 class="section-title">TEAMMATES <span class="title-number"><%= @user.friendships.uniq.count %></span> </h2>
+    <% @user.friends.uniq.each do |friend| %>
     <div class="column-profil"><%= render 'shared/card_friend', friend: friend %></div>
             <% end %>
   </div>

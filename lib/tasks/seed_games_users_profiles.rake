@@ -10,6 +10,10 @@ require 'nokogiri'
     puts 'destroying all previous datas'
     puts '-----------------------------'
 
+    Friendship.destroy_all
+    UserReview.destroy_all
+    TeamReview.destroy_all
+    TeamMembership.destroy_all
     Profile.destroy_all
     Team.destroy_all
     User.destroy_all
@@ -154,13 +158,13 @@ require 'nokogiri'
     profile_creation(bourbon_parameters)
 
     puts '-----------------------------'
-    puts 'CREATING 8 TEAMS FOR OVERWATCH'
+    puts 'CREATING 20 TEAMS FOR OVERWATCH'
     puts '-----------------------------'
 
-    8.times do
-      Team.create!(spirit: %w[casual competitive].sample, rank_scale: ow_rank.sample, game: overwatch, gender_choice: %w[girls guys mixed].sample)
+    20.times do
+      Team.create!(spirit: %w[casual competitive].sample, rank_scale: ow_rank.sample, game: overwatch, gender_choice: %w[girls guys mixed].sample, status: %w[pending pending pending complete ingame over].sample)
     end
 
-    puts '8 teams created'
+    puts '20 teams created'
   end
 end
