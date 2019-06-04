@@ -9,29 +9,16 @@
     <div class="front">
       <h5>Enjoyed playing with <%= user.username %>?</h5>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= render 'shared/flip_card_user_review', user: User.last %>
 
 
-      <div class="">
-        <% user_review = UserReview.new %>
-          <%= simple_form_for [@team, user_review] do |f| %>
-            <%= f.hidden_field :user_reviewed_id, :value => user.id %>
-            <div class="">
-              <%= f.input :add_friend, as: :boolean, boolean_style: :inline %>
-              <%= f.input :endorse, as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox" %>
-              <button class="fire">fire</button>
-              <%= f.input :nok, label: "Not really", as: :boolean, boolean_style: :inline, :class=>'hidden' "user-review_checkbox" %>
-            </div>
-          <%end%>
-      </div>
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 
       <!-- <button class="fire">fire</button> -->

@@ -20,7 +20,7 @@
 
 .homepage-title h1 {
   color: #fff;
-  font-family: agency-fb, sans-serif;
+  font-family: $headers-font;
   font-weight: 400;
   font-style: normal;
   opacity: 1;
@@ -33,5 +33,5 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   position: relative;
-  top: -3px; left: 40px;
+  top: -3px; left: 0px;
 }
