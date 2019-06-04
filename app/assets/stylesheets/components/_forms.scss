@@ -67,6 +67,12 @@
     display: none;
   }
 
+.gender-container {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
 .gender-container .form-check {
   text-align: center;
   display: inline-block;
