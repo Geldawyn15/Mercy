@@ -23,3 +23,64 @@
       border: none;
     }
 }
+
+// Form Style User Review //
+
+.form-check {
+  input[type='checkbox'] + label {
+    padding: 8px 16px;
+    background-color: #141414;
+    transition: box-shadow .3s;
+    border-radius: 2px;
+    border: 1px solid #55CDC9;
+  }
+  input[type='checkbox']:checked + label {
+    padding: 8px 16px;
+    background-color: $light-green;
+    transition: box-shadow .3s;
+    border-radius: 2px;
+    border: 1px solid #55CDC9;
+  }
+  input[type='checkbox'] {
+    display: none;
+  }
+}
+
+// Form Style Team New //
+
+  input[type='radio'] + label {
+    padding: 8px 16px;
+    background-color: #141414;
+    transition: box-shadow .3s;
+    border-radius: 2px;
+    border: 1px solid #55CDC9;
+    display: flex;
+      }
+  input[type='radio']:checked + label {
+    padding: 8px 16px;
+    background-color: $light-green;
+    transition: box-shadow .3s;
+    border-radius: 2px;
+    border: 1px solid #55CDC9;
+  }
+  input[type='radio'] {
+    display: none;
+  }
+
+.gender-container .form-check {
+  text-align: center;
+  display: inline-block;
+}
+
+.gender-container legend {
+  text-align: center;
+}
+
+.games-container .form-check {
+  text-align: center;
+  display: inline-block;
+}
+
+.games-container legend {
+  text-align: center;
+}

@@ -23,7 +23,7 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     if @team.save
       TeamMembership.create(mems_params(@team))
-      redirect_to mates_path
+      redirect_to team_mates_path(@team)
     else
       redirect_to new_team_path
     end
