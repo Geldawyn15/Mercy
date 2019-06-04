@@ -1,0 +1,75 @@
+.container-review {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    color: #55CDC9;
+    margin: 30px auto;
+  }
+
+
+  h4 {
+    color: white;
+    text-align: center;
+  }
+}
+
+.review-title {
+  margin: 120px auto 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 141414;
+  h1 {
+    background: linear-gradient(to right, #ff5858, #f857a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font: {
+      size: 32px;
+      family: $headers-font;
+    };
+  }
+}
+
+.team-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating-card.team {
+  height: 180px;
+}
+
+.already-submitted {
+  background-image: url(mercy.jpg);
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  h1 {
+    color: white;
+    font: {
+      size: 32px;
+      family: $headers-font;
+    };
+  }
+  p {
+    color: white;
+  }
+}
+
+.already-submitted-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

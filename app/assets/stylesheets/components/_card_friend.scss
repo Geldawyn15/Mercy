@@ -6,33 +6,18 @@
 }
 
 .card-friend-info {
+  background-color: #0E1427;
   height: 200px;
   width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
   align-items: center;
   text-align: center;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 48px 8px 0 8px;
-  h3 {
-    font-size: 16px;
-    color: orange;
-    margin-bottom: 0;
-  }
-  h4 {
-    font-size: 16px;
-    color: white;
-  }
-  p {
-    font-size: 12px;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-  fas {
-    font-size: 10px;
-  }
 }
 
 .friend-image {
@@ -42,5 +27,45 @@
   border-radius: 50%;
   position: relative;
   top: 50px;
-  border: 1px solid $orange;
+
+}
+
+.friend-ingame {
+  border: 1.5px solid $orange;
+}
+.friend-online {
+  border: 1.5px solid #52B581;
+}
+.friend-away {
+ border: 1.5px solid $red;
+}
+
+
+
+.ingame {
+  font-size: 18px;
+  border-radius: 50%;
+  color: $orange;
+  z-index: 23;
+  position: relative;
+  top: 35px;
+  left: 25px;
+}
+
+.online {
+  font-size: 18px;
+  color: #52B581;
+  z-index: 23;
+  position: relative;
+  top: 35px;
+  left: 25px;
+}
+
+.away {
+  font-size: 18px;
+  color: $red;
+  z-index: 23;
+  position: relative;
+  top: 35px;
+  left: 25px;
 }

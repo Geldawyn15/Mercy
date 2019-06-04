@@ -2,12 +2,14 @@
 <% degs = ["deg0", "deg45", "deg135", "deg180", "deg225", "deg315"] %>
  <ul id="team" class='circle-container'>
 
+
     <% 6.times do |index| %>
       <% if @mems[index] %>
         <% mem = @mems[index] %>
         <li id="<%= mem.user.id %>" class="<%= degs[index] %> tool <%= "owner" if index == 0 %> <%=  "mate" if index > 0 %> "><img class="avatar-large" alt="avatar-large" src="<%= mem.user.image %>"/><span class="tooltiptext"><%= mem.user.username %></span></li>
       <% else %>
         <li class="<%= degs[index] %> empty"><img class="avatar-large" alt="avatar-large" src="  https://via.placeholder.com/64" /></li>
+
 
       <% end %>
     <% end %>

@@ -1,0 +1,34 @@
+<div class="profile-box">
+  <div class="user-image">
+    <%= image_tag @user.image, class:"avatar-xlarge" %>
+  </div>
+  <div class="user-tagname">
+    <h2><%= @user.username %><br></h2>
+      <h6>Only Pokemon matter</h6>
+  </div>
+  <div class="about-me">
+    <p>About me: <br>Age: 28 <br>Location: Montreal, Canada</p>
+  </div>
+  <div class="user-mercy-stats">
+    <% if @user.user_reviews != [] %>
+      <p class="user-endorsement">
+        <i class="fas fa-thumbs-up"></i>
+        <span class="stats-number"> <%= UserReview.where(user_id: @user.id, endorse: true).count %></span>
+        </br>NUMBER OF </br>ENDORSEMENTS </br>
+      </p>
+      <p class="user-as-friends">
+        <i class="fas fa-heart"></i>
+         <span class="stats-number"> <%= UserReview.where(user_id: @user.id, add_friend: true).count %> </span>
+        </br>ADDED </br>AS FRIEND </br>
+      </p>
+      <p class="user-endorsement">
+        <i class="fas fa-smile-beam"></i>
+         <span class="stats-number"> <%= (UserReview.where(user_id: @user.id, endorse: true).count / UserReview.where(user_id: @user.id).count)*100 %>% </span>
+        </br>POSITIVE </br>REVIEWS </br>
+      </p>
+    <% end %>
+  </div>
+  <%= link_to user_path(@user.id), class:'more-info button-green' do %>
+    friend <i class="fas fa-plus">  </i>
+  <% end %>
+</div>

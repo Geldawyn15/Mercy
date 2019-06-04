@@ -1,12 +1,25 @@
 class Team < ApplicationRecord
-  has_many :team_memberships
-  has_many :team_reviews, dependent: :destroy
+  has_many :team_memberships, dependent: :destroy
+  has_many :team_reviews
+  has_many :user_reviews
   has_many :users, through: :team_memberships
   belongs_to :game
 
   validates :spirit, :rank_scale, presence: true
   validates :status, inclusion: { in: %w[pending complete ingame over],
                                   message: "Status should be either 'pending' or 'complete'or ingame' or 'over'" }
+
+  def user_review_needed(current_user)
+    users.map do |member|
+      if member.id == current_user.id
+        nil
+      elsif UserReview.where(team_id: self.id, user_reviewed: member, user: current_user).any?
+        nil
+      else
+        member
+      end
+    end.compact
+  end
 
   def average_rating
     unless team_reviews.count.zero?
@@ -19,7 +32,7 @@ class Team < ApplicationRecord
   end
 
   def complete_reviews?
-    team_reviews.count != 6
+    team_reviews.count == 6
   end
 
   def pending_reviews?

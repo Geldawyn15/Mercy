@@ -1,0 +1,69 @@
+.profile-box {
+  background-color: #0F162B;
+  width: 400px;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 30px;
+  border-radius: 0% 0% 10% 10%;
+  border-top: 2px solid $light-green;
+  box-shadow: 0px 0px 34px 2px rgba(85,205,201,0.62);
+  text-align: center;
+
+  h2 {
+    color: $light-green;
+    font-family: agency-fb, sans-serif;
+  }
+
+}
+
+.profile-box .user-image {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -80px;
+
+  img {
+    border: 2px solid $light-green;
+  }
+}
+
+
+.profile-box .about-me p {
+  color: $white;
+}
+
+.user-mercy-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+
+  p {
+    font-size: 8px;
+    font: $body-font;
+    color: white;
+    .fas {
+      font-size: 24px;
+      color: $light-green;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+
+.stats-number {
+  font-size: 20px;
+  font-family: $body-font;
+  margin-left: 6px;
+}
+
+
+.profile-box .more-info {
+  position: absolute;
+  bottom: -20px;
+}
+

@@ -4,17 +4,21 @@ class UserReviewsController < ApplicationController
   end
 
   def create
+    set_team
     @review = UserReview.new(review_params)
-    if @review.save!
-      redirect_to redirect_to users_path(@users.id)
-    else
-      render :new
-    end
+    @review.user_id = current_user.id
+    @review.team_id = @team.id
+    @review.save!
+    redirect_to team_review_path(@team.id)
   end
 
   private
 
   def review_params
-    params.require(:user_reviews).permit(:user, :endorse, :add_friend, :nok, :nok_positiveness, :nok_respect, :nok_helpfulness, :nok_communication)
+    params.require(:user_review).permit(:user, :user_reviewed_id, :endorse, :add_friend, :nok)
+  end
+
+  def set_team
+    @team = Team.find(params[:team_id])
   end
 end
