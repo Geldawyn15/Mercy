@@ -7,8 +7,6 @@ class TeamsController < ApplicationController
       redirect_to user_path(current_user.id)
     elsif @team.status == "pending"
       redirect_to team_mates_path(@team.id)
-    elsif @team.status == "complete" || @team.status == "ingame"
-      redirect_to team_path(@team.id)
     elsif @team.status == "over"
       redirect_to team_review_path(@team.id)
     end
@@ -46,6 +44,8 @@ class TeamsController < ApplicationController
   def set_team
     if Team.pluck(:id).include? params[:team_id].to_i
       @team = Team.find(params[:team_id])
+    elsif Team.pluck(:id).include? params[:id].to_i
+      @team = Team.find(params[:id])
     else
       @team = false
     end
