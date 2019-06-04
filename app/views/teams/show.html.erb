@@ -4,14 +4,14 @@
   <% if @team.status == "complete" %>
       <h1> Team is Ready to Go ! </h1>
       <div>
-      <%= redirect_to 'shared/circle_container', mems: @team.users %>
+      <%= render 'shared/circle_container', mems: @team.users %>
       </div>
       <%= link_to "Launch game", team_path(@team.id), class: "button1" %>
       <!-- TEAM INGAME -->
   <% elsif @team.status == "ingame" %>
     <h1> Players are ingame </h1>
     <div>
-    <%= redirect_to 'shared/circle_container', mems: @team.users %>
+    <%= render 'shared/circle_container', mems: @team.users %>
     </div>
     <%= link_to "Game is finished", team_path(@team.id), class: "button1" %>
   <% end %>
