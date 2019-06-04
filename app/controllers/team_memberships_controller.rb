@@ -3,16 +3,21 @@ class TeamMembershipsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[ create delete]
 
   def mates
+    redirect_to team_path(@team) if @team.status == "complete"
+
     @user = current_user
-    friends = @user.friends
-    @mems = @team.team_memberships
+    friends = @user.friends.where(status: "online")
+    mems = @team.team_memberships.pluck(:user_id)
+    @mems = User.where(id: mems)
+
     indexes = []
     friends.each do |friend|
       @mems.each do |mem|
-        indexes << friend.id if friend.id == mem.user_id
+        indexes << friend.id if friend.id == mem.id
       end
     end
-    @friends = @user.friends.where.not(id: indexes)
+    temp = @user.friends.where.not(id: indexes)
+    @friends = @user.friends.where(id: temp, status: "online").order(username: :asc)
   end
 
   def create
@@ -90,6 +95,8 @@ class TeamMembershipsController < ApplicationController
     if not_full(mems)
       head :bad_request
     else
+      @team.status = "complete"
+      @team.save!
       head :ok
     end
   end
