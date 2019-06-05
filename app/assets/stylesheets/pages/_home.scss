@@ -3,7 +3,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  padding: 30px;
+  padding: 20px;
 }
 
 #features {
@@ -31,4 +31,28 @@
     width: 100%;
     padding-top: 64%;
     padding-left: 105%
+}
+
+#features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .site-stats-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .fas, {
+    color: $light-green;
+    font-size: 46px;
+  }
+  .site-stats {
+    color: $white;
+    font-size: 46px;
+  }
+  .site-stats-label {
+    color: $light-green;
+    font-size: 24px;
+  }
 }
