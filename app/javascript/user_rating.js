@@ -4,6 +4,21 @@ const nokCheckbox = () => {
 
   const flipcardInputs = document.querySelectorAll('.flipcard:not(.flipcard-team) input[type=checkbox]')
 
+  const leaveComment = document.querySelector(".leave-comment")
+  const teamBackArrow = document.querySelector("#team-flip")
+
+  leaveComment.addEventListener('click', event => {
+    console.log("je suis dans comment")
+    const input = event.currentTarget
+    const flippedCard = input.closest('.flipcard')
+    flippedCard.classList.add('flipped')
+  })
+
+  teamBackArrow.addEventListener('click', event => {
+    console.log("je suis dans back arrow")
+    document.querySelector(".flipcard-team").classList.remove('flipped')
+  })
+
   const inputClicked = (event) => {
     const input = event.currentTarget
     const flippedCard = input.closest('.flipcard')
@@ -15,7 +30,6 @@ const nokCheckbox = () => {
     const nokHelp = flippedCard.querySelector(".nok_helpfulness")
     const nokRespect = flippedCard.querySelector(".nok_respect")
     const backArrow = flippedCard.querySelector(".fas.fa-undo-alt")
-    const leaveComment = document.querySelector(".leave-comment")
     // console.log(event.currentTarget)
     // console.log(flippedCard)
     // console.log(event.currentTarget)
@@ -28,13 +42,13 @@ const nokCheckbox = () => {
     // console.log(nokHelp)
     // console.log(nokRespect)
     // console.log(backArrow)
-    console.log(leaveComment)
+
 
     backArrow.addEventListener('click', event => {
-    console.log("je suis dans back arrow")
-    console.log(flippedCard)
-    flippedCard.classList.remove('flipped')
-  })
+      console.log("je suis dans back arrow")
+      console.log(flippedCard)
+      flippedCard.classList.remove('flipped')
+    })
 
       if (input.classList.contains('add_friend')) {
         if(addFriend.checked) {
@@ -57,7 +71,7 @@ const nokCheckbox = () => {
 
     flipcardInputs.forEach((flipcardInput) => {
       flipcardInput.addEventListener('change', inputClicked)
-  })
+    })
 
   nok.addEventListener('change',event => {
     if(nok.checked) {
@@ -93,10 +107,7 @@ addFriend.addEventListener('change',event => {
     }
   })
 
-leaveComment.addEventListener('click', event => {
-    console.log("je suis dans comment")
-    flippedCard.classList.add('flipped')
-  })
+
 
 }
 
