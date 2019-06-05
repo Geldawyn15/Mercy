@@ -30,8 +30,6 @@ class TeamsController < ApplicationController
   def review
     @team_review = TeamReview.new
     @user_review = UserReview.new
-    @ov = OverwatchCharacterScrapper.new
-    @ov_img = @ov.scrapping2
   end
 
   private
