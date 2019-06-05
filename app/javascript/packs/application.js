@@ -28,5 +28,3 @@ if(window.location.href.indexOf("/mates") > -1){
 if(window.location.href.indexOf("/loading") > -1){
   loading();
 }
-
-
