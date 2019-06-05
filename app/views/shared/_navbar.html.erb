@@ -34,7 +34,7 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "", :class=>"toto" %>
+      <%= image_tag "logo_Mercyv2.png", :class=>"toto",width: "30",  height: "30" %>
     <% end %>
 
 
@@ -83,15 +83,18 @@
     </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a data-toggle="modal" data-target="#exampleModal">Log in</a>
+      <ul id="user-op" class="navbar-nav mr-auto">
+        <div class="jototo">
+          <li class="nav-item active">
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Log in</a>
+          </li class="nav-item active">
+          <li class="nav-item active">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </li>
+        </div>
 
-        </li>
-        <p>|</p>
-        <li class="nav-item active">
-          <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-        </li>
+
+
 
         <li class="dropdown d-none d-sm-block">
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
