@@ -11,14 +11,12 @@
   </head>
   <body>
 
-
-    <%= render 'shared/flip_card_user_review', user: User.last %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
 
-    <%= render'shared/footer' %>
+
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

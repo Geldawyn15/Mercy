@@ -1,0 +1,129 @@
+// VERSION USER REVIEW - FLIPCARD BANNER + AVATAR
+
+.flipcard-banner {
+  position: absolute;
+  .team-banner-review {
+    width: 300px;
+    height: 100px;
+  }
+  .friend-image {
+    border: 1px solid $light-green;
+    position: relative;
+    left: 100px;
+  }
+}
+
+// VERSION TEAM REVIEW - FLIPCARD BANNER
+
+.flipcard-banner {
+  background-image: url('https://imgnooz.com/sites/default/files/wallpaper/games/59186/overwatch-female-heroes-wallpapers-59186-8821788.jpg');
+  background-size: 100%;
+  background-position: bottom 115px;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+}
+
+// FLIPCARDS
+
+.flipcard {
+    margin: 16px;
+    width: 300px;
+    height: 450px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid $light-green;
+    box-shadow: 0 0 10px $light-green;
+    perspective: 800px;
+    .friend-image {
+      top: -50px;
+    }
+    .new_user_review {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+.flipcard-inner {
+  background-color: $dark-blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 100px;
+  width: 258px;
+  height: 348px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  .form-check {
+    input[type='checkbox'] + label {
+      padding: 8px 16px;
+      background-color: $dark-blue;
+      transition: box-shadow .3s;
+      border-radius: 2px;
+      border: 1px solid $light-green;
+    }
+    input[type='checkbox']:checked + label {
+      padding: 8px 16px;
+      background-color: $light-green;
+      color: white;
+      transition: box-shadow .3s;
+      border-radius: 2px;
+      border: 1px solid #55CDC9;
+    }
+    input[type='checkbox'] {
+      display: none;
+    }
+  }
+}
+
+.flipcard:hover .flipcard-inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  font-size: small;
+  text-align: center;
+  position: absolute;
+  width: 258px;
+  height: 348px;
+  backface-visibility: hidden;
+  h2 {
+    font-family: $fancy-font;
+    color: $light-green;
+    padding-bottom: 12px;
+    padding-top: 50px;
+  }
+}
+
+.front {
+  background-color: $dark-blue;
+}
+
+.back {
+  background-color: $dark-blue;
+  transform: rotateY(180deg);
+}
+
+.nok-comments {
+  input[type='checkbox'] + label {
+    margin: -2px;
+  }
+  input[type='checkbox']:checked + label {
+    margin: -2px;
+  }
+}
+
+// TEAM REVIEW COLOR THEME
+
+.flipcard-team {
+  border: 1px solid $pink;
+  box-shadow: 0 0 10px $pink;
+  h2 {
+    color: $pink;
+  }
+}

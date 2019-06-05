@@ -1,8 +1,36 @@
-<div class="banner-review">
-  <div class="title-review">
-    <h1>THE GAME IS <strong><span class="pink-text">NOT OVER</span></strong></h1>
-    <p>Build a respectful community by reviewing your teammates</p>
+<% if @team.team_review_for(current_user) != [] %>
+  <div class="banner-review">
+    <div class="title-review">
+      <h1>THE GAME IS <strong><span class="pink-text">NOT OVER</span></strong></h1>
+      <p>Build a respectful community by reviewing your teammates</p>
+    </div>
   </div>
-</div>
+
+  <div class="container rating-card-wrapper">
+    <div class="row">
+      <% @team.users.each do |member| %>
+        <% if member.id != current_user.id %>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <%= render 'shared/flip_card_user_review', user: member, team: @team, user_review: @user_review %>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <%= render 'shared/flip_card_team_review', team: @team, team_review: @team_review, ov_img: @ov_img %>
+      </div>
+    </div>
+  </div>
 
 
+<% else %>
+  <div class="already-submitted">
+    <div class="already-submitted-text">
+      <h1>You already submited you review on this team!</h1>
+      <p>(thanks)</p>
+    </div>
+    <div>
+      <%= link_to "My profile",  user_path(current_user.id), class:"button-green"%>
+      <%= link_to "Find a team",  new_team_path, class:"button-green"%>
+    </div>
+  </div>
+<% end %>
