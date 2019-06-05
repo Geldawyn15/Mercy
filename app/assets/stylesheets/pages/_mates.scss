@@ -1,16 +1,44 @@
 .container-mates{
-  display: flex;
-  margin: 60px auto;
-  width: 100%;
-  flex-grow: 1;
+  display: grid;
+  min-height: calc(100vh - 66px);
+  margin-top: 66px;
+  grid-template-columns: 1fr 2fr 300px;
+  /* margin: 60px auto; */
+  /* width: 100%; */
+  /* flex-grow: 1; */
+  /* position: absolute; */
 }
 
 // TEAM CIRCLE
 
 .team-circle {
-  width: 80%;
   text-align: center;
-  padding: 16px;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  h1 {
+    font-family: $fancy-font;
+    text-align: center;
+    font-size: 54px;
+    color: $dark-pink;
+  }
+}
+
+.lobby-name h1 {
+  font-family: $fancy-font;
+  color: $light-green;
+}
+
+.button1 {
+  display: initial;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  height: unset;
 }
 
 .team-circle2 {
@@ -22,11 +50,18 @@
 // FRIEND BAR
 
 .friend-bar {
-  margin-top: 0;
-  width: 20%;
+  width: 300px;
+  background-color: rgba(250, 249, 249, 0.5);
+  /* margin-top: 22px; */
 }
+
 .friend-list {
   padding: 16px;
+
+  h2 {
+    font-family: $fancy-font;
+    text-align: center;
+  }
 }
 
 ul.friend-list {
@@ -36,7 +71,6 @@ ul.friend-list {
 .friend {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 8px;
   .friend-ingame {
     border: 1.5px solid $orange;
@@ -56,8 +90,14 @@ ul.friend-list {
 }
 
 .friend-info {
+  font-color: $black;
+  font-family: $fancy-font;
   width: 140px;
-  p {
+
+  #friend-username {
+    font-size: x-large;
+    font-family: $fancy-font;
+    font-weight: bold;
     margin: 0;
   }
 }
@@ -102,4 +142,33 @@ ul.friend-list {
 .tool:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+ // background
+.hero-detail-background.is-active, .hero-detail-overview.is-active, .hero-detail-video.is-active {
+  display: block;
+  opacity: 0.8;
+}
+
+.hero-detail-background, .hero-detail-overview, .hero-detail-video {
+  display: none;
+}
+.video-background-wrapper {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+*, :after, :before {
+  box-sizing: inherit;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  vertical-align: inherit;
+  white-space: inherit;
+  text-overflow: inherit;
+  text-shadow: inherit;
 }

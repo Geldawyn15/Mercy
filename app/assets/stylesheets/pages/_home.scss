@@ -9,5 +9,26 @@
 #features {
   height: 30vh;
   width: 100%;
+  padding: 40px;
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('lol-jinx.jpg');
+  opacity: 0.2px;
+}
+
+.ar-4_3:before, .aspect-ratio-4_3:before {
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: 75%;
+    background-image: url('https://actualitesjeuxvideo.fr/wp-content/uploads/2018/12/Tendances-gaming-Jeux-Vid%C3%A9o-2019-eSport-e1544785941624.jpg');
+    background-repeat: no-repeat;
+    padding-left: 105%;
+    margin-left: 5%;
+}
+
+.ar-4_3:before, .aspect-ratio-4_3:before {
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: 64%;
+    padding-left: 105%
 }

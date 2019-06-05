@@ -23,7 +23,6 @@
   box-shadow: 0px 1px 5px 1px  rgba(226, 30, 228, 1);
   height: 40px;
   text-align: center;
-  // display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 60px;
@@ -53,7 +52,7 @@
 }
 
 .nav-item {
-  color: #FFCD00;
+  color: $white;
   width: 100px;
 }
 

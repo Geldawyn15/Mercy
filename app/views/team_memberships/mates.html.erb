@@ -1,10 +1,14 @@
-<div class="container">
+<<<<<<< HEAD
+<div class="container-mates">
+    <div class="team-circle">
+      <%= render 'shared/circle_container', mems: @mems %>
+      <%= link_to "Complete the team", team_random_mates_path, class: "button1" %>
 
-  <div class="team-circle">
-    <h1> Create Your Team </h1>
-    <%= render 'shared/circle_container', mems: @mems %>
-    <%= link_to "Complete the team", team_loading_path, class: "button1" %>
-  </div>
+    </div>
+<!--
+  <div class="lobby-name">
+    <h1><%= @user.username %><br>Main character D.va</h1>
+  </div> -->
 
   <div class="friend-bar">
     <ul class="friend-list">
@@ -19,13 +23,20 @@
           <i class="fas fa-circle <%= friend.status %>"></i>
           </div>
           <div class="friend-info">
-            <p><%= friend.username %></p>
-            <p>aka. <%= friend.profile(@team).capitalize %></p>
+            <p id="friend-username">
+              <%= friend.username %></p>
+            <p id="main-character">main hero <%= friend.profile(@team).capitalize %></p>
           </div>
         </li>
       <% end %>
     </ul>
   </div>
+
 </div>
 
-
+<div class="hero-detail-video video-background-wrapper is-active m-blend">
+  <video class="video-background-vid m-fit-width m-right-align" autoplay="" loop="" muted="">
+    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/dva/idle-video.webm" type="video/webm">
+      <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/dva/idle-video.mp4" type="video/mp4">
+  </video>
+</div>
