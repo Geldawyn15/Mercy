@@ -1,11 +1,10 @@
 require 'open-uri'
 require 'nokogiri'
 
-  namespace :db  do
+namespace :db do
   desc 'it launches the seeds for games, users, profiles and teams'
 
   task :seed1 do
-
     puts '-----------------------------'
     puts 'destroying all previous datas'
     puts '-----------------------------'
@@ -34,7 +33,6 @@ require 'nokogiri'
     csgo = Game.create!(name: 'CS:Go', rank_typology: csgo_rank, players_quantity: 5, roles: csgo_roles)
 
     puts 'CS:Go Game created'
-
 
     # Parsing for lol roles
     url_lol_role = 'https://leagueoflegends.fandom.com/wiki/List_of_champions/Position'
@@ -93,10 +91,73 @@ require 'nokogiri'
     kyo = User.create!(username: 'Kyo', email: 'kyo@gmail.com', password:'mercy4all', discord_id:'Kyo#8128', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/1061631/profile/YGERHLET_avatar_medium_square.jpg', gender: 'female', status: 'away')
     puts "#{User.last.username} created"
 
-    yunyun = User.create!(username: 'YunYun', email: 'yunyun@gmail.com', password:'mercy4all', discord_id:'YunYun#9321', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://elnuevosol.net/wp-content/uploads/2018/12/Jessica-Wells-483x500.png', gender: 'female', status: 'online')
+    bourbon = User.create!(username: 'Bourbon', email: 'Jonaschancelier@gmail.com', discord_id:'Bourbon kid*#6910', password:'mercy4all', birthdate:'02/02/1993', langage: 'en', location: 'eu', image: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/36/36362efcd22d2845be1bc5c0edc38cddd14674cb_full.jpg', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
-    bourbon = User.create!(username: 'Bourbon', email: 'Jonaschancelier@gmail.com', discord_id:'Bourbon kid*#6910', password:'mercy4all', birthdate:'02/02/1993', langage: 'en', location: 'eu', image: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/36/36362efcd22d2845be1bc5c0edc38cddd14674cb_full.jpg', gender: 'male', status: 'online')
+    yunyun = User.create!(username: 'YunYun', email: 'yunyun@gmail.com', password:'mercy4all', discord_id:'YunYun#9321', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/54908/profile/VCINVZWI_avatar_medium_square.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    lolonai = User.create!(username: 'Lolonai', email: 'Lolonai@gmail.com', discord_id:'Lolonai#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/337243/profile/JGBHFEBN_avatar_medium_square.jpg', gender: 'male', status: 'online')
+    puts "#{User.last.username} created"
+
+    pengorof = User.create!(username: 'Pengorof', email: 'Pengorof@gmail.com', discord_id:'Pengorof#4648', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/764397/profile/GFWWYHLL_avatar_medium_square.jpg', gender: 'male', status: 'online')
+    puts "#{User.last.username} created"
+
+    taeola = User.create!(username: 'Taeola', email: 'Taeola@gmail.com', discord_id:'Taeola#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://d38we5ntdyxyje.cloudfront.net/809160/profile/PBCEJDGZ_avatar_medium_square.jpg', gender: 'male', status: 'online')
+    puts "#{User.last.username} created"
+
+    whipthan = User.create!(username: 'whipthan', email: 'whipthan@gmail.com', discord_id:'whipthan#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://thehustlecommunity.com/wp-content/uploads/2016/03/Jason-Avatar-Square-300x300.jpg', gender: 'male', status: 'online')
+    puts "#{User.last.username} created"
+
+    sneax = User.create!(username: 'SneaX', email: 'SneaX@gmail.com', discord_id:'SneaX#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://cdn2.stylecraze.com/wp-content/uploads/2012/06/50-Top-Hairstyles-For-Square-Faces37.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    kayozz = User.create!(username: 'KaYoZz', email: 'KaYoZz@gmail.com', discord_id:'KaYoZz#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://media.creativemornings.com/uploads/user/avatar/470117/Peter_Portrait_square_medium_res.jpeg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    dragonix = User.create!(username: 'Dragonix', email: 'Dragonix@gmail.com', discord_id:'Dragonix#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://cdn2.stylecraze.com/wp-content/uploads/2012/06/50-Top-Hairstyles-For-Square-Faces44.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    synix = User.create!(username: 'Synix', email: 'Synix@gmail.com', discord_id:'Synix#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.apetogentleman.com/wp-content/uploads/2018/07/Oval-1160x1067.png', gender: 'male', status: 'online')
+    puts "#{User.last.username} created"
+
+    drazox = User.create!(username: 'Drazox', email: 'Drazox@gmail.com', discord_id:'Drazox#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.apetogentleman.com/wp-content/uploads/2018/07/Round-1160x1067.png', gender: 'male', status: 'online')
+    puts "#{User.last.username} created"
+
+    heatzy = User.create!(username: 'Heatzy', email: 'Heatzy@gmail.com', discord_id:'Heatzy#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://d38we5ntdyxyje.cloudfront.net/820650/profile/IEKRIPNI_avatar_medium_square.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    zodiack = User.create!(username: 'Zodiack', email: 'Zodiack@gmail.com', discord_id:'Zodiack#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.apetogentleman.com/wp-content/uploads/2018/07/Square-1160x1067.png', gender: 'male', status: 'online')
+    puts "#{User.last.username} created"
+
+    kaos = User.create!(username: 'kaos', email: 'kaos@gmail.com', discord_id:'kaos#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://i.pinimg.com/236x/0c/9a/0e/0c9a0ecb677c68b62e62ae5885e455da.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    omega = User.create!(username: 'Omega', email: 'Omega@gmail.com', discord_id:'Omega#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/1056572/profile/SPXPVHKZ_avatar_medium_square.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    zaria = User.create!(username: 'Zaria', email: 'Zaria@gmail.com', discord_id:'Zaria#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://cdn2.stylecraze.com/wp-content/uploads/2012/06/50-Top-Hairstyles-For-Square-Faces41.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    gail = User.create!(username: 'Gail', email: 'Gail@gmail.com', discord_id:'Gail#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://images.zapnito.com/users/200472/avatar/medium_Profile_Square.jpeg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    uma = User.create!(username: 'uma', email: 'uma@gmail.com', discord_id:'uma#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://220057-669498-1-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/avatar_medium_square.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    edna = User.create!(username: 'Edna', email: 'Edna@gmail.com', discord_id:'Edna#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://image.shutterstock.com/image-vector/avatar-girl-hairstyle-6-260nw-1104755567.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    faith = User.create!(username: 'Faith', email: 'Faith@gmail.com', discord_id:'Faith#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaKejvjIA5icjkrLeq_HeoFPPabGwGazDyL-ZvyCBtignOYtoh', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    ruby = User.create!(username: 'Ruby', email: 'Ruby@gmail.com', discord_id:'Ruby#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://png.pngtree.com/element_origin_min_pic/16/07/09/205780ec4db0476.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    quinn = User.create!(username: 'quinn', email: 'quinn@gmail.com', discord_id:'quinn#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://png.pngtree.com/element_origin_min_pic/16/07/10/2057823b91baad3.jpg', gender: 'female', status: 'online')
+    puts "#{User.last.username} created"
+
+    okami = User.create!(username: 'Okami', email: 'Okami@gmail.com', discord_id:'Okami#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS1Yqm0QIEk_QIaYFwTUrPqBL6hlYXVVcDVhdiSeSfeVc7Hzjk', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
     puts '-----------------------------'
@@ -156,6 +217,69 @@ require 'nokogiri'
 
     bourbon_parameters = { user: bourbon, launcher_tag: '21332', platform: 'pc', mainrole: 'dVa', game: overwatch }
     profile_creation(bourbon_parameters)
+
+    lolonai_parameters = { user: lolonai, launcher_tag: '28456', platform: 'pc', mainrole: "mei", game: overwatch }
+    profile_creation(lolonai_parameters)
+
+    pengorof_parameters = { user: pengorof, launcher_tag: '8156', platform: 'pc', mainrole: "tracer", game: overwatch }
+    profile_creation(pengorof_parameters)
+
+    taeola_parameters = { user: taeola, launcher_tag: '28456', platform: 'pc', mainrole: "reinhardt", game: overwatch }
+    profile_creation(taeola_parameters)
+
+    whipthan_parameters = { user: whipthan, launcher_tag: '28456', platform: 'pc', mainrole: "moira", game: overwatch }
+    profile_creation(whipthan_parameters)
+
+    sneax_parameters = { user: sneax, launcher_tag: '28456', platform: 'pc', mainrole: "ana", game: overwatch }
+    profile_creation(sneax_parameters)
+
+    kayozz_parameters = { user: kayozz, launcher_tag: '28456', platform: 'pc', mainrole: "brigitte", game: overwatch }
+    profile_creation(kayozz_parameters)
+
+    dragonix_parameters = { user: dragonix, launcher_tag: '28456', platform: 'pc', mainrole: "tracer", game: overwatch }
+    profile_creation(dragonix_parameters)
+
+    synix_parameters = { user: synix, launcher_tag: '28456', platform: 'pc', mainrole: "reaper", game: overwatch }
+    profile_creation(synix_parameters)
+
+    drazox_parameters = { user: drazox, launcher_tag: '28456', platform: 'pc', mainrole: "widowmaker", game: overwatch }
+    profile_creation(drazox_parameters)
+
+    heatzy_parameters = { user: heatzy, launcher_tag: '28456', platform: 'pc', mainrole: "ashe", game: overwatch }
+    profile_creation(heatzy_parameters)
+
+    zodiack_parameters = { user: zodiack, launcher_tag: '28456', platform: 'pc', mainrole: "lúcio", game: overwatch }
+    profile_creation(zodiack_parameters)
+
+    kaos_parameters = { user: kaos, launcher_tag: '28456', platform: 'pc', mainrole: "bastion", game: overwatch }
+    profile_creation(kaos_parameters)
+
+    omega_parameters = { user: omega, launcher_tag: '28456', platform: 'pc', mainrole: "baptiste", game: overwatch }
+    profile_creation(omega_parameters)
+
+    zaria_parameters = { user: zaria, launcher_tag: '28456', platform: 'pc', mainrole: "zarya", game: overwatch }
+    profile_creation(zaria_parameters)
+
+    gail_parameters = { user: gail, launcher_tag: '28456', platform: 'pc', mainrole: "orisa", game: overwatch }
+    profile_creation(gail_parameters)
+
+    uma_parameters = { user: uma, launcher_tag: '28456', platform: 'pc', mainrole: "roadhog", game: overwatch }
+    profile_creation(uma_parameters)
+
+    edna_parameters = { user: edna, launcher_tag: '28456', platform: 'pc', mainrole: "torbjörn", game: overwatch }
+    profile_creation(edna_parameters)
+
+    faith_parameters = { user: faith, launcher_tag: '28456', platform: 'pc', mainrole: "symmetra", game: overwatch }
+    profile_creation(faith_parameters)
+
+    ruby_parameters = { user: ruby, launcher_tag: '28456', platform: 'pc', mainrole: "hanzo", game: overwatch }
+    profile_creation(ruby_parameters)
+
+    quinn_parameters = { user: quinn, launcher_tag: '28456', platform: 'pc', mainrole: "winston", game: overwatch }
+    profile_creation(quinn_parameters)
+
+    okami_parameters = { user: okami, launcher_tag: '28456', platform: 'pc', mainrole: "pharah", game: overwatch }
+    profile_creation(okami_parameters)
 
     puts '-----------------------------'
     puts 'CREATING 20 TEAMS FOR OVERWATCH'
