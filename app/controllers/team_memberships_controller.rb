@@ -1,5 +1,5 @@
 class TeamMembershipsController < ApplicationController
-  before_action :set_team, only: %i[mates create random_mates]
+  before_action :set_team, only: %i[mates create loading]
   skip_before_action :verify_authenticity_token, only: %i[ create delete]
 
   def mates
@@ -47,71 +47,68 @@ class TeamMembershipsController < ApplicationController
     end
   end
 
-  def random_mates
+  def not_full(mems)
+    return true if mems.length != 6
+  end
+
+  def loading
     mems = @team.team_memberships.pluck(:user_id)
-    if mems.length == 6
-      @team.status = "complete"
-      @team.save!
-      redirect_to team_path(@team)
-      return
-    end
 
     # get friends of friends
+    if not_full(mems)
+      mates = current_user.friends.pluck(:id)
 
-    mates = current_user.friends.pluck(:id)
+      friend_friends = []
 
-    friend_friends = []
+      mates.each do |friend|
+        user = User.find(friend)
+        friend_friends << user.friends.where.not(id: mates).pluck(:id)
+      end
 
-    mates.each do |friend|
-      user = User.find(friend)
-      friend_friends << user.friends.where.not(id: mates).pluck(:id)
+      friend_friends = friend_friends.flatten.uniq
+      make_team(friend_friends, mems)
+
+      #  get most endorsed that aren't your friends or your friends friends
+
+      mems = @team.team_memberships.pluck(:user_id)
+      if not_full(mems)
+        users = User.where(status: "online").pluck(:id)
+
+        lvl1 =  users - mates
+        lvl2 = lvl1 - friend_friends
+
+        lvl3 = User.where(id: lvl2).joins(:user_reviews).where("user_reviews.endorse = ?", true).pluck(:id)
+
+        lvl3 = lvl3.flatten.uniq
+
+        make_team(lvl3, mems)
+
+        # get randoms
+
+        mems = @team.team_memberships.pluck(:user_id)
+        if not_full(mems)
+          last_resorts = lvl3 - mems
+          make_team(last_resorts, mems)
+        end
+
+      end
     end
 
-    friend_friends = friend_friends.flatten.uniq
-    make_team(friend_friends, mems)
-
-
-    #  get most endorsed that aren't your friends or your friends friends
-
+    # if not_full(mems)
+    #   head :bad_request
+    # else
+    #   head :ok
+    # end
     mems = @team.team_memberships.pluck(:user_id)
-    if mems.length == 6
-      @team.status = "complete"
-      @team.save!
-      redirect_to team_path(@team)
-      return
-    end
-
-    users = User.where(status: "online").pluck(:id)
-
-    lvl1 =  users - mates
-    lvl2 = lvl1 - friend_friends
-
-    lvl3 = User.where(id: lvl2).joins(:user_reviews).where("user_reviews.endorse = ?", true).pluck(:id)
-
-    lvl3 = lvl3.flatten.uniq
-
-    make_team(lvl3, mems)
-
-    # get randoms
-
-    mems = @team.team_memberships.pluck(:user_id)
-    if mems.length == 6
-      @team.status = "complete"
-      @team.save!
-      redirect_to team_path(@team)
-      return
-    end
-
-    last_resorts = lvl3 - mems
-
-    make_team(last_resorts, mems)
-
+    @mems = User.where(id: mems)
     @team.status = "complete"
     @team.save!
-    redirect_to team_path(@team)
+
   end
 
   private
+
+
 
   def make_team(mates, mems)
     mates.first(6 - mems.length).each do |people|
