@@ -20,8 +20,8 @@
   width: 100vW;
   z-index: 1000;
   background: $dark-blue;
-  box-shadow: 0px 1px 5px -1px  rgba(226, 30, 228, 1);
-  height: 50px;
+  box-shadow: 0px 1px 5px 1px  rgba(226, 30, 228, 1);
+  height: 40px;
   text-align: center;
   align-items: center;
   justify-content: space-between;
@@ -88,4 +88,17 @@ ul.navbar-nav.mr-auto p {
 
 .burger-dropdown {
   background-color: white;
+}
+
+ul#user-op li {
+  display: inline;
+}
+
+.navbar-nav {
+  margin-bottom: 10px;
+}
+
+.jototo {
+  display: flex;
+  flex-direction: row;
 }
