@@ -32,11 +32,6 @@ const loading = () => {
     circle.classList.add("is-grow");
   }
   setInterval(animate, 1500);
-
-  function redirect(){
-    window.location.href = url;
-  }
-  setTimeout(redirect, 13000)
 }
 
 export { loading };
