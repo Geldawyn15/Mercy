@@ -6,7 +6,7 @@ class TeamMembershipsController < ApplicationController
     redirect_to team_path(@team) if @team.status == "complete"
 
     @user = current_user
-    friends = @user.friends.where(status: "online")
+    friends = @user.friends
     mems = @team.team_memberships.pluck(:user_id)
     @mems = User.where(id: mems)
 
@@ -17,7 +17,7 @@ class TeamMembershipsController < ApplicationController
       end
     end
     temp = @user.friends.where.not(id: indexes)
-    @friends = @user.friends.where(id: temp, status: "online").order(username: :asc)
+    @friends = @user.friends.where(id: temp).order(username: :asc)
   end
 
   def create
