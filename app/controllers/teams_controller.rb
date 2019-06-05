@@ -1,9 +1,15 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: %i[review]
+  before_action :set_team, only: %i[show review]
 
   def show
-    @team = Team.find(params[:id])
-    @mems = @team.team_memberships
+    @mems = @team.users if @team
+    if @team == false
+      redirect_to user_path(current_user.id)
+    elsif @team.status == "pending"
+      redirect_to team_mates_path(@team.id)
+    elsif @team.status == "over"
+      redirect_to team_review_path(@team.id)
+    end
   end
 
   def new
@@ -23,6 +29,9 @@ class TeamsController < ApplicationController
 
   def review
     @team_review = TeamReview.new
+    @user_review = UserReview.new
+    @ov = OverwatchCharacterScrapper.new
+    @ov_img = @ov.scrapping2
   end
 
   private
@@ -36,6 +45,12 @@ class TeamsController < ApplicationController
   end
 
   def set_team
-    @team = Team.find(params[:team_id])
+    if Team.pluck(:id).include? params[:team_id].to_i
+      @team = Team.find(params[:team_id])
+    elsif Team.pluck(:id).include? params[:id].to_i
+      @team = Team.find(params[:id])
+    else
+      @team = false
+    end
   end
 end

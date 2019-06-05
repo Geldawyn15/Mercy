@@ -1,4 +1,4 @@
-namespace :db  do
+namespace :db do
 desc 'it launches the seeds for team memberships, team reviews and user reviews'
 
   task :seed2 do
@@ -47,32 +47,46 @@ desc 'it launches the seeds for team memberships, team reviews and user reviews'
     over_teams = Team.where(status: "over")
 
     #Good reviews#
-    over_teams[-2..-1].each do |team|
-      j = 0
-      6.times do
-        members = team.users
-        TeamReview.create!(user: team.users[j], team: team, rating: [4,5].sample, comment: good_reviews[j])
-        j += 1
-      end
-    end
 
-    puts "#{ (over_teams.count - 2) * 6 } good team reviews created"
+    i = over_teams.count
+    if i <= 2
+      over_teams.each do |team|
+        j = 0
+        6.times do
+          members = team.users
+          TeamReview.create!(user: team.users[j], team: team, rating: [4,5].sample, comment: good_reviews[j])
+          j += 1
+        end
+      end
 
     #Mild and bad reviews#
-    over_teams[-2..-1].each do |team|
-      members = team.users
-      j = 0
-      k = 0
-      2.times do
-        TeamReview.create!(user: team.users[k], team: team, rating: [1,2].sample, comment: bad_reviews[j])
-        j += 1
-        k =+ 1
+    elsif i > 2
+      over_teams[0..-3].each do |team|
+        j = 0
+        6.times do
+          members = team.users
+          TeamReview.create!(user: team.users[j], team: team, rating: [4,5].sample, comment: good_reviews[j])
+          j += 1
+        end
       end
-      j = 0
-      4.times do
-        TeamReview.create!(user: team.users[k], team: team, rating: [2,3].sample, comment: mild_reviews[j])
-        j += 1
-        k =+ 1
+
+      puts "#{ (over_teams.count - 2) * 6 } good team reviews created"
+
+      over_teams[-2..-1].each do |team|
+        members = team.users
+        j = 0
+        k = 0
+        2.times do
+          TeamReview.create!(user: team.users[k], team: team, rating: [1,2].sample, comment: bad_reviews[j])
+          j += 1
+          k =+ 1
+        end
+        j = 0
+        4.times do
+          TeamReview.create!(user: team.users[k], team: team, rating: [2,3].sample, comment: mild_reviews[j])
+          j += 1
+          k += 1
+        end
       end
     end
 
@@ -84,26 +98,38 @@ desc 'it launches the seeds for team memberships, team reviews and user reviews'
     puts '---------------------------------------------------------'
 
     # user reviews ++ (endorse + add_friend)
-
-    over_teams[0..-3].each do |team|
-      team.users.each_with_index do |user, index|
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: true, endorse: true, nok: false) if index !=1
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: true, endorse: true, nok: false) if index !=2
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: true, nok: false) if index !=4
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: true, endorse: true, nok: false) if index !=5
+    if i <= 2
+      over_teams.each do |team|
+        team.users.each_with_index do |user, index|
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: true, endorse: true, nok: false) if index !=1
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: true, endorse: true, nok: false) if index !=2
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: true, nok: false) if index !=4
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: true, endorse: true, nok: false) if index !=5
+        end
       end
-    end
+    elsif i > 2
+      over_teams[0..i-3].each do |team|
+        team.users.each_with_index do |user, index|
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: true, endorse: true, nok: false) if index !=1
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: true, endorse: true, nok: false) if index !=2
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: true, nok: false) if index !=4
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: true, endorse: true, nok: false) if index !=5
+        end
+      end
 
-    over_teams[-2..-1].each do |team|
-      team.users.each_with_index do |user, index|
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: false, endorse: true, nok: false) if index !=1
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: false, endorse: true, nok: false) if index !=2
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: false, nok: true, nok_respect: true) if index !=4
-        UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: false, endorse: true, nok: true, nok_communication: true, nok_helpfulness: true) if index !=5
+      over_teams[-2..-1].each do |team|
+        team.users.each_with_index do |user, index|
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: false, endorse: true, nok: false) if index !=1
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: false, endorse: true, nok: false) if index !=2
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: false, nok: true, nok_respect: true) if index !=4
+          UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: false, endorse: true, nok: true, nok_communication: true, nok_helpfulness: true) if index !=5
+        end
       end
     end
 

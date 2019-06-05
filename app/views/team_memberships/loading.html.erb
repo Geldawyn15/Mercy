@@ -1,0 +1,20 @@
+<div class="container-team_show">
+  <h1> Players are ingame </h1>
+  <div class="team-circle2">
+  <%= render 'shared/circle_container', mems: @team.users %>
+  <h1 class="typed"></h1>
+  </div>
+
+</div>
+
+
+
+<script>
+
+  function redirect(){
+    window.location.href = "/teams/<%= @team.id %>";
+  }
+  setTimeout(redirect, 13000)
+
+
+</script>

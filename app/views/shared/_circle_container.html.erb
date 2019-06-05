@@ -6,9 +6,9 @@
     <% 6.times do |index| %>
       <% if @mems[index] %>
         <% mem = @mems[index] %>
-        <li id="<%= mem.user.id %>" class="<%= degs[index] %> tool <%= "owner" if index == 0 %> <%=  "mate" if index > 0 %> "><img class="avatar-large" alt="avatar-large" src="<%= mem.user.image %>"/><span class="tooltiptext"><%= mem.user.username %></span></li>
+        <li id="<%= mem.id %>" class="<%= degs[index] %> tool <%= "owner" if index == 0 %> <%=  "mate" if index > 0 %> "><img class="avatar-large friend-image-sm" alt="avatar-large" src="<%= mem.image %>"/><span class="tooltiptext"><%= mem.username %></span></li>
       <% else %>
-        <li class="<%= degs[index] %> empty"><img class="avatar-large" alt="avatar-large" src="  https://via.placeholder.com/64" /></li>
+        <li class="<%= degs[index] %> empty"><%= image_tag "logo_mercy.png", class:"friend-image-sm", alt:"avatar-large" %></li>
 
 
       <% end %>

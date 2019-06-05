@@ -40,7 +40,6 @@ const manageMates = () => {
         // item.remove();
         // circle.classList.remove("empty");
         // circle.classList.add("mate");
-        alert("Friend added to Team!");
         location.reload()
       } else {
         alert("the fuck did you do");
@@ -64,7 +63,6 @@ const manageMates = () => {
       headers: { "Content-Type": "application/json" }
     }).then((response) => {
       if (response.ok) {
-        alert("Teammate Removed!");
         location.reload();
       } else {
         alert("the fuck did you do");
