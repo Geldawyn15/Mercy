@@ -1,4 +1,4 @@
-<% if @team.team_review_for(current_user) != [] %>
+<% if @team.team_review_for(current_user) == [] %>
   <div class="banner-review">
     <div class="title-review">
       <h1>THE GAME IS <strong><span class="pink-text">NOT OVER</span></strong></h1>
@@ -34,3 +34,7 @@
     </div>
   </div>
 <% end %>
+<div align="center">
+  <%= link_to "Submit review", user_path(current_user.id), class:"button1"%>
+</div>
+

@@ -31,6 +31,12 @@ class Team < ApplicationRecord
     end
   end
 
+  def mainrole_img(user)
+    @ov = OverwatchCharacterScrapper.new
+    @heronames = @ov.scrapping2
+    @heronames[user.profile(self)]
+  end
+
   def complete_reviews?
     team_reviews.count == 6
   end

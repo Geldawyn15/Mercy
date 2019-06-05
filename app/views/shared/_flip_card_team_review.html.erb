@@ -1,22 +1,24 @@
 <div class="flipcard flipcard-team">
-  <div class="flipcard-banner"></div>
+  <div class="flipcard-banner">
+  </div>
 
   <div class="flipcard-inner">
     <div class="front">
       <h2>Now, rate your game</h2>
       <div id="rater"></div>
-      <button class="button1">Leave a comment</button>
+      <div class="button1 leave-comment">Leave a comment</div>
     </div>
-  </div>
 
-  <div class="back">
-    <h2>It worths a few words</h2>
-    <div class="comment-box">
-      <%= simple_form_for [@team, @team_review] do |f| %>
-        <%= f.hidden_field :rating, :value => 5 %>
-        <%= f.input :comment, label: false, placeholder: "It worth a word", as: :text %>
-        <%= f.button :submit, "Submit", class: "my-button btn-user-rating" %>
-      <% end %>
+    <div class="back">
+      <h2>It worths a few words</h2>
+      <div class="comment-box">
+        <%= simple_form_for [@team, @team_review] do |f| %>
+          <%= f.hidden_field :rating, :value => 5 %>
+          <%= f.input :comment, label: false, placeholder: "Share your experience with the community.", as: :text %>
+          <%= f.button :submit, "Submit", class: "my-button btn-user-rating hidden" %>
+        <% end %>
+      </div>
+      <i id="team-flip" class="fas fa-undo-alt"></i>
     </div>
   </div>
 </div>
