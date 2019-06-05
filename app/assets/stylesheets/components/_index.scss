@@ -8,7 +8,11 @@
 @import "card_team";
 @import "card_team";
 @import "circle-container";
+@import "features";
 @import "feature_card";
+@import "flip_card_review";
+@import "footer";
+@import "forms";
 @import "game_card";
 @import "login_popup";
 @import "navbar";
@@ -19,8 +23,6 @@
 @import "user-header";
 @import "user_status";
 @import "user_profil_box";
-@import "forms";
-@import "footer";
 
 .container {
   margin-top: 62px;

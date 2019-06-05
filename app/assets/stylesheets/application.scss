@@ -16,6 +16,9 @@
 
 body {
   background-color: $dark-blue;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -26,4 +29,17 @@ h1, h2, h3 {
 p {
   font-family: $body-font;
   color: #A2A2A2;
+}
+
+.container {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto 62px;
+}
+
+.hidden {
+  display: none;
 }

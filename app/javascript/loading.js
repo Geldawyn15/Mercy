@@ -26,19 +26,17 @@ const loading = () => {
     circle.classList.add("to-remove");
   })
 
-
   function animate(){
     let circle = document.querySelector(".to-remove");
     circle.classList.remove("to-remove");
     circle.classList.add("is-grow");
-    // function vis(){
-    //   circle.classList.add("is-visible")
-    // }
-    // setTimeout(vis, 1000);
   }
-  setInterval(animate, 1000);
+  setInterval(animate, 1500);
 
-
+  function redirect(){
+    window.location.href = url;
+  }
+  setTimeout(redirect, 13000)
 }
 
 export { loading };
