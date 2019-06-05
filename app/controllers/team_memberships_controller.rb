@@ -1,5 +1,5 @@
 class TeamMembershipsController < ApplicationController
-  before_action :set_team, only: %i[mates create random_mates]
+  before_action :set_team, only: %i[mates create loading]
   skip_before_action :verify_authenticity_token, only: %i[ create delete]
 
   def mates
@@ -47,11 +47,14 @@ class TeamMembershipsController < ApplicationController
     end
   end
 
-  def random_mates
+  def not_full(mems)
+    return true if mems.length != 6
+  end
+
+  def loading
     mems = @team.team_memberships.pluck(:user_id)
 
     # get friends of friends
-
     if not_full(mems)
       mates = current_user.friends.pluck(:id)
 
@@ -91,21 +94,21 @@ class TeamMembershipsController < ApplicationController
       end
     end
 
+    # if not_full(mems)
+    #   head :bad_request
+    # else
+    #   head :ok
+    # end
     mems = @team.team_memberships.pluck(:user_id)
-    if not_full(mems)
-      head :bad_request
-    else
-      @team.status = "complete"
-      @team.save!
-      head :ok
-    end
+    @mems = User.where(id: mems)
+    @team.status = "complete"
+    @team.save!
+
   end
 
   private
 
-  def not_full(mems)
-    return true if mems.length != 6
-  end
+
 
   def make_team(mates, mems)
     mates.first(6 - mems.length).each do |people|

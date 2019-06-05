@@ -3,6 +3,7 @@ import { gameSelect } from "../gameSelect.js";
 import { manageMates } from "../manageMates.js";
 import { initRaterJs } from "../star-rating.js";
 import { nokCheckbox } from "../user_rating.js";
+import { loading } from "../loading.js";
 
 
 if(window.location.href.indexOf("/review") > -1){
@@ -21,3 +22,9 @@ if(window.location.href.indexOf("teams/new") > -1){
 if(window.location.href.indexOf("/mates") > -1){
   manageMates();
 }
+
+if(window.location.href.indexOf("/loading") > -1){
+  loading();
+}
+
+
