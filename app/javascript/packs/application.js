@@ -11,7 +11,6 @@ if(window.location.href.indexOf("/review") > -1){
   let exists = document.querySelector("#rater");
   if (exists) {
     initRaterJs();
-  } else  {
     initCardFlipped();
     nokCheckbox();
   }

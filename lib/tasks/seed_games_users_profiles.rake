@@ -55,7 +55,7 @@ namespace :db do
     puts 'League of Legend created'
 
     puts '-----------------------------'
-    puts 'CREATING 13 USERS'
+    puts 'CREATING 34 USERS'
     puts '-----------------------------'
 
     charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@live.fr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'female', status: 'online')
@@ -161,7 +161,7 @@ namespace :db do
     puts "#{User.last.username} created"
 
     puts '-----------------------------'
-    puts 'CREATING 13 OVERWATCH PROFILES'
+    puts 'CREATING 34 OVERWATCH PROFILES'
     puts '-----------------------------'
 
     def profile_creation(user_parameters)
