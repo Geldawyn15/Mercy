@@ -1,7 +1,8 @@
 .container-mates{
-  display: flex;
+  display: grid;
   min-height: calc(100vh - 66px);
   margin-top: 66px;
+  grid-template-columns: 1fr 2fr 300px;
   /* margin: 60px auto; */
   /* width: 100%; */
   /* flex-grow: 1; */
@@ -11,10 +12,13 @@
 // TEAM CIRCLE
 
 .team-circle {
-  flex-grow: 1;
   text-align: center;
-  padding: 55px;
-  padding-left: 115px;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 
   h1 {
     font-family: $fancy-font;
@@ -33,9 +37,8 @@
   display: initial;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
-  position: relative;
-  top: 45px;
+  margin-top: 50px;
+  height: unset;
 }
 
 // FRIEND BAR

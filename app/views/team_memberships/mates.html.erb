@@ -1,17 +1,16 @@
 <div class="container-mates">
-  <div class="team-circle">
-    <div>
-    <%= render 'shared/circle_container', mems: @mems %>
-    <%= link_to "Complete the team", team_random_mates_path, class: "button1" %>
+    <div class="team-circle">
+      <%= render 'shared/circle_container', mems: @mems %>
+      <%= link_to "Complete the team", team_random_mates_path, class: "button1" %>
+
     </div>
-</div>
 <!--
   <div class="lobby-name">
     <h1><%= @user.username %><br>Main character D.va</h1>
   </div> -->
 
 
-<div class="friend-bar">
+  <div class="friend-bar">
     <ul class="friend-list">
       <h2>MY FRIENDS</h2>
       <% @friends.each do |friend| %>
@@ -32,6 +31,7 @@
       <% end %>
     </ul>
   </div>
+
 </div>
 
 <div class="hero-detail-video video-background-wrapper is-active m-blend">
