@@ -4,26 +4,27 @@
     <%= image_tag user.image, class:"friend-image" %>
   </div>
 
-  <%= simple_form_for [@team, @user_review] do |f| %>
+  <%= simple_form_for [@team, @user_review], html: {id: "new_user_review_#{user.id}" } do |f| %>
   <div class="flipcard-inner">
       <div class="front">
         <h2>Enjoyed playing with </br><%= user.username %>?</h2>
         <div class="ok-comments">
-          <%= f.hidden_field :user_reviewed_id, :value => user.id %>
-          <%= f.input :add_friend, as: :boolean, boolean_style: :inline %>
-          <%= f.input :endorse, as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox" %>
-          <%= f.input :nok, label: "Not really", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox hidden" %>
+          <%= f.hidden_field :user_reviewed_id, :value => user.id, id: "user_reviewed_id_#{user.id}" %>
+          <%= f.input :add_friend, as: :boolean, boolean_style: :inline, :input_html => {id: "add_friend_#{user.id}", class: 'add_friend'} %>
+          <%= f.input :endorse, as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox", :input_html => {id: "endorse_#{user.id}", class: 'endorse'} %>
+          <%= f.input :nok, label: "Not really", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox hidden", :input_html => {id: "nok_#{user.id}", class: 'nok'} %>
         </div>
       </div>
 
     <div class="back">
       <h2>Let <%= user.username %> know what was wrong</h2>
       <div class="nok-comments">
-        <%= f.input :nok_positiveness, label: "Not positive", as: :boolean, boolean_style: :inline %>
-        <%= f.input :nok_communication, label: "Not communicative", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox nok" %>
-        <%= f.input :nok_helpfulness, label: "Not helful", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox nok" %>
-        <%= f.input :nok_respect, label: "Not respectful", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox nok" %>
+        <%= f.input :nok_positiveness, label: "Not positive", as: :boolean, boolean_style: :inline, :input_html => {id: "nok_positiveness_#{user.id}", class: 'nok_positiveness'} %>
+        <%= f.input :nok_positiveness, label: "Not communicative", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox nok", :input_html => {id: "nok_communication_#{user.id}", class: 'nok_positiveness'} %>
+        <%= f.input :nok_helpfulness, label: "Not helful", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox nok", :input_html => {id: "nok_helpfulness_#{user.id}", class: 'nok_helpfulness'} %>
+        <%= f.input :nok_respect, label: "Not respectful", as: :boolean, boolean_style: :inline, :class=> "user-review_checkbox nok", :input_html => {id: "nok_respect_#{user.id}", class: 'nok_respect'} %>
       </div>
+      <i class="fas fa-undo-alt"></i>
     </div>
   <% end %>
   </div>
