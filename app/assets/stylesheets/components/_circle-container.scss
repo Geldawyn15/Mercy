@@ -1,18 +1,24 @@
 .circle-container {
-      background-image: url('overwatch_girl_team.jpg');
+      background-color: rgba(250, 249, 249, 0.5);
+      opacity: 0.8;
       background-size: cover;
       display: flex;
       width: 24em;
       height: 24em;
-      padding: 2.8em;
+      padding: 0.8em;
       border: none;
       border-radius: 50%;
       margin: 1.75em auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
     .circle-container li {
       display: block;
-      position: relative;
-      top: 50%; left: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
       width: 4em; height: 4em;
       margin: -2em;
     }
