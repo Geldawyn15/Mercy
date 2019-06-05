@@ -13,6 +13,6 @@
     <div>
     <%= render 'shared/circle_container', mems: @team.users %>
     </div>
-    <%= link_to "Game is finished", team_path(@team.id), class: "button1" %>
+    <%= link_to "Game is finished", team_review_path(@team.id), class: "button1" %>
   <% end %>
   </div>
