@@ -49,25 +49,27 @@ const manageMates = () => {
   }
 
   const clickMate = (mate) => {
-
-    let pathname = window.location.pathname;
-    let teamId = pathname.split("/")[2];
-    let mydata = {
-      "user_id": mate.id,
-      "team_id": teamId
-    }
-
-    fetch("/teams/" + teamId + "/destroy", {
-      method: "DELETE",
-      body: JSON.stringify(mydata),
-      headers: { "Content-Type": "application/json" }
-    }).then((response) => {
-      if (response.ok) {
-        location.reload();
-      } else {
-        alert("the fuck did you do");
+    currentUser = document.querySelector(".team-circle")
+    if ( mate.id != currentUser.id ) {
+      let pathname = window.location.pathname;
+      let teamId = pathname.split("/")[2];
+      let mydata = {
+        "user_id": mate.id,
+        "team_id": teamId
       }
-    })
+
+      fetch("/teams/" + teamId + "/destroy", {
+        method: "DELETE",
+        body: JSON.stringify(mydata),
+        headers: { "Content-Type": "application/json" }
+      }).then((response) => {
+        if (response.ok) {
+          location.reload();
+        } else {
+          alert("the fuck did you do");
+        }
+      })
+    }
   }
 }
 
