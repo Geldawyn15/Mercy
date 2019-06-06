@@ -2,11 +2,12 @@
 <div class="container">
   <!-- TEAM PENDING -->
   <% if @team.status == "complete" %>
-      <h1> Team is Ready to Go ! </h1>
-      <div>
-      <%= render 'shared/circle_container', mems: @team.users %>
+        <h1 class="message"> Team is ready!</h1>
+        <%= link_to "Launch your game", team_review_path(@team.id), class: "title" %>
+        <div class="rails-default-error-page">
+          <div class="tenor-gif-embed"></div>
+        </div>
       </div>
-      <%= link_to "Launch game", complete_path(@team.id), class: "button1" %>
       <!-- TEAM INGAME -->
   <% elsif @team.status == "ingame" %>
       <h1 class="message"> Players are ingame </h1>

@@ -1,12 +1,25 @@
 .container-mates{
   display: grid;
   min-height: calc(100vh - 66px);
-  margin-top: 66px;
+  margin-top: 50px;
   grid-template-columns: 1fr 2fr 300px;
+  z-index: 1;
+  align-items: center;
   /* margin: 60px auto; */
   /* width: 100%; */
   /* flex-grow: 1; */
   /* position: absolute; */
+}
+
+// BACKGROUND VIDEO
+
+.rails-default-error-page {
+  .tenor-gif-embed.lobby {
+    background-image: image-url('dva_lobby.gif');
+    transform: rotateY(180deg);
+    height: calc(100vh-66px);
+    margin-top: 50px;
+  }
 }
 
 // TEAM CIRCLE
@@ -29,6 +42,7 @@
 }
 
 .lobby-name h1 {
+  z-index: 1;
   font-family: $fancy-font;
   color: $light-green;
 }
@@ -50,9 +64,19 @@
 // FRIEND BAR
 
 .friend-bar {
-  width: 300px;
+  width: 250px;
   background-color: rgba(250, 249, 249, 0.5);
-  /* margin-top: 22px; */
+  height: calc(100vh - 66px);
+  margin-top: 16px;
+  align-items: center;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {                 /* Scrollbars */
+    display: block;
+    border-radius: 32px;
+    width: 14px;
+    height: 14px;
+    background: white url(images/bg-blog-repeat.png) 0 0 repeat;
+  }
 }
 
 .friend-list {
@@ -66,6 +90,7 @@
 
 ul.friend-list {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .friend {
@@ -84,8 +109,8 @@ ul.friend-list {
   .fa-circle {
     font-size: 12px;
     position: relative;
-    top: 21px;
-    left: -18px;
+    top: -30px;
+    left: 54px;
   }
 }
 
@@ -102,11 +127,28 @@ ul.friend-list {
   }
 }
 
+#friend-username.info-online {
+  color: #52B581;
+}
+
+#friend-username.info-ingame {
+  color: $orange;
+}
+
+#friend-username.info-away {
+  color: $red;
+}
+
 .friend-image-sm {
   height:64px;
   width: 64px;
   border-radius: 50%;
   border: 1.5px solid #52B581;
+}
+
+#main-character {
+  font-size: 14px;
+  color: $gray;
 }
 
 // JAVASCRIPT

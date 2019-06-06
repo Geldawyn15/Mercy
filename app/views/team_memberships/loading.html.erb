@@ -1,5 +1,9 @@
-<div class="container">
-  <h1> Players are ingame </h1>
+<div class="container-loading">
+  <div class="rails-default-error-page">
+    <div class="tenor-gif-embed lobby"></div>
+  </div>
+    <h1> LOOKING FOR YOUR TEAM MATES </h1>
+
   <div class="team-circle2">
   <%= render 'shared/circle_container', mems: @team.users %>
   <h1 class="typed"></h1>
@@ -9,7 +13,7 @@
 
 
 
-<script>
+<!-- <script>
 
   function redirect(){
     window.location.href = "/teams/<%= @team.id %>";
@@ -17,4 +21,4 @@
   // setTimeout(redirect, 13000)
 
 
-</script>
+</script> -->
