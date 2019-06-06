@@ -4,9 +4,9 @@ class User < ApplicationRecord
   has_many :profiles, dependent: :destroy
   has_many :games, through: :profiles
   has_many :user_reviews, dependent: :destroy
-  has_many :team_memberships
+  has_many :team_memberships, dependent: :destroy
   has_many :teams, through: :team_memberships
-  has_many :team_reviews
+  has_many :team_reviews, dependent: :destroy
   has_many :friendships, dependent: :destroy
   has_many :friends, class_name: 'User', through: :friendships
 
