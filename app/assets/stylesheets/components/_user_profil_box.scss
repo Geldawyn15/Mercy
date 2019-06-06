@@ -63,7 +63,9 @@
 
 
 .profile-box .more-info {
-  position: absolute;
-  bottom: -20px;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 40px;
 }
 

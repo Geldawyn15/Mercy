@@ -163,12 +163,8 @@ ul.friend-list {
   z-index: -1;
   overflow: hidden;
 }
-*, :after, :before {
-  box-sizing: inherit;
+
+ :after, :before {
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  vertical-align: inherit;
-  white-space: inherit;
-  text-overflow: inherit;
-  text-shadow: inherit;
 }
