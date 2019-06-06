@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: %i[show review]
+  before_action :set_team, only: %i[show review complete]
 
   def show
     @mems = @team.users if @team
@@ -10,6 +10,12 @@ class TeamsController < ApplicationController
     elsif @team.status == "over"
       redirect_to team_review_path(@team.id)
     end
+  end
+
+  def complete
+    @team.status = "ingame"
+    @team.save!
+    redirect_to team_path(@team.id)
   end
 
   def new

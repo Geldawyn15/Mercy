@@ -6,7 +6,7 @@ class TeamMembershipsController < ApplicationController
     redirect_to team_path(@team) if @team.status == "complete"
 
     @user = current_user
-    friends = @user.friends
+    friends = @user.friends.uniq
     mems = @team.team_memberships.pluck(:user_id)
     @mems = User.where(id: mems)
 
@@ -17,7 +17,7 @@ class TeamMembershipsController < ApplicationController
       end
     end
     temp = @user.friends.where.not(id: indexes)
-    @friends = @user.friends.where(id: temp).order(username: :asc)
+    @friends = @user.friends.where(id: temp).order(username: :asc).uniq
   end
 
   def create
@@ -94,21 +94,13 @@ class TeamMembershipsController < ApplicationController
       end
     end
 
-    # if not_full(mems)
-    #   head :bad_request
-    # else
-    #   head :ok
-    # end
     mems = @team.team_memberships.pluck(:user_id)
     @mems = User.where(id: mems)
     @team.status = "complete"
     @team.save!
-
   end
 
   private
-
-
 
   def make_team(mates, mems)
     mates.first(6 - mems.length).each do |people|
