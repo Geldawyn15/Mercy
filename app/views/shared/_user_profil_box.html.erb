@@ -7,7 +7,7 @@
       <h6>Only Pokemon matter</h6>
   </div>
   <div class="about-me">
-    <p>About me: <br>Age: 28 <br>Location: Montreal, Canada</p>
+    <p>About me: <br>Age: <%= @user.age %> y.o.<br>Location: Montreal, Canada</p>
   </div>
   <div class="user-mercy-stats">
     <% if @user.user_reviews != [] %>
@@ -23,7 +23,7 @@
       </p>
       <p class="user-endorsement">
         <i class="fas fa-smile-beam"></i>
-         <span class="stats-number"> <%= (UserReview.where(user_id: @user.id, endorse: true).count / UserReview.where(user_id: @user.id).count)*100 %>% </span>
+         <span class="stats-number"> <%= (UserReview.where(user_id: @user.id, endorse: true).count * 100) / UserReview.where(user_id: @user.id).count %>% </span>
         </br>POSITIVE </br>REVIEWS </br>
       </p>
     <% end %>

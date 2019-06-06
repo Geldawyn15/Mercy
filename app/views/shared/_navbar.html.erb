@@ -36,8 +36,8 @@
   <div class="d-flex align-items-center">
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "logo_Mercyv1.png", :class=>"toto",width: "30",  height: "30" %>
+      <h3>MERCY</h3>
     <% end %>
-    <%= image_tag "mercy_top_white.png", :class=>"mercy-typo", height: "30" %>
   </div>
 
   <!-- USER SIGNED IN -->
@@ -51,10 +51,12 @@
         <ul class="navbar-nav mr-auto d-flex justify-center align-items-center">
           <div class="navbar-text">
             <li class="nav-item active mr-2">
-              <%= link_to "Find a player", new_team_path, class: "nav-link" %>
+              <%= link_to new_team_path, class: "nav-link" do %>
+                <span><i class="fas fa-search"></i> Find a player</span>
+              <% end %>
             </li>
             <li class="nav-item active mr-4">
-              <%= link_to "Find a team", new_team_path, class: "nav-link" %>
+              <%= link_to "Create a team", new_team_path, class: "nav-link" %>
             </li>
             <li class="nav-item d-block d-sm-none">
               <%= link_to "My Profile", user_path(current_user.id), class: "nav-link" %>

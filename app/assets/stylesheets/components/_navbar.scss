@@ -10,6 +10,19 @@
   height: 40px;
 }
 
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+  transform: translateY(10%);
+  h3 {
+    font-family: $fancy-font;
+    color: white;
+    font-size: 32px;
+    padding-left: 16px;
+  }
+}
+
+
 .topnav {
   color: white;
 
@@ -32,11 +45,16 @@
 .navbar-text {
   display: flex;
   position: relative;
-  right: 20px;
+  right: 65px;
 }
 
 .nav-link {
-  width: 125px;
+  width: 200px;
+  font-family: $headers-font;
+  span {
+    padding-right: 30px;
+    background-position: translateX(-10px);
+  }
 }
 
 .navbar .navbar-collapse {
@@ -44,7 +62,8 @@
 }
 
 .navbar-light .navbar-nav .active > .nav-link {
-  color: white;
+  color: $white;
+  border-radius: 16px;
 }
 
 .nav-button {
@@ -59,10 +78,6 @@
 .nav-item a {
   color: white;
   padding: 8px 16px;
-}
-
-.navbar-light .navbar-nav .active > .nav-link {
-  color: white;
 }
 
 .dropdown-menu {
