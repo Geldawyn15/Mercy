@@ -95,13 +95,14 @@
     text-align: center;
 }
 // CARD REVIEW PENDING //
-.pending-img {
+.rpending-img {
   height: 200px;
   width: 300px;
-  background-image: image-url('https://i.kym-cdn.com/photos/images/newsfeed/001/122/517/890.jpg');
+  // background-image: image-url('https://i.kym-cdn.com/photos/images/newsfeed/001/122/517/890.jpg');
   background-size: cover;
   position: relative;
   top: 20%;
+  object-position: top;
 }
 
 
@@ -110,9 +111,8 @@
     position: absolute;
     margin-top: 28px;
     margin-left: 29px;
-    z-index: 3;
-    top: -48%;
-    left: 31%;
+    top: -47%;
+    left: 10%;
 }
 
 .card-team-status.rpending {
@@ -128,7 +128,6 @@
     position: absolute;
     margin-top: 28px;
     margin-left: 29px;
-    z-index: 3;
     top: -47%;
     left: 51%;
 }
@@ -137,7 +136,7 @@
     background: #EF001D;
     opacity: .8;
     text-align: center;
-    border-radius: none;
+    border-radius: 0%;
   }
 
 // CARD COMPLETE //

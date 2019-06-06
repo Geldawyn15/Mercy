@@ -3,8 +3,8 @@
 </div>
 
 <div class="container-mates">
-    <div class="team-circle">
-      <%= render 'shared/circle_container', mems: @mems %>
+    <div id="<%= current_user.id %>" class="team-circle">
+      <%= render 'shared/circle_container', mems: @mems.reverse %>
       <%= link_to "Complete the team", team_loading_path, class: "button1" %>
 
     </div>

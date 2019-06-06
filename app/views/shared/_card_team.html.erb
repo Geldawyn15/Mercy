@@ -1,6 +1,6 @@
 <% if team.status == 'pending' %>
   <div class="card-team">
-    <img src="https://i.pinimg.com/originals/9d/48/24/9d4824e004d497a1ce85c61db5ae26a6.jpg", class="bottom-line pending" >
+    <%= image_tag "https://i.pinimg.com/originals/9d/48/24/9d4824e004d497a1ce85c61db5ae26a6.jpg", class:"bottom-line pending" %>
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
@@ -15,7 +15,7 @@
 
 <% elsif team.status == 'complete' %>
   <div class="card-team">
-    <img src="https://bnetcmsus-a.akamaihd.net/cms/blog_header/nr/NRKCTXZNWRQ81519177975121.jpg", class="bottom-line" >
+    <%= image_tag "https://bnetcmsus-a.akamaihd.net/cms/blog_header/nr/NRKCTXZNWRQ81519177975121.jpg", class:"bottom-line" %>
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
@@ -30,7 +30,7 @@
 
 <% elsif team.status == 'ingame' %>
   <div class="card-team">
-    <img src="https://ksassets.timeincuk.net/wp/uploads/sites/54/2014/11/OVR_Brigitte_007-1024x576.png">
+    <%= image_tag "https://ksassets.timeincuk.net/wp/uploads/sites/54/2014/11/OVR_Brigitte_007-1024x576.png" %>
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
@@ -45,7 +45,7 @@
 
 <% elsif team.status == 'over' && team.team_review_for(current_user).present? %>
   <div class="card-team">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5Hso0rfNz1V41JRKlAxh_H4nn7VcL_2P8sHHmyjWRtBRdP_KLQ">
+   <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5Hso0rfNz1V41JRKlAxh_H4nn7VcL_2P8sHHmyjWRtBRdP_KLQ"%>
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
@@ -66,7 +66,7 @@
 
 <% elsif team.status == 'over' && team.team_review_for(current_user).blank? %>
   <div class="card-team">
-    <div class="pending-img"></div>
+    <%= image_tag "https://i.kym-cdn.com/photos/images/newsfeed/001/122/517/890.jpg", class:'rpending-img'%>
     <div class="card-team-infos">
       <div>
         <h2>Team <%= team.id %></h2>
