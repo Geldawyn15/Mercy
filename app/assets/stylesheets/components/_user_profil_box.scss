@@ -63,7 +63,15 @@
 
 
 .profile-box .more-info {
-  position: absolute;
-  bottom: -20px;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  color: $light-green;
 }
 
+.profile-box .more-info img {
+  width: 40px;
+  height: 40px;
+  color: $light-green;
+}

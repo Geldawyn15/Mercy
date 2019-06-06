@@ -45,8 +45,6 @@ namespace :db do
 
     champions = champions.uniq[4..-1]
     champions.map! { |element| element[1..-3] }
-    champions
-    #
 
     lol_rank = %w[bronze silver gold platinium diamond master challenger]
     lol_roles = champions
@@ -55,11 +53,8 @@ namespace :db do
     puts 'League of Legend created'
 
     puts '-----------------------------'
-    puts 'CREATING 34 USERS'
+    puts 'CREATING 33 USERS'
     puts '-----------------------------'
-
-    charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@live.fr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'female', status: 'online')
-    puts "#{User.last.username} created"
 
     bimblor = User.create!(username: 'bimblor', email: 'bimblor@gmail.com', password:'mercy4all', discord_id:'Bimblor#3201', birthdate:'28/05/1995', langage: 'en', location: 'us', image: 'https://avatarfiles.alphacoders.com/105/thumb-105223.jpg', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
@@ -161,7 +156,7 @@ namespace :db do
     puts "#{User.last.username} created"
 
     puts '-----------------------------'
-    puts 'CREATING 34 OVERWATCH PROFILES'
+    puts 'CREATING 33 OVERWATCH PROFILES'
     puts '-----------------------------'
 
     def profile_creation(user_parameters)
@@ -178,9 +173,6 @@ namespace :db do
       Profile.create!(game_id: user_parameters[:game].id, user_id: user_parameters[:user].id, launcher_tag: user_parameters[:launcher_tag], rank: complete_json['rating'], mainrole: user_parameters[:mainrole], profile: profile_json, complete: complete_json, main_hero: main_hero_json)
       puts "#{user_parameters[:user].username} overwatch profile created"
     end
-
-    charlycade_parameters = { user: charlycade, launcher_tag: '2422', platform: 'pc', mainrole: 'dVa', game: overwatch }
-    profile_creation(charlycade_parameters)
 
     bimblor_parameters = { user: bimblor, launcher_tag: '1842', platform: 'pc', mainrole: 'reinhardt', game: overwatch }
     profile_creation(bimblor_parameters)
@@ -285,8 +277,9 @@ namespace :db do
     puts 'CREATING 20 TEAMS FOR OVERWATCH'
     puts '-----------------------------'
 
-    20.times do
-      Team.create!(spirit: %w[casual competitive].sample, rank_scale: ow_rank.sample, game: overwatch, gender_choice: %w[girls guys mixed].sample, status: %w[pending pending pending complete ingame over].sample)
+    10.times do
+      Team.create!(spirit: %w[casual competitive].sample, rank_scale: ow_rank.sample, game: overwatch, gender_choice: %w[girls guys mixed].sample, status: "over")
+      Team.create!(spirit: %w[casual competitive].sample, rank_scale: ow_rank.sample, game: overwatch, gender_choice: %w[girls guys mixed].sample, status: %w[pending pending pending complete ingame].sample)
     end
 
     puts '20 teams created'
