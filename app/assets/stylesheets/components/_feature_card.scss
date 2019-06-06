@@ -24,9 +24,10 @@
 
   h3 {
     display: inline-block;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 100;
     transition: color .3s;
+    padding: 10px;
     &:after {
       content: '';
       position: relative;
@@ -42,11 +43,12 @@
   }
   p {
     color: $font-color;
-    text-align: left;
+    text-align: center;
     text-indent: 1em;
     font-size: 16px;
     line-height: 26px;
     transition: color .3s;
+    margin: 13px;
   }
 }
 
