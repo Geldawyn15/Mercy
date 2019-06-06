@@ -2,14 +2,17 @@
 <div class="container">
   <!-- TEAM PENDING -->
   <% if @team.status == "complete" %>
+    <div class="team-show-ready">
         <h1 class="message"> Team is ready!</h1>
         <%= link_to "Launch your game", team_review_path(@team.id), class: "title" %>
         <div class="rails-default-error-page">
           <div class="tenor-gif-embed"></div>
         </div>
       </div>
+    </div>
       <!-- TEAM INGAME -->
   <% elsif @team.status == "ingame" %>
+    <div class="team-show-ingame">
       <h1 class="message"> Players are ingame </h1>
       <%= link_to "Game finished!", team_review_path(@team.id), class: "title" %>
       <div class="rails-default-error-page">
