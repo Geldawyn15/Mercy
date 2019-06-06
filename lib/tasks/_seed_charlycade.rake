@@ -140,8 +140,8 @@ namespace :db do
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: false, endorse: false, nok: true, nok_communication: true, nok_helpfulness: true) if index !=5
     end
 
-    # good user reviews for 6 teams
-    charlycade_team[2..7].each do |team|
+    # good user reviews for 5 teams
+    charlycade_team[2..6].each do |team|
       team.users.each_with_index do |user, index|
         UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
         UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: true, endorse: true, nok: false) if index !=1
