@@ -3,14 +3,14 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  padding: 30px;
+  padding: 20px;
 }
 
 #features {
   height: 30vh;
   width: 100%;
   padding: 40px;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('lol-jinx.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('lol-jinx.jpg');
   opacity: 0.2px;
 }
 
@@ -19,7 +19,7 @@
     content: " ";
     width: 100%;
     padding-top: 75%;
-    background-image: url('https://actualitesjeuxvideo.fr/wp-content/uploads/2018/12/Tendances-gaming-Jeux-Vid%C3%A9o-2019-eSport-e1544785941624.jpg');
+    background-image: image-url('https://actualitesjeuxvideo.fr/wp-content/uploads/2018/12/Tendances-gaming-Jeux-Vid%C3%A9o-2019-eSport-e1544785941624.jpg');
     background-repeat: no-repeat;
     padding-left: 105%;
     margin-left: 5%;
@@ -31,4 +31,28 @@
     width: 100%;
     padding-top: 64%;
     padding-left: 105%
+}
+
+#features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .site-stats-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .fas, {
+    color: $light-green;
+    font-size: 46px;
+  }
+  .site-stats {
+    color: $white;
+    font-size: 46px;
+  }
+  .site-stats-label {
+    color: $light-green;
+    font-size: 24px;
+  }
 }

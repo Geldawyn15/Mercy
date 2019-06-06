@@ -1,9 +1,15 @@
+.rating-card-wrapper {
+  .row {
+  box-sizing: border-box;
+  }
+}
+
 .banner-review {
   margin-top: 60px;
   background-position: center 0px;
   width: 100%;
   height: 400px;
-  background: url('soldier.jpg') center center no-repeat;
+  background: image-url('soldier.jpg') center center no-repeat;
   background-size: cover;
   justify-content: center;
   display: flex;
@@ -81,7 +87,7 @@
 }
 
 .already-submitted {
-  background-image: url(mercy.jpg);
+  background-image: image-url('mercy.jpg');
   background-size: cover;
   width: 100%;
   height: calc(100vh - 60px);
