@@ -1,10 +1,10 @@
 .star-rating {
-  background: url("emptystar.svg") !important;
+  background: image-url("emptystar.svg") !important;
   background-repeat: no-repeat;
 }
 
 .star-rating .star-value{
-  background: url("fullstar.svg") !important;
+  background: image-url("fullstar.svg") !important;
   background-repeat: no-repeat;
 
 }
