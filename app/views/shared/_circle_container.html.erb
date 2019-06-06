@@ -12,7 +12,12 @@
         <% end %>
 
       <% else %>
-        <li class="<%= degs[index] %> empty"><%= image_tag "logo_mercy.png", class:"friend-image-sm", alt:"avatar-large" %></li>
+        <% if index == 0  %>
+          <li class="deg45 empty"><%= image_tag "logo_mercy.png", class:"friend-image-sm", alt:"avatar-large" %></li>
+        <% else %>
+          <li class=" <%= degs[index-1] %> empty"><%= image_tag "logo_mercy.png", class:"friend-image-sm", alt:"avatar-large" %></li>
+        <% end %>
+
       <% end %>
     <% end %>
   </ul>
