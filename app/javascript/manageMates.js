@@ -52,7 +52,7 @@ const manageMates = () => {
     const currentUser = document.querySelector(".team-circle")
 
     console.log(currentUser);
-    if ( mate.id != currentUser.id ) {
+    if ( mate.id != currentUser.id.to_i ) {
       let pathname = window.location.pathname;
       let teamId = pathname.split("/")[2];
       let mydata = {
