@@ -2,15 +2,16 @@ import Typed from 'typed.js';
 
 const loading = () => {
   let options = {
-      strings: ["Looking for team mates",
-      "8567 players online",
-      "6342 girls online",
-      "342 friends of my friends",
-      "576 top endorsement",
+      strings: [
+      "LOOKING FOR <br> TEAM MATES",
+      "8567 players <br> online",
+      "6342 girls <br> online",
+      "342 friends <br> of my friends",
+      "576 <br> endorsements",
       "That's it!",
-      "Your team is complete"
+      "Your team <br> is complete"
       ],
-      typeSpeed: 40,
+      typeSpeed: 10,
       onComplete: function() {
         document.querySelector(".typed-cursor").remove();
       }
@@ -29,7 +30,7 @@ const loading = () => {
     circle.classList.remove("to-remove");
     circle.classList.add("is-grow");
   }
-  setInterval(animate, 1500);
+  setInterval(animate, 2500);
 }
 
 export { loading };
