@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :profiles, only: %i[new create]
   end
 
+
+  get '/complete/:team_id', to: 'teams#complete', as: 'complete'
   resources :teams, only: %i[show new create] do
     get '/mates', to: 'team_memberships#mates', as: 'mates'
     get '/loading', to: 'team_memberships#loading', as: 'loading'
