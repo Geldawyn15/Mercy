@@ -49,7 +49,9 @@ const manageMates = () => {
   }
 
   const clickMate = (mate) => {
-    currentUser = document.querySelector(".team-circle")
+    const currentUser = document.querySelector(".team-circle")
+
+    console.log(currentUser);
     if ( mate.id != currentUser.id ) {
       let pathname = window.location.pathname;
       let teamId = pathname.split("/")[2];
