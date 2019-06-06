@@ -1,13 +1,19 @@
 
-<% degs = ["deg0", "deg45", "deg135", "deg180", "deg225", "deg315"] %>
+<% degs = ["deg45", "deg135", "deg180", "deg225", "deg315"] %>
  <ul id="team" class='circle-container'>
     <h1> CREATE<br>YOUR TEAM </h1>
     <% 6.times do |index| %>
       <% if @mems[index] %>
         <% mem = @mems[index] %>
-        <li id="<%= mem.id %>" class="<%= degs[index] %> tool <%= "owner" if index == 0 %> <%=  "mate" if index > 0 %> "><img class="avatar-large friend-image-sm" alt="avatar-large" src="<%= mem.image %>"/><span class="tooltiptext"><%= mem.username %></span></li>
+        <%= index %>
+        <% if mem.id == current_user.id %>
+          <li id="<%= current_user.id %>" class="deg0 tool <%= "owner" if mem.id == current_user.id %> <%=  "mate" if mem.id != current_user.id  %> "><img class="avatar-large friend-image-sm" alt="avatar-large" src="<%= mem.image %>"/><span class="tooltiptext"><%= mem.username %></span></li>
+        <% else %>
+          <li id="<%=  mem.id %>" class="<%= degs[index-1] %> tool <%= "owner" if mem.id == current_user.id %> <%=  "mate" if mem.id != current_user.id  %> "><img class="avatar-large friend-image-sm" alt="avatar-large" src="<%= mem.image %>"/><span class="tooltiptext"><%= mem.username %></span></li>
+        <% end %>
+
       <% else %>
-        <li class="<%= degs[index] %> empty"><%= image_tag "logo_mercy.png", class:"friend-image-sm", alt:"avatar-large" %></li>
+        <li class="<%= degs[index-1] %> empty"><%= image_tag "logo_mercy.png", class:"friend-image-sm", alt:"avatar-large" %></li>
       <% end %>
     <% end %>
   </ul>
