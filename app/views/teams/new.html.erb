@@ -1,7 +1,12 @@
-<div class="container">
-  <h2 id="team-title">Create your team now</h2>
-  <div class="inline-game-cards">
+<div class="container-team">
+    <div class="banner-team">
+    <div class="title-team">
+      <h1>CREATE YOUR TEAM<strong><span class="pink-text"> NOW</span></strong></h1>
+      <p>MAKE YOUR OWN GAME WITH YOUR RANK SKILL</p>
+    </div>
+  </div>
 
+  <div class="inline-game-cards">
     <div id="ow" class="game-card">
       <img src="https://blznav.akamaized.net/img/games/cards/card-overwatch-7eff92e1257149aa.jpg">
       <div class="game-card-infos">
@@ -13,7 +18,7 @@
     </div>
 
     <div id="csgo"class="game-card">
-      <img src="https://s3.gaming-cdn.com/images/products/62/orig/counter-strike-global-offensive-prime-status-upgrade-cover.jpg">
+      <img src="https://steamcdn-a.akamaihd.net/steam/subs/54029/header_586x192.jpg?t=1544227353">
       <div class="game-card-infos">
         <div>
           <h2><%= @games[1].name.capitalize %></h2>
@@ -23,7 +28,7 @@
     </div>
 
     <div id="lol" class="game-card">
-      <img src="https://i.udemycdn.com/course/480x270/1712886_5ce0.jpg">
+      <img src="http://paperlief.com/images/league-of-legends-logo-wallpaper-4.jpg">
       <div class="game-card-infos">
         <div>
           <h2><%= @games[2].name.capitalize %></h2>
@@ -34,25 +39,37 @@
 
   </div>
 
-
   <% spirit = ["Casual", "Competitive"] %>
 
-  <div class="container team-form">
+  <div class="team-form">
+
     <div class="games-container">
     <%= simple_form_for @team, url: teams_path, method: 'POST' do |f| %>
-      <%= f.association :game, as: :radio_buttons, input_html: { class: 'game-radio'} %>
-      <%= f.input :spirit, collection: spirit, selected: 1 %>
+      <%= f.association :game, as: :radio_buttons, label: false, input_html: { class: 'game-radio'} %>
+      <p>How do you feel today ?</p>
+      <%= f.input :spirit, label: false, collection: spirit, selected: 1 %>
+
+
+    <%@games.each_with_index do |game, index| %>
+      <% ranks = game.rank_typology.tr('[]"', '').split(",")%>
+      <% num = index + 1 %>
+      <%= f.input :rank_scale, label: 'fdjhflsd', required: false, collection: ranks, selected: 1, input_html: { class: 'hidden-rank rank-select', id: 'team_select_' + num.to_s }, label_html: { class: 'hidden-rank rank-label', id: 'team_label_' + num.to_s } %>
+      <% end %>
+      <div class="vl"></div>
     </div>
 
-      <%@games.each_with_index do |game, index| %>
-        <% ranks = game.rank_typology.tr('[]"', '').split(",")%>
-        <% num = index + 1 %>
-        <%= f.input :rank_scale, collection: ranks, selected: 1, input_html: { class: 'hidden-rank rank-select', id: 'team_select_' + num.to_s }, label_html: { class: 'hidden-rank rank-label', id: 'team_label_' + num.to_s } %>
-      <% end %>
-      <div class="gender-container">
-        <%= f.input :gender_choice, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['guys','Just the Boys']], label_method: :second, value_method: :first %>
-      </div>
+
+
+    <div class="gender-container">
+        <%= f.input :gender_choice, label: 'With who do you want to play?', legend: false, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['guys','Just the Boys']], label_method: :second, value_method: :first %>
+        <div class="vl"></div>
+    </div>
+
+
+
+  <div class="button-team">
         <%= f.button :submit %>
       <% end %>
+      </div>
   </div>
-</div>
+
