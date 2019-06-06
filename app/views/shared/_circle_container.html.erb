@@ -5,7 +5,6 @@
     <% 6.times do |index| %>
       <% if @mems[index] %>
         <% mem = @mems[index] %>
-        <%= index %>
         <% if mem.id == current_user.id %>
           <li id="<%= current_user.id %>" class="deg0 tool <%= "owner" if mem.id == current_user.id %> <%=  "mate" if mem.id != current_user.id  %> "><img class="avatar-large friend-image-sm" alt="avatar-large" src="<%= mem.image %>"/><span class="tooltiptext"><%= mem.username %></span></li>
         <% else %>
@@ -13,7 +12,7 @@
         <% end %>
 
       <% else %>
-        <li class="<%= degs[index-1] %> empty"><%= image_tag "logo_mercy.png", class:"friend-image-sm", alt:"avatar-large" %></li>
+        <li class="<%= degs[index] %> empty"><%= image_tag "logo_mercy.png", class:"friend-image-sm", alt:"avatar-large" %></li>
       <% end %>
     <% end %>
   </ul>
