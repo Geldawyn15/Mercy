@@ -9,9 +9,6 @@ class TeamsController < ApplicationController
       redirect_to team_mates_path(@team.id)
     elsif @team.status == "over"
       redirect_to team_review_path(@team.id)
-    elsif @team.status == "complete"
-      @team.status = "ingame"
-      @team.save!
     end
   end
 

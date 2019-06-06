@@ -1,89 +1,71 @@
 <!-- app/views/offers/show.html.erb -->
-<body>
-  <div class="homepage-banner">
-    <div class="homepage-content">
-      <div class="homepage-title">
-        <h1>Play your favorite game with<br> <strong><span class="pink-text">non-toxic players</span></strong> now.</h1>
-        <p>Join the community of Mercy and build a respectful place for gamers.</p>
+<div class="container">
+    <div class="homepage-banner">
+      <div class="homepage-content">
+        <div class="homepage-title">
+          <h1>Play your favorite game with<br> <strong><span class="pink-text">non-toxic players</span></strong> now.</h1>
+          <p>Join the community of Mercy and build a respectful place for gamers.</p>
+        </div>
+        <%= link_to "Join us", new_user_registration_path, class: "button-green" %>
       </div>
-      <%= link_to "Join us", new_user_registration_path, class: "button-green-1" %>
     </div>
-  </div>
 
-  <section id="feature-cards">
-    <% title1 = 'Use your mic again' %> <br>
-    <% icon1 = 'fas fa-headset' %> <br>
-    <% para1 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
-    <% title2 = 'Join the community' %>
-    <% icon2 = 'fa fa-users' %>
-    <% para2 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
-    <% title3 = 'Use your mic again' %>
-    <% icon3 = 'fas fa-headset' %>
-    <% para3 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
+    <section id="feature-cards">
+      <% title1 = 'Use your mic again' %> <br>
+      <% icon1 = 'fas fa-headset' %> <br>
+      <% para1 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
+      <% title2 = 'Join the community' %>
+      <% icon2 = 'fa fa-users' %>
+      <% para2 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
+      <% title3 = 'Use your mic again' %>
+      <% icon3 = 'fas fa-headset' %>
+      <% para3 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
 
-    <%= render 'shared/feature_card', title: title1, icon: icon1, para: para1, color: 'orange'%>
-    <%= render 'shared/feature_card', title: title2, icon: icon2, para: para2, color: 'light-green'%>
-    <%= render 'shared/feature_card', title: title3, icon: icon3, para: para3, color: 'pink'%>
-  </section>
-</body>
+      <%= render 'shared/feature_card', title: title1, icon: icon1, para: para1, color: 'orange'%>
+      <%= render 'shared/feature_card', title: title2, icon: icon2, para: para2, color: 'light-green'%>
+      <%= render 'shared/feature_card', title: title3, icon: icon3, para: para3, color: 'pink'%>
+    </section>
 
-<section id="features">
-  <div class="container-fluid text-center">
-    <div class="row gutters-y">
-      <div class="col-md-6 col-lg-3 mb-6 mb-lg-0">
-        <div class="display-4 mb-6 text-warning">
-          <i class="fas fa-users"></i>
-        </div>
+  <div id="features">
+    <div class="site-stats-box">
+      <i class="fas fa-users"></i>
+      <div class="site-stats">9 867</div>
+      <span class="site-stats-label">Happy players</span>
+    </div>
 
-        <div class="text-features">
-          <div class="d-block counter-total lh-1 fw-600 mb-3">102K</div>
-          <span class="lead-1 fw-600 text-uppercase">Total Players</span>
-        </div>
-      </div>
+    <div class="site-stats-box">
+      <i class="fas fa-headset"></i>
+      <div class="site-stats">23 675</div>
+      <span class="site-stats-label">Parties played</span>
+    </div>
 
-      <div class="col-md-6 col-lg-3 mb-6 mb-lg-0">
-        <div class="display-4 mb-6 text-warning">
-          <i class="fas fa-trophy"></i>
+    <div class="site-stats-box">
+      <i class="fas fa-thumbs-up"></i>
+      <div class="site-stats">19 973</div>
+      <span class="site-stats-label">Positive reviews</span>
+    </div>
+
+    <div class="site-stats-box">
+      <i class="fas fa-heart"></i>
+      <div class="site-stats">13 352</div>
+      <span class="site-stats-label">Frienships created</span>
+    </div>
+
+  <!-- <section class="content-section gradient-lg">
+        <div class="container">
+          <div class="row gutters-y align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 ml-auto">
+              <div class="ar-4_3 bs-c bp-c br-n rounded"></div>
         </div>
-        <div class="text-features">
-          <div class="d-block counter-total lh-1 fw-600 mb-3">30</div>
-          <span class="lead-1 fw-600 text-uppercase">Positive review</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 mb-6 mb-md-0">
-        <div class="display-4 mb-6 text-warning">
-          <i class="fas fa-heart"></i>
-        </div>
-        <div class="text-features">
-          <div class="d-block counter-total lh-1 fw-600 mb-3">70k</div>
-          <span class="lead-1 fw-600 text-uppercase">Happy Players</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="display-4 mb-6 text-warning">
-          <i class="fas fa-globe-americas"></i>
-        </div>
-        <div class="text-features">
-          <div class="d-block counter-total lh-1 fw-600 mb-3">54</div>
-          <span class="lead-1 fw-600 text-uppercase">Countries</span>
+        <div class="col-lg-6 ml-lg--8 rounded bg-dark text-light shadow-lg-3 py-7 px-lg-7 py-lg-6">
+          <h3 class="mb-4">Our Mission.</h3>
+          <hr class="w-10 border-top-2 my-6 my-xl-7 ml-0 border-warning">
+          <p class="lead-1">Morbi aliquet felis nec nisl congue interdum. Quisque vitae sapien ullamcorper, tincidunt nibh et, finibus dui. Nunc et ex faucibus, molestie lacus id, interdum lectus. Sed tincidunt purus vel porttitor sagittis. Fusce at ligula felis.</p>
+        <div class="text-right"><p class="text-warning mt-0">Aenean ac.</p></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section> -->
 
-<!-- <section class="content-section gradient-lg">
-      <div class="container">
-        <div class="row gutters-y align-items-center">
-          <div class="col-lg-6 mb-4 mb-lg-0 ml-auto">
-            <div class="ar-4_3 bs-c bp-c br-n rounded"></div>
-      </div>
-      <div class="col-lg-6 ml-lg--8 rounded bg-dark text-light shadow-lg-3 py-7 px-lg-7 py-lg-6">
-        <h3 class="mb-4">Our Mission.</h3>
-        <hr class="w-10 border-top-2 my-6 my-xl-7 ml-0 border-warning">
-        <p class="lead-1">Morbi aliquet felis nec nisl congue interdum. Quisque vitae sapien ullamcorper, tincidunt nibh et, finibus dui. Nunc et ex faucibus, molestie lacus id, interdum lectus. Sed tincidunt purus vel porttitor sagittis. Fusce at ligula felis.</p>
-      <div class="text-right"><p class="text-warning mt-0">Aenean ac.</p></div>
-      </div>
-    </div>
-  </div>
-</section> -->
+</div>
+
