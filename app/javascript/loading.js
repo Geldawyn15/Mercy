@@ -18,8 +18,6 @@ const loading = () => {
 
   let typed = new Typed(".typed" , options);
 
-
-
   const circles = document.querySelectorAll(".tool");
   circles.forEach(function(circle, index) {
     circle.classList.add("toggle-content");

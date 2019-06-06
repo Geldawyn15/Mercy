@@ -4,5 +4,5 @@ meta_product_name: "Mercy"
 meta_title: "Mercy - Play your favorite game with
 non-toxic players now."
 meta_description: "Find great player to play with using our in-game behavior algorithm based"
-meta_image: "logo_mercy.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_image: "op-logo.png"
+twitter_account: "@product_twitter_account"

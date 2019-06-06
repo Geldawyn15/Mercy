@@ -6,7 +6,7 @@
       <div>
       <%= render 'shared/circle_container', mems: @team.users %>
       </div>
-      <%= link_to "Launch game", team_path(@team.id), class: "button1" %>
+      <%= link_to "Launch game", complete_path(@team.id), class: "button1" %>
       <!-- TEAM INGAME -->
   <% elsif @team.status == "ingame" %>
       <h1 class="message"> Players are ingame </h1>
