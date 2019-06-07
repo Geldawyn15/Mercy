@@ -40,7 +40,7 @@ namespace :db do
       puts "#{user_parameters[:user].username} overwatch profile created"
     end
 
-    charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@live.fr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://data.whicdn.com/images/299530921/large.png', gender: 'female', status: 'online')
+    charlycade = User.create!(username: 'CHARLYCADE', email: 'charlinem@live.fr', password:'mercy4all', discord_id:'CharlyCade#9981' ,birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://66.media.tumblr.com/0575ce8bfc6af722c09499d4bd781771/tumblr_pspy1butNs1qb5wcd_500.jpg', gender: 'female', status: 'online')
     puts "#{User.last.username} user created"
 
     charlycade_parameters = { user: charlycade, launcher_tag: '2422', platform: 'pc', mainrole: 'dVa', game: Game.first }
@@ -123,9 +123,9 @@ namespace :db do
       team = charlycade_team[0]
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: false, endorse: true, nok: false) if index !=1
-      UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: false, endorse: true, nok: false) if index !=2
+      UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: false, endorse: true, nok: false) if index !=4
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
-      UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: false, nok: true, nok_respect: true) if index !=4
+      UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: false, nok: true, nok_respect: true) if index !=2
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: false, endorse: true, nok: true, nok_communication: true, nok_helpfulness: true) if index !=5
     end
 
@@ -133,11 +133,11 @@ namespace :db do
     charlycade_team[1].users.each_with_index do |user, index|
       team = charlycade_team[1]
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[0], add_friend: true, endorse: true, nok: false) if index !=0
-      UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: true, endorse: true, nok: false) if index !=1
+      UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[1], add_friend: true, endorse: true, nok: false) if index !=5
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[2], add_friend: false, endorse: true, nok: false) if index !=2
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[3], add_friend: false, endorse: true, nok: false) if index !=3
       UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[4], add_friend: false, endorse: true, nok: false) if index !=4
-      UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: false, endorse: false, nok: true, nok_communication: true, nok_helpfulness: true) if index !=5
+      UserReview.create!(team_id: team.id, user: user, user_reviewed: team.users[5], add_friend: false, endorse: false, nok: true, nok_communication: true, nok_helpfulness: true) if index !=1
     end
 
     # good user reviews for 5 teams

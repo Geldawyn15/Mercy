@@ -89,70 +89,70 @@ namespace :db do
     bourbon = User.create!(username: 'Bourbon', email: 'Jonaschancelier@gmail.com', discord_id:'Bourbon kid*#6910', password:'mercy4all', birthdate:'02/02/1993', langage: 'en', location: 'eu', image: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/36/36362efcd22d2845be1bc5c0edc38cddd14674cb_full.jpg', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
-    yunyun = User.create!(username: 'YunYun', email: 'yunyun@gmail.com', password:'mercy4all', discord_id:'YunYun#9321', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/54908/profile/VCINVZWI_avatar_medium_square.jpg', gender: 'female', status: 'online')
+    yunyun = User.create!(username: 'YunYun', email: 'yunyun@gmail.com', password:'mercy4all', discord_id:'YunYun#9321', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfxrvTwSHdzAj52qmYZ-4_kdg7aAIBkywW8VMu0x7ruEfXDfjX', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    lolonai = User.create!(username: 'Lolonai', email: 'Lolonai@gmail.com', discord_id:'Lolonai#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/337243/profile/JGBHFEBN_avatar_medium_square.jpg', gender: 'male', status: 'online')
+    lolonai = User.create!(username: 'Lolonai', email: 'Lolonai@gmail.com', discord_id:'Lolonai#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://profilepicturesdp.com/wp-content/uploads/2018/06/good-profile-picture-girls-2.jpg', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
     pengorof = User.create!(username: 'Pengorof', email: 'Pengorof@gmail.com', discord_id:'Pengorof#4648', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/764397/profile/GFWWYHLL_avatar_medium_square.jpg', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
-    taeola = User.create!(username: 'Taeola', email: 'Taeola@gmail.com', discord_id:'Taeola#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://d38we5ntdyxyje.cloudfront.net/809160/profile/PBCEJDGZ_avatar_medium_square.jpg', gender: 'male', status: 'online')
+    taeola = User.create!(username: 'Taeola', email: 'Taeola@gmail.com', discord_id:'Taeola#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy_zMIjntdPWxSv5XgEL3eVAq7yGwit0g5kaRToKZ9hdlZ9XOj', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    whipthan = User.create!(username: 'whipthan', email: 'whipthan@gmail.com', discord_id:'whipthan#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://thehustlecommunity.com/wp-content/uploads/2016/03/Jason-Avatar-Square-300x300.jpg', gender: 'male', status: 'online')
+    whipthan = User.create!(username: 'whipthan', email: 'whipthan@gmail.com', discord_id:'whipthan#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://casanovastyle.com/wp-content/uploads/2019/03/08-Things-You-Should-Never-Do-Over-Text-Message_fight_506921360_portishead1-740x431@2x.jpg', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    sneax = User.create!(username: 'SneaX', email: 'SneaX@gmail.com', discord_id:'SneaX#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://cdn2.stylecraze.com/wp-content/uploads/2012/06/50-Top-Hairstyles-For-Square-Faces37.jpg', gender: 'female', status: 'online')
+    sneax = User.create!(username: 'SneaX', email: 'SneaX@gmail.com', discord_id:'SneaX#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://photodoto.com/wp-content/uploads/2013/01/54-self-portrait.jpg', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
-    kayozz = User.create!(username: 'KaYoZz', email: 'KaYoZz@gmail.com', discord_id:'KaYoZz#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://media.creativemornings.com/uploads/user/avatar/470117/Peter_Portrait_square_medium_res.jpeg', gender: 'female', status: 'online')
+    kayozz = User.create!(username: 'KaYoZz', email: 'KaYoZz@gmail.com', discord_id:'KaYoZz#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://i2-prod.mirror.co.uk/incoming/article2957719.ece/ALTERNATES/s615b/Cheryl-Cole-instagram.png', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    dragonix = User.create!(username: 'Dragonix', email: 'Dragonix@gmail.com', discord_id:'Dragonix#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://cdn2.stylecraze.com/wp-content/uploads/2012/06/50-Top-Hairstyles-For-Square-Faces44.jpg', gender: 'female', status: 'online')
+    dragonix = User.create!(username: 'Dragonix', email: 'Dragonix@gmail.com', discord_id:'Dragonix#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/614048c0-c5eb-4425-909d-b4b94a056889/d9qu1ct-b6ad9584-9aaf-4a4b-b87f-a98110af8415.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzYxNDA0OGMwLWM1ZWItNDQyNS05MDlkLWI0Yjk0YTA1Njg4OVwvZDlxdTFjdC1iNmFkOTU4NC05YWFmLTRhNGItYjg3Zi1hOTgxMTBhZjg0MTUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jAUeHl2r2U6Di5GSyTEOnI6rGINwVxzx9sMhkQynjCI', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    synix = User.create!(username: 'Synix', email: 'Synix@gmail.com', discord_id:'Synix#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.apetogentleman.com/wp-content/uploads/2018/07/Oval-1160x1067.png', gender: 'male', status: 'online')
+    synix = User.create!(username: 'Synix', email: 'Synix@gmail.com', discord_id:'Synix#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://i.pinimg.com/736x/5b/05/7f/5b057f5115df5baef83446732c3ce194.jpg', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    drazox = User.create!(username: 'Drazox', email: 'Drazox@gmail.com', discord_id:'Drazox#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.apetogentleman.com/wp-content/uploads/2018/07/Round-1160x1067.png', gender: 'male', status: 'online')
+    drazox = User.create!(username: 'Drazox', email: 'Drazox@gmail.com', discord_id:'Drazox#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://66.media.tumblr.com/ac1e0a540ca9c5e7e828fbd6e71fb7cb/tumblr_pdxj8ebaj41vydp0uo1_250.png', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    heatzy = User.create!(username: 'Heatzy', email: 'Heatzy@gmail.com', discord_id:'Heatzy#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://d38we5ntdyxyje.cloudfront.net/820650/profile/IEKRIPNI_avatar_medium_square.jpg', gender: 'female', status: 'online')
+    heatzy = User.create!(username: 'Heatzy', email: 'Heatzy@gmail.com', discord_id:'Heatzy#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://scontent.cdninstagram.com/vp/bf9c41083c7eef6f6e76f3d3ccd20a6f/5D74BC76/t51.2885-15/e35/s480x480/56968358_630031677458477_3444622263442622323_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    zodiack = User.create!(username: 'Zodiack', email: 'Zodiack@gmail.com', discord_id:'Zodiack#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.apetogentleman.com/wp-content/uploads/2018/07/Square-1160x1067.png', gender: 'male', status: 'online')
+    zodiack = User.create!(username: 'Zodiack', email: 'Zodiack@gmail.com', discord_id:'Zodiack#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://scontent.cdninstagram.com/vp/fd4817eca11677b168bd13cae011c347/5D67C60A/t51.2885-15/e35/c86.0.907.907a/s480x480/58410033_378916006289311_3242896559221177523_n.jpg?_nc_ht=scontent-ort2-1.cdninstagram.com', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    kaos = User.create!(username: 'kaos', email: 'kaos@gmail.com', discord_id:'kaos#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://i.pinimg.com/236x/0c/9a/0e/0c9a0ecb677c68b62e62ae5885e455da.jpg', gender: 'female', status: 'online')
+    kaos = User.create!(username: 'kaos', email: 'kaos@gmail.com', discord_id:'kaos#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://techgirl.co.za/wp-content/uploads/2016/05/girlgamer.jpg', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    omega = User.create!(username: 'Omega', email: 'Omega@gmail.com', discord_id:'Omega#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'http://d38we5ntdyxyje.cloudfront.net/1056572/profile/SPXPVHKZ_avatar_medium_square.jpg', gender: 'female', status: 'online')
+    omega = User.create!(username: 'Omega', email: 'Omega@gmail.com', discord_id:'Omega#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://scontent-vie1-1.cdninstagram.com/vp/708374d9b04974219d4cb2d38e1ea309/5D8CFBB5/t51.2885-19/s320x320/61040251_430466291084769_4993501588770258944_n.jpg?_nc_ht=scontent-vie1-1.cdninstagram.com', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    zaria = User.create!(username: 'Zaria', email: 'Zaria@gmail.com', discord_id:'Zaria#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://cdn2.stylecraze.com/wp-content/uploads/2012/06/50-Top-Hairstyles-For-Square-Faces41.jpg', gender: 'female', status: 'online')
+    zaria = User.create!(username: 'Zaria', email: 'Zaria@gmail.com', discord_id:'Zaria#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://thechive.files.wordpress.com/2018/06/these-hot-af-pro-gamer-girls-can-use-our-joysticks-anytime-56-photos-2528.jpg?quality=85&strip=info&w=600', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    gail = User.create!(username: 'Gail', email: 'Gail@gmail.com', discord_id:'Gail#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://images.zapnito.com/users/200472/avatar/medium_Profile_Square.jpeg', gender: 'female', status: 'online')
+    gail = User.create!(username: 'Gail', email: 'Gail@gmail.com', discord_id:'Gail#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://scontent-lga3-1.cdninstagram.com/vp/511efcaf870a065337ab5d9fce9be8ad/5D59D230/t51.2885-15/e35/56398539_207045883593586_428885208413621224_n.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&se=8', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
-    uma = User.create!(username: 'uma', email: 'uma@gmail.com', discord_id:'uma#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://220057-669498-1-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/avatar_medium_square.jpg', gender: 'female', status: 'online')
+    uma = User.create!(username: 'uma', email: 'uma@gmail.com', discord_id:'uma#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://scontent.cdninstagram.com/vp/a0153034f70eeb0f2683363e4177e473/5D62C6CA/t51.2885-15/e35/c0.90.720.720/s480x480/25014856_1393237424118756_7273558404612751360_n.jpg?_nc_ht=scontent-msp1-1.cdninstagram.com', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
-    edna = User.create!(username: 'Edna', email: 'Edna@gmail.com', discord_id:'Edna#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://image.shutterstock.com/image-vector/avatar-girl-hairstyle-6-260nw-1104755567.jpg', gender: 'female', status: 'online')
+    edna = User.create!(username: 'Edna', email: 'Edna@gmail.com', discord_id:'Edna#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://api.personality-database.com/profile_images/25516.png', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
-    faith = User.create!(username: 'Faith', email: 'Faith@gmail.com', discord_id:'Faith#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaKejvjIA5icjkrLeq_HeoFPPabGwGazDyL-ZvyCBtignOYtoh', gender: 'female', status: 'online')
+    faith = User.create!(username: 'Faith', email: 'Faith@gmail.com', discord_id:'Faith#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBOLNT4PxapuOnF1bZYF47M87S87RbOA7UTwEsx9NwsfDle2re', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
-    ruby = User.create!(username: 'Ruby', email: 'Ruby@gmail.com', discord_id:'Ruby#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://png.pngtree.com/element_origin_min_pic/16/07/09/205780ec4db0476.jpg', gender: 'female', status: 'online')
+    ruby = User.create!(username: 'Ruby', email: 'Ruby@gmail.com', discord_id:'Ruby#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://pbs.twimg.com/profile_images/1105697951329017856/1pgq5Jxq.png', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    quinn = User.create!(username: 'quinn', email: 'quinn@gmail.com', discord_id:'quinn#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://png.pngtree.com/element_origin_min_pic/16/07/10/2057823b91baad3.jpg', gender: 'female', status: 'online')
+    quinn = User.create!(username: 'quinn', email: 'quinn@gmail.com', discord_id:'quinn#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://www.instagram.com/p/lLLCxeorA2/media/?size=m', gender: 'female', status: 'online')
     puts "#{User.last.username} created"
 
-    okami = User.create!(username: 'Okami', email: 'Okami@gmail.com', discord_id:'Okami#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS1Yqm0QIEk_QIaYFwTUrPqBL6hlYXVVcDVhdiSeSfeVc7Hzjk', gender: 'female', status: 'online')
+    okami = User.create!(username: 'Okami', email: 'Okami@gmail.com', discord_id:'Okami#9254', password:'mercy4all', birthdate:'29/05/1990', langage: 'en', location: 'eu', image: 'https://tse4.mm.bing.net/th?id=OIP.pCctGPIEHi5Tp6YpN96caAHaHw', gender: 'male', status: 'online')
     puts "#{User.last.username} created"
 
     puts '-----------------------------'
