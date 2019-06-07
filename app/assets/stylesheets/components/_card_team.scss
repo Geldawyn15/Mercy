@@ -77,6 +77,7 @@
 .card-team-status.pending {
     background: #ff205f;
     opacity: .8;
+    font-size: 12px;
 }
 
 // CARD TEAM READY //
@@ -95,6 +96,7 @@
     background: #00FF18;
     opacity: .8;
     text-align: center;
+    font-size: 12px;
 }
 
 // CARD TEAM COMPLETE //
@@ -129,6 +131,7 @@
     background: #EF001D;
     opacity: .8;
     text-align: center;
+    font-size: 12px;
   }
 
   // CARD REVIEW PENDING //
@@ -155,4 +158,5 @@
     background: #EF7400;
     opacity: .8;
     text-align: center;
+    font-size: 12px;
 }

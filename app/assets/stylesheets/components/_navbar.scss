@@ -64,6 +64,7 @@
 .navbar-light .navbar-nav .active > .nav-link {
   color: $white;
   border-radius: 16px;
+  transform: translateX(-30%);
 }
 
 .nav-button {
