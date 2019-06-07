@@ -14,6 +14,10 @@
   font-family:'Hind', "sans-serif";
 }
 
+#new_team {
+  width: 240px;
+}
+
 // New_Review_Form
 
 .team_review_comment {
@@ -86,6 +90,7 @@
 .gender-container .form-check {
   text-align: center;
   display: inline-block;
+  padding: 0 10px;
 }
 
 .gender-container legend {

@@ -53,7 +53,7 @@
     <%@games.each_with_index do |game, index| %>
       <% ranks = game.rank_typology.tr('[]"', '').split(",")%>
       <% num = index + 1 %>
-      <%= f.input :rank_scale, label: 'fdjhflsd', required: false, collection: ranks, selected: 1, input_html: { class: 'hidden-rank rank-select', id: 'team_select_' + num.to_s }, label_html: { class: 'hidden-rank rank-label', id: 'team_label_' + num.to_s } %>
+      <%= f.input :rank_scale, label: 'Which rank scale do you want?', required: false, collection: ranks, selected: 1, input_html: { class: 'hidden-rank rank-select', id: 'team_select_' + num.to_s }, label_html: { class: 'hidden-rank rank-label', id: 'team_label_' + num.to_s } %>
       <% end %>
       <div class="vl"></div>
     </div>
@@ -61,7 +61,7 @@
 
 
     <div class="gender-container">
-        <%= f.input :gender_choice, label: 'With who do you want to play?', legend: false, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['guys','Just the Boys']], label_method: :second, value_method: :first %>
+        <%= f.input :gender_choice, label: 'Who do you want to play with?', legend: false, as: :radio_buttons, collection: [['girls', 'Girl Power'], ['mixed', 'Better together'], ['guys','Just the Boys']], label_method: :second, value_method: :first %>
         <div class="vl"></div>
     </div>
 

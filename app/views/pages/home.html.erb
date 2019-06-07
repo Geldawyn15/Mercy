@@ -5,7 +5,11 @@
           <h1>Play your favorite game with<br> <strong><span class="pink-text">non-toxic players</span></strong> now.</h1>
           <p>Join the community of <strong>Mercy</strong> and build a respectful place for gamers.</p>
         </div>
-        <%= link_to "Join us", new_user_registration_path, class: "button-green" %>
+        <% if user_signed_in? %>
+          <%= link_to "Find team mates", new_team_path, class: "button-green" %>
+        <% else %>
+          <%= link_to "Join us", new_user_registration_path, class: "button-green" %>
+        <% end %>
       </div>
     </div>
 
