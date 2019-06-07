@@ -1,11 +1,21 @@
 // New_Team_Form //
+.team-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
 .team-form .form-control {
-  width:100%;
-  padding:5px;
+  // width:100%;
+  // padding:5px;
   box-sizing:border-box;
-  box-shadow: 0 0 40px #fa3380;
-  border: solid 1px #fa3380;
+  box-shadow: 0 0 20px #fa3380;
+  // border: solid 1px #fa3380;
   font-family:'Hind', "sans-serif";
+}
+
+#new_team {
+  width: 240px;
 }
 
 // New_Review_Form
@@ -29,7 +39,8 @@
 .form-check {
   input[type='checkbox'] + label {
     padding: 8px 16px;
-    background-color: #141414;
+    font-color: $white;
+    // background-color: #141414;
     transition: box-shadow .3s;
     border-radius: 2px;
     border: 1px solid #55CDC9;
@@ -68,18 +79,29 @@
   }
 
 .gender-container {
- display: flex;
- align-items: center;
- justify-content: center;
+  grid-column: 2;
+  grid-row: 1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gender-container .form-check {
   text-align: center;
   display: inline-block;
+  padding: 0 10px;
 }
 
 .gender-container legend {
   text-align: center;
+}
+
+.games-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid $light-green;
 }
 
 .games-container .form-check {
@@ -89,4 +111,19 @@
 
 .games-container legend {
   text-align: center;
+}
+
+
+.button-team {
+  grid-column: 3;
+  grid-row: 1;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid $light-green;
+
+  input[type='submit'] {
+    margin-top: 0;
+  }
 }

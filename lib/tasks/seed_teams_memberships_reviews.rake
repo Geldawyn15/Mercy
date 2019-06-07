@@ -28,13 +28,36 @@ desc 'it launches the seeds for team memberships, team reviews and user reviews'
     Team.where(status: %i[complete ingame]).each do |team|
       i = 0
       users = User.user_for_game_available(team.game).sample(6)
-      6.times do
-        TeamMembership.create!(user: users[i], team: team) if users.count > 6
-        i += 1
+      if users.count == 6
+        6.times do
+          TeamMembership.create!(user: users[i], team: team)
+          i += 1
+        end
+      else
+        team.status = "pending"
       end
     end
 
-    puts 'all teams completed'
+    pending_team_average = 0
+    Team.where(status: "pending").each { |team| pending_team_average += team.users.count }
+    pending_team_average /= Team.where(status: "pending").count unless pending_team_average.zero?
+
+    complete_team_average = 0
+    Team.where(status: "complete").each { |team| complete_team_average += team.users.count }
+    complete_team_average /= Team.where(status: "complete").count unless complete_team_average.zero?
+
+    ingame_team_average = 0
+    Team.where(status: "ingame").each { |team| ingame_team_average += team.users.count }
+    ingame_team_average /= Team.where(status: "ingame").count unless ingame_team_average.zero?
+
+    over_team_average = 0
+    Team.where(status: "over").each { |team| over_team_average += team.users.count }
+    over_team_average /= Team.where(status: "over").count unless over_team_average.zero?
+
+    puts "#{Team.where(status: 'pending').count} teams PENDING with #{pending_team_average} players"
+    puts "#{Team.where(status: 'complete').count} teams COMPLETE with #{complete_team_average} players"
+    puts "#{Team.where(status: 'ingame').count} teams INGAME with #{ingame_team_average} players"
+    puts "#{Team.where(status: 'over').count} teams OVER with #{over_team_average} players"
 
     puts '--------------------------------------------------'
     puts 'CREATING 6 TEAM REVIEWS FOR TEAMS WITH STATUS OVER'
@@ -70,8 +93,6 @@ desc 'it launches the seeds for team memberships, team reviews and user reviews'
         end
       end
 
-      puts "#{ (over_teams.count - 2) * 6 } good team reviews created"
-
       over_teams[-2..-1].each do |team|
         members = team.users
         j = 0
@@ -90,8 +111,7 @@ desc 'it launches the seeds for team memberships, team reviews and user reviews'
       end
     end
 
-    puts "4 bad team reviews created"
-    puts "8 mild team reviews created"
+    puts "#{TeamReview.count} Team Reviews created"
 
     puts '---------------------------------------------------------'
     puts 'CREATING USER REVIEWS FOR USERS IN TEAMS WITH STATUS OVER'
@@ -133,12 +153,12 @@ desc 'it launches the seeds for team memberships, team reviews and user reviews'
       end
     end
 
-    puts "240 user reviews created"
-    puts "170 endorsements"
-    puts "90 users added as friends"
-    puts "20 nok reported"
+    puts "#{UserReview.count} User reviews created"
+    puts "#{UserReview.where(endorse: true).count} endorsements"
+    puts "#{UserReview.where(add_friend: true).count} users added as friends"
+    puts "#{UserReview.where(nok: true).count} nok reported"
 
-    puts "90 friendships will automatically be created"
+    puts "#{Friendship.all.count} friendships automatically created"
 
     puts '-----------------'
     puts 'SEEDS ARE DONE!!!'

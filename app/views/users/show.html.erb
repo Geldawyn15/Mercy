@@ -14,7 +14,7 @@
   <div class="headerDivider"></div>
 
     <div class="column-profil">
-      <h2 class="section-title">TEAMMATES <span class="title-number"><%= @user.friendships.uniq.count %></span> </h2>
+      <h2 class="section-title">TEAMMATES <span class="title-number"><%= @user.friends.uniq.count %></span> </h2>
       <% @user.friends.uniq.each do |friend| %>
       <div class="column-profil"><%= render 'shared/card_friend', friend: friend %></div>
     <% end %>

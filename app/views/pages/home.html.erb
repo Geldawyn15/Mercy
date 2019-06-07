@@ -1,25 +1,28 @@
 <!-- app/views/offers/show.html.erb -->
-<div class="container">
     <div class="homepage-banner">
       <div class="homepage-content">
         <div class="homepage-title">
           <h1>Play your favorite game with<br> <strong><span class="pink-text">non-toxic players</span></strong> now.</h1>
-          <p>Join the community of Mercy and build a respectful place for gamers.</p>
+          <p>Join the community of <strong>Mercy</strong> and build a respectful place for gamers.</p>
         </div>
-        <%= link_to "Join us", new_user_registration_path, class: "button-green" %>
+        <% if user_signed_in? %>
+          <%= link_to "Find team mates", new_team_path, class: "button-green" %>
+        <% else %>
+          <%= link_to "Join us", new_user_registration_path, class: "button-green" %>
+        <% end %>
       </div>
     </div>
 
     <section id="feature-cards">
-      <% title1 = 'Use your mic again' %> <br>
-      <% icon1 = 'fas fa-headset' %> <br>
-      <% para1 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
-      <% title2 = 'Join the community' %>
-      <% icon2 = 'fa fa-users' %>
-      <% para2 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
+      <% title1 = 'Play with respectful gamers' %>
+      <% icon1 = 'fas fa-users' %>
+      <% para1 = 'What is worth that playing with toxic players? Stop harassment, enjoy plainly your game and meet new gamer friends who share your values and game spirit.' %>
+      <% title2 = 'Join a non-toxic community' %>
+      <% icon2 = 'fas fa-fist-raised' %>
+      <% para2 = 'Mercy is the first gamer platform where members are not only judged on their gaming skills but also on their behavior and are endorsed by other players.' %>
       <% title3 = 'Use your mic again' %>
       <% icon3 = 'fas fa-headset' %>
-      <% para3 = 'Social media support towards female gamers in order to defeat online harassment. Thus creating a amicable and positive online environment and experience for all.' %>
+      <% para3 = "Thanks to mercy, you won't hide behing your keyboard anymore. Be yourself fully and use your mic agin. Female gamers are good as anyone else." %>
 
       <%= render 'shared/feature_card', title: title1, icon: icon1, para: para1, color: 'orange'%>
       <%= render 'shared/feature_card', title: title2, icon: icon2, para: para2, color: 'light-green'%>
@@ -28,44 +31,38 @@
 
   <div id="features">
     <div class="site-stats-box">
-      <i class="fas fa-users"></i>
-      <div class="site-stats">9 867</div>
+      <i class="fas fa-smile-beam"></i>
+      <div class="site-stats">9k</div>
       <span class="site-stats-label">Happy players</span>
     </div>
 
     <div class="site-stats-box">
       <i class="fas fa-headset"></i>
-      <div class="site-stats">23 675</div>
+      <div class="site-stats">23K</div>
       <span class="site-stats-label">Parties played</span>
     </div>
 
     <div class="site-stats-box">
       <i class="fas fa-thumbs-up"></i>
-      <div class="site-stats">19 973</div>
+      <div class="site-stats">19K</div>
       <span class="site-stats-label">Positive reviews</span>
     </div>
 
     <div class="site-stats-box">
       <i class="fas fa-heart"></i>
-      <div class="site-stats">13 352</div>
+      <div class="site-stats">13K</div>
       <span class="site-stats-label">Frienships created</span>
     </div>
+  </div>
 
-  <section class="content-section gradient-lg">
-        <div class="container">
-          <div class="row gutters-y align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0 ml-auto">
-              <div class="ar-4_3 bs-c bp-c br-n rounded"></div>
-        </div>
-        <div class="col-lg-6 ml-lg--8 rounded bg-dark text-light shadow-lg-3 py-7 px-lg-7 py-lg-6">
-          <h3 class="mb-4">Our Mission.</h3>
-          <hr class="w-10 border-top-2 my-6 my-xl-7 ml-0 border-warning">
-          <p class="lead-1">Morbi aliquet felis nec nisl congue interdum. Quisque vitae sapien ullamcorper, tincidunt nibh et, finibus dui. Nunc et ex faucibus, molestie lacus id, interdum lectus. Sed tincidunt purus vel porttitor sagittis. Fusce at ligula felis.</p>
-        <div class="text-right"><p class="text-warning mt-0">Aenean ac.</p></div>
-        </div>
-      </div>
+<div id="container-mission">
+  <div class="component-mission">
+    <div class="img-mission"></div>
+    <div class="description-mission">
+      <h1>Our Mission.</h1>
+      <hr class="w-10 border-top-2 my-6 my-xl-7 ml-0 border-warning">
+      <h2>Defeat online harassment, <strong>Mercy</strong> protect and support female players who want to grow in the gaming community. We created a amicable and positive online environment and experience for all. Thus we are empowering woman and girls in gaming, to feel their best and be respected.</h2><br>
+      <p>Mercy</p>
     </div>
-  </section>
-
+  </div>
 </div>
-

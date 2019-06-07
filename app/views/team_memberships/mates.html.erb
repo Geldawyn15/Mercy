@@ -1,6 +1,10 @@
+<div class="rails-default-error-page">
+  <div class="tenor-gif-embed lobby"></div>
+</div>
+
 <div class="container-mates">
-    <div class="team-circle">
-      <%= render 'shared/circle_container', mems: @mems %>
+    <div id="<%= current_user.id %>" class="team-circle">
+      <%= render 'shared/circle_container', mems: @mems.reverse %>
       <%= link_to "Complete the team", team_loading_path, class: "button1" %>
 
     </div>
@@ -15,27 +19,30 @@
       <% @friends.each do |friend| %>
         <li id="<%= friend.id %>" class="friend" >
           <div class="friend-avatar-available">
-            <% if friend.status == "ingame" %> <%= image_tag friend.image, class:"friend-image-sm friend-ingame" %>
-          <% elsif friend.status == "online" %> <%= image_tag friend.image, class:"friend-image-sm  friend-online" %>
-          <% else friend.status == "away" %> <%= image_tag friend.image, class:"friend-image-sm  friend-away" %>
-          <% end %>
-          <i class="fas fa-circle <%= friend.status %>"></i>
+            <% if friend.status == "ingame" %>
+              <div class="friend-bar-image">
+                <%= image_tag friend.image, class:"friend-image-sm friend-ingame" %>
+                <i class="fas fa-circle <%= friend.status %>"></i>
+              </div>
+            <% elsif friend.status == "online" %>
+              <div class="friend-bar-image">
+                <%= image_tag friend.image, class:"friend-image-sm  friend-online" %>
+                <i class="fas fa-circle <%= friend.status %>"></i>
+              </div>
+            <% else friend.status == "away" %>
+              <div class="friend-bar-image">
+                <%= image_tag friend.image, class:"friend-image-sm  friend-away" %>
+                <i class="fas fa-circle <%= friend.status %>"></i>
+              </div>
+            <% end %>
           </div>
+
           <div class="friend-info">
-            <p id="friend-username">
-              <%= friend.username %></p>
-            <p id="main-character">main hero <%= friend.profile(@team).capitalize %></p>
+            <p id="friend-username" class="info-<%= friend.status %>"><%= friend.username %></p>
+            <p id="main-character">as. <%= friend.profile(@team).capitalize %></p>
           </div>
         </li>
       <% end %>
     </ul>
   </div>
-
-</div>
-
-<div class="hero-detail-video video-background-wrapper is-active m-blend">
-  <video class="video-background-vid m-fit-width m-right-align" autoplay="" loop="" muted="">
-    <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/dva/idle-video.webm" type="video/webm">
-      <source src="https://d1u1mce87gyfbn.cloudfront.net/hero/dva/idle-video.mp4" type="video/mp4">
-  </video>
 </div>

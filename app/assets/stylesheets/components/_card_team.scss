@@ -61,6 +61,8 @@
     color: #fff;
   }
 
+  // CARD TEAM PENDING //
+
   .card-team .card-team-status.pending {
     padding: 6px 25px;
     position: absolute;
@@ -94,43 +96,33 @@
     opacity: .8;
     text-align: center;
 }
-// CARD REVIEW PENDING //
-.pending-img {
-  height: 200px;
-  width: 300px;
-  background-image: image-url('https://i.kym-cdn.com/photos/images/newsfeed/001/122/517/890.jpg');
-  background-size: cover;
-  position: relative;
-  top: 20%;
-}
 
-
-.card-team .card-team-status.rpending {
+// CARD TEAM COMPLETE //
+.stars {
+    height: 36px;
+    width: 136px;
     padding: 6px 25px;
     position: absolute;
     margin-top: 28px;
     margin-left: 29px;
-    z-index: 3;
-    top: -48%;
-    left: 31%;
-}
-
-.card-team-status.rpending {
-    background: #EF7400;
-    opacity: .8;
     text-align: center;
-}
+    top: -25%;
+    left: 55%;
+    color: yellow;
+    background-color: rgba(85, 205, 201, .8);
+  }
 
-// CARD INGAME //
+  // CARD TEAM INGAME //
 
 .card-team .card-team-status.ingame {
     padding: 6px 25px;
     position: absolute;
     margin-top: 28px;
     margin-left: 29px;
-    z-index: 3;
     top: -47%;
     left: 51%;
+    border-radius: 0;
+    color: white;
 }
 
 .card-team-status.ingame {
@@ -139,17 +131,28 @@
     text-align: center;
   }
 
-// CARD COMPLETE //
-.stars {
+  // CARD REVIEW PENDING //
+
+.rpending-img {
+  height: 200px;
+  width: 300px;
+  background-size: cover;
+  position: relative;
+  top: 20%;
+  object-position: top;
+}
+
+.card-team .card-team-status.rpending {
     padding: 6px 25px;
     position: absolute;
     margin-top: 28px;
     margin-left: 29px;
-    z-index: 3;
-    opacity: 1;
-    text-align: center;
-    top: -25%;
-    left: 55%;
-    color: yellow;
+    top: -47%;
+    left: 10%;
+}
 
-  }
+.card-team-status.rpending {
+    background: #EF7400;
+    opacity: .8;
+    text-align: center;
+}

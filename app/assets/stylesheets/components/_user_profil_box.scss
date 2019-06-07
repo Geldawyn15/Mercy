@@ -8,12 +8,10 @@
   position: relative;
   align-items: center;
   padding-top: 80px;
-  padding-bottom: 30px;
   border-radius: 0% 0% 10% 10%;
   border-top: 2px solid $light-green;
   box-shadow: 0px 0px 34px 2px rgba(85,205,201,0.62);
   text-align: center;
-
   h2 {
     color: $light-green;
     font-family: agency-fb, sans-serif;
@@ -41,19 +39,17 @@
   display: flex;
   justify-content: space-around;
   width: 80%;
-
+  transform: translateY(20px);
   p {
-    font-size: 8px;
+    font-size: 11px;
     font: $body-font;
     color: white;
     .fas {
       font-size: 24px;
       color: $light-green;
-      padding-bottom: 12px;
     }
   }
 }
-
 
 .stats-number {
   font-size: 20px;
@@ -67,7 +63,11 @@
   display: flex;
   justify-content: space-around;
   font-size: 30px;
-  color: $light-green;
+  color: white;
+  background-color: rgba(86, 205, 201, 0.7);
+  transform: translateY(100%);
+  border-radius: 2px;
+  padding: 8px 8px;
 }
 
 .profile-box .more-info img {
